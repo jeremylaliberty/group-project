@@ -1,0 +1,36 @@
+.header {
+    padding: 5px;
+    text-align: left;
+    background: #11c9fc;
+    color: white;
+    font-size: 30px;
+  }
+
+  .footer {
+    background-color: #11c9fc;
+    overflow: hidden;
+    position: fixed;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .fa {
+    padding: 20px;
+  }
+
+  .fa-facebook {
+    color: black;
+  }
+
+  .fa-instagram {
+    color: black;
+  }
+  
+  .fa-twitter {
+    color: black;
+  }
+
+.signupbtn {
+  float: right;
+}
