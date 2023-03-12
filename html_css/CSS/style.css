@@ -6,6 +6,10 @@
     font-size: 30px;
   }
 
+  .is-favorite{
+    background: #11c9fc !important;
+  }
+
   .footer {
     background-color: #11c9fc;
     overflow: hidden;

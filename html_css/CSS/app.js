@@ -18,6 +18,7 @@ let signinbtn = document.querySelector('#signinbtn');
 let signinModal = document.querySelector('#signin-modal');
 let signinModalBg = document.querySelector('#signin-modalbg');
 let closeSignin = document.querySelector('#sign-in-close');
+
 signinbtn.addEventListener('click', () => {
  signinModal.classList.add('is-active');
 })
