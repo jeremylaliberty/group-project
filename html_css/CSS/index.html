@@ -9,8 +9,73 @@
 </head>
 <body>
     <div class="header">
-        <h1>Gamma Phi Beta Logo</h1>
+        <h1>
+            Gamma Phi Beta Logo
+            <button id="signupbtn">Sign Up</button>
+            <button id="signinbtn">Sign In</button>
+        </h1>
     </div>
+
+    <div class="modal" id="signup-modal">
+        <div id="signup-modalbg">
+            <h1>Sign Up</h1>
+            <form id="signup_form">
+                <!-- Email -->
+                <div class="field">
+                    <label class="label">Email</label>
+                    <div class="control">
+                        <input type="email" id="email">
+                    </div>
+                </div>
+                <!-- Password -->
+                <div class="field">
+                    <label class="label">Password</label>
+                    <div class="control">
+                        <input type="password" id="password">
+                    </div>
+                </div>
+ 
+                <!-- submit -->
+                <div class="field">
+                    <div class="control">
+                        <button id="sum_submit">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div> 
+
+    <!-- sign in modal -->
+   <div class="modal" id="signin-modal">
+       <div class="modal-background" id="signin-modalbg"></div>
+       <div class="modal-content p-6 has-background-white">
+           <h1 class="is-size-3 title">Sign In</h1>
+           <form id="signin_form">
+               <!-- Email -->
+               <div class="field">
+                   <label class="label">Email</label>
+                   <div class="control">
+                       <input type="email" id="email_">
+                   </div>
+               </div>
+
+               <!-- Password -->
+               <div class="field">
+                   <label class="label">Password</label>
+                   <div class="control">
+                       <input type="password" id="password_">
+                   </div>
+               </div>
+
+               <!-- submit -->
+               <div class="field">
+                   <div class="control">
+                       <button class="m-3 button is-link">Submit</button>
+                   </div>
+               </div>
+           </form>
+       </div>
+   </div>
 
     <div style="width: 100%;">
         <div style="width: 50%; height: 300px; float: left; background: grey;">
@@ -19,7 +84,6 @@
         <div style="margin-left: 50%; height: 300px; background: beige;">
             Righ div content
         </div>
-
     </div>
 
     <div class="footer">
@@ -30,5 +94,6 @@
         </div>
     </div>
     
+ <script src="app.js"></script>
 </body>
 </html>
