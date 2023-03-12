@@ -31,3 +31,29 @@ signinModalBg.addEventListener('click', () => {
  signinModal.classList.remove('is-active');
 });
 
+
+var x_attendance = ['Attended', 'Missed'];
+var y_attendance = [18,3];
+var barColors = [
+    "rgba(0,0,255,1.0)",
+    "rgba(17, 201, 252, 1)",
+  ];
+var attendance_image = document.getElementById("myChart");
+var attendance_chart = new Chart(attendance_image, {
+    type: "doughnut",
+    data: {
+      labels: x_attendance,
+      datasets: [{
+        backgroundColor: barColors,
+        data: y_attendance
+      }]
+    },
+    options: {
+      title: {
+        display: true,
+        text: "Attendance"
+      }
+    }
+  });
+
+
