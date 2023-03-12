@@ -30,3 +30,4 @@ closeSignin.addEventListener('click', () => {
 signinModalBg.addEventListener('click', () => {
  signinModal.classList.remove('is-active');
 });
+

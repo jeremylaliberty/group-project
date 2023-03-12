@@ -9,8 +9,8 @@
     <title>Document</title>
 </head>
 <body>
-    <header class="is-favorite">
-        <nav class="navbar is-favorite" role="navigation" aria-label="main navigation">
+    <header class="is-favorite" >
+        <nav class="navbar is-favorite" role="navigation" aria-label="main navigation" style="margin-left: 10px;">
             <div class="navbar-brand">
                 <a href="">
                     <img src="images/logo.png" alt="" width="100" height = "50">
@@ -27,14 +27,27 @@
             <div id="navbarBasicExample" class="navbar-menu">
               <div class="navbar-start">
                 <a class="navbar-item">
-                    <span style="color: white; border: 1px; border-color: black;">
+                    <span style="color: white;">
                         <i class="fa-solid fa-house fa-2x bordered-icon"></i>
+                      </span>
+                    
+                </a>
+                <a class="navbar-item">
+                    <span style="color: white; ">
+                        <i class="fa-solid fa-globe fa-2x bordered-icon"></i>
                       </span>
                     
                 </a>
           
                 <a class="navbar-item">
-                  Documentation
+                    <span style="color: white; ">
+                        <i class="fa-solid fa-hand fa-2x bordered-icon"></i>
+                      </span>
+                </a>
+                <a class="navbar-item">
+                    <span style="color: white;">
+                        <i class="fa-solid fa-user fa-2x bordered-icon"></i>
+                      </span>
                 </a>
           
                 
@@ -42,14 +55,18 @@
           
               <div class="navbar-end">
                 <div class="navbar-item">
-                  <div class="buttons">
-                    <a id = "signupbtn" class="button is-primary">
-                      <strong>Sign up</strong>
-                    </a>
-                    <a id = "signinbtn" class="button is-light">
-                      Log in
-                    </a>
-                  </div>
+                    <div class="border">
+                        <p id = "signupbtn" class="button has-text-black" style = 'border: none; font-size: large;'>
+                            <strong>Sign up</strong>
+                        </p>
+                        </div>
+                </div>
+                <div class="navbar-item">
+                    <div class="border">
+                        <p id = "signinbtn" class="button has-text-black" style = 'border: none; font-size: large;'>
+                            <strong>Log in</strong>
+                        </p>
+                        </div>
                 </div>
               </div>
             </div>
@@ -84,8 +101,8 @@
                   </div>
                   <div class="field">
                     <p class="control">
-                      <button class="button is-success">
-                        Login
+                      <button class="button is-favorite has-text-white">
+                        <strong>Login</strong>
                       </button>
                     </p>
                   </div>
@@ -163,7 +180,7 @@
                   
                   <div class="field is-grouped">
                     <div class="control">
-                      <button class="button is-success">Submit</button>
+                      <button class="button has-text-white is-favorite"><strong>Submit</strong></button>
                     </div>
                     <div class="control">
                       <button class="button is-danger">Clear</button>
