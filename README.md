@@ -17,6 +17,116 @@ https://www.burndownfortrello.com/index.php
 
 **Daily Scrum Updates **
 
+#1 
+Jeremy: 
+- What did you do yesterday?
+	Yesterday I listened to clients discuss more what they were looking for.
+- What are you planning to do today?
+	Today I am working in Just in Mind to develop a graphic of what we think the client is looking for from the main page
+- Any problems you are facing?
+	The only issue I am facing right now is understanding what the most beneficial main page to the user will look like 
+Brandon:
+- What did you do yesterday?
+        Yesterday I refreshed my memory on how to create modals and using JS with HTML
+- What are you planning to do today?
+        Creating the sign up modal for users
+- Any problems you are facing?
+        Ran into some problems regarding having the form be presented in the modal
+Kennedy:
+- What did you do yesterday?
+        Yesterday I worked with the client to build user stories and better understand what we are looking for. 
+- What are you planning to do today?
+        Today I am breaking down the user stories into actionable story points to be built and prioritized.
+- Any problems you are facing?
+        I am having a difficult time understanding how specific each story point needs to be to be added to the burndown chart or if it is supposed to correlate more directly to the general project.
+Anouk:
+- What did you do yesterday? 
+        Yesterday we went to speak with our client to gather user stories.
+- What are you planning to do today?
+        Today, I will research color themes and layouts for our first website page. 
+- Any problems you are facing?
+        So far, I haven’t faced any issues. 
+Anna:
+- What did you do yesterday?
+	Yesterday I met with the clients with our group to gather user stories.
+- What are you planning to do today?
+	Today I plan to work on turning the user stories into story points for the burndown chart. 
+- Any problems you are facing?
+	None as of right now. 
+
+#2 
+Jeremy: 
+- What did you do yesterday?
+	Yesterday I worked on building out some of the prototypes in Justinmind
+- What are you planning to do today?
+	Today I am working to finish the protoypes that I was working on.
+- Any problems you are facing?
+	Not facing any problems, however, am aware that some of the prototypes I am building may need to be adjusted aesthetically. 
+Brandon:
+- What did you do yesterday?
+	Yesterday I attempted to to start building out the sign up modal for users
+- What are you planning to do today?
+	Start the JS and make sure the modals look right.
+- Any problems you are facing?
+	Was facing some issues with the JS
+Kennedy:
+- What did you do yesterday?
+	Yesterday I worked on the trello board and updated all of the tasks into the proper category as well as made changes to the burndown chart.
+- What are you planning to do today?
+	I am planning on helping build part of the mainframe structure of the html today
+- Any problems you are facing?
+	I and the group are still struggling with the burndown chart. 
+Anouk:
+- What did you do yesterday?
+	Yesterday I researched color themes that would aid in the aesthetic of the website and brainstormed the layout.
+- What are you planning to do today?
+	Today, I plan on starting the index.html file with our main page and creating a bare bones outline to iterate on. I also will create a style.css file.
+- Any problems you are facing?
+	I have not faced any issues.
+Anna:
+- What did you do yesterday?
+	Yesterday, I helped build the html outline. 
+- What are you planning to do today?
+	Today, I am going to start working on building out one of the prototypes form the html structure outline. 
+- Any problems you are facing?
+	No problems right now. 
+
+#3
+Jeremy: 
+- What did you do yesterday?
+	Yesterday I added the attendance and the points aspects to the html file
+- What are you planning to do today?
+	Today, I am workin on those parts of the main page more. 
+- Any problems you are facing?
+	Not facing any specific problems right now. 
+Brandon:
+- What did you do yesterday?
+	Yesterday I helped finish the main page of the site.
+- What are you planning to do today?
+	Today I am making sure that the main page is complete and the sign-on modal works smoothly off of it
+- Any problems you are facing?
+	Some issues with JS 
+Kennedy:
+- What did you do yesterday?
+	Yesterday I added to the css file 
+- What are you planning to do today?
+	Today, I am continuing to make changes to the css file as more of the html is being built out.
+- Any problems you are facing?
+	I forgot how to do some css techniques with different sizing and images. 
+Anouk:
+- What did you do yesterday?
+	Yesterday, I began outlining the index.html file and added some light css formatting and aesthetic.
+- What are you planning to do today?
+	Today, I plan on adding references for social media to the footer that links to the website, and improving the structure of the main page as well as adding more css.
+- Any problems you are facing?
+	I have not faced any issues.
+Anna:
+- What did you do yesterday?
+	Yesterday I checked in with the client with some of our prototypes to make sure they were in line with what they were looking for. 
+- What are you planning to do today?
+	Today I worked to make some css changes the client was looking for with the logo and aesthetic of the home pages.
+- Any problems you are facing?
+	Had some issues with editing the html and css with padding for different sized screens. 
 
 **Sprint Review**
 
