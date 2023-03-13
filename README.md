@@ -13,6 +13,8 @@ First Sprint - Assignment 3 Responses
         As a user, I want to be able to network with other members of the organization. 
 
 **Breakdown into Burndown Chart for Trello**
+
+
 https://www.burndownfortrello.com/index.php 
 
 **Daily Scrum Updates **
