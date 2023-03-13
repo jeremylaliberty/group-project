@@ -28,6 +28,12 @@ First Sprint - Assignment 3 Responses
 | Added Bulma to Main Page | 1,2 | 2 hours | 6 | average | Anna |
 | Add header above Nav Page | 1,2 | 1 hour | 5 | low | Anna |
 
+<img width="447" alt="Screenshot 2023-03-12 at 8 56 34 PM" src="https://user-images.githubusercontent.com/124934690/224591027-5801b474-085d-4127-a218-2f5cc8608993.png">
+
+
+<img width="483" alt="Screenshot 2023-03-12 at 8 56 42 PM" src="https://user-images.githubusercontent.com/124934690/224591141-5885aebc-e40f-46d3-9f79-49b003e37a2b.png">
+
+<img width="560" alt="Screenshot 2023-03-12 at 8 57 14 PM" src="https://user-images.githubusercontent.com/124934690/224591170-68af7d00-50d5-4312-b871-47a15e07d4bc.png">
 
 https://www.burndownfortrello.com/index.php 
 
