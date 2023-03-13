@@ -15,6 +15,9 @@ First Sprint - Assignment 3 Responses
 **Breakdown into Burndown Chart for Trello**
 https://www.burndownfortrello.com/index.php 
 
+**Daily Scrum Updates **
+
+
 **Sprint Review**
 
 1. What did you learn from doing our first sprint?
