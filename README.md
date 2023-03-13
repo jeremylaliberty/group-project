@@ -14,6 +14,20 @@ First Sprint - Assignment 3 Responses
 
 **Breakdown into Burndown Chart for Trello**
 
+| Task | Corresponding Story Number | Duration | Priority | Complexity | Lead Person |
+| ---- | -------------------------- | -------- | -------- | ---------- | ----------- |
+| Build Github repo for project | 1,2 | 30 mins | 10 | low | Jeremy |
+| Create basic html structure for main page | 1 | 4 hours | 8 | low | Anouk |
+| Add CSS code to main page | 1 | 2 hours | 6 | average | Anouk & Kennedy |
+| Add modal for sign in/sign up | 1,2 | 1 hour | 8 | average | Brandon |
+| Add footer with links to social media | 1,2 | 1 hour | 5 | low | Anouk |
+| Develop html for main page to include div content with attendance and points | 2 | 8 hours | 9 | high | Jeremy |
+| Add images for organization logo and implement it in header | 1,2 | 1 hour | 3 | low | Kennedy |
+| Add modal for attendance | 1,2 | 2 hours | 6 | average | Brandon |
+| Add modal for points | 1,2 | 2 hours | 6 | average | Jeremy |
+| Added Bulma to Main Page | 1,2 | 2 hours | 6 | average | Anna |
+| Add header about Nav Page | 1,2 | 1 hour | 5 | low | Anna |
+
 
 https://www.burndownfortrello.com/index.php 
 
