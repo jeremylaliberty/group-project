@@ -26,7 +26,7 @@ First Sprint - Assignment 3 Responses
 | Add modal for attendance | 1,2 | 2 hours | 6 | average | Brandon |
 | Add modal for points | 1,2 | 2 hours | 6 | average | Jeremy |
 | Added Bulma to Main Page | 1,2 | 2 hours | 6 | average | Anna |
-| Add header about Nav Page | 1,2 | 1 hour | 5 | low | Anna |
+| Add header above Nav Page | 1,2 | 1 hour | 5 | low | Anna |
 
 
 https://www.burndownfortrello.com/index.php 
