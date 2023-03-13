@@ -66,7 +66,7 @@ var points_chart = new Chart(points_image, {
         data: yValues
       }]
     },
-    options: {...}
+    options: {}
   });
 
 
