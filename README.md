@@ -17,7 +17,7 @@ First Sprint - Assignment 3 Responses
 
 https://www.burndownfortrello.com/index.php 
 
-**Daily Scrum Updates **
+**Daily Scrum Updates**
 
 #1 <br>
 Jeremy: 
