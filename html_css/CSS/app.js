@@ -36,8 +36,8 @@ var x_attendance = ['Attended', 'Missed'];
 var y_attendance = [18,3];
 
 var pieColors = [
-    "rgba(0,0,255,1.0)",
-    "rgba(17, 201, 252, 1)",
+    "#11C9FC",
+    "#1153FC",
   ];
 var attendance_image = document.getElementById("myChart");
 var attendance_chart = new Chart(attendance_image, {
@@ -55,18 +55,28 @@ var attendance_chart = new Chart(attendance_image, {
 
 var x_points = ['Your Points', 'MC Average', 'Maximum Points'];
 var y_points = [630, 450, 1000];
+var barColors =  ["#11C9FC","#1153FC" ,"#11FCBA"];
 
 var points_image = document.getElementById("points-chart");
 var points_chart = new Chart(points_image, {
     type: "bar",
     data: {
-      labels: xValues,
+      labels: x_points,
       datasets: [{
         backgroundColor: barColors,
-        data: yValues
+        data: y_points
       }]
     },
-    options: {}
+    options: {
+        legend: {display: false}, 
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+}
   });
 
 
