@@ -1,6 +1,9 @@
 # group-project
 First Sprint - Assignment 3 Responses 
 
+**Prototype from Justinmind**
+<img width="816" alt="PNG image" src="https://user-images.githubusercontent.com/124934690/224597874-1218cdb0-57d4-49ca-9b21-c658e21cc339.png">
+
 **Trello Board Link** – https://trello.com/b/jIeSXUdM/gamma-phi-beta-member-system 
 
 **User Stories**
