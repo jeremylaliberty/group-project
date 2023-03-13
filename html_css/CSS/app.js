@@ -31,10 +31,10 @@ signinModalBg.addEventListener('click', () => {
  signinModal.classList.remove('is-active');
 });
 
-
+//  This data would be actual member data
+//  since we dont have that yet, we use placeholder data
 var x_attendance = ['Attended', 'Missed'];
 var y_attendance = [18,3];
-
 var pieColors = [
     "#11C9FC",
     "#1153FC",
@@ -53,6 +53,7 @@ var attendance_chart = new Chart(attendance_image, {
     }
   });
 
+// same here
 var x_points = ['Your Points', 'MC Average', 'Maximum Points'];
 var y_points = [630, 450, 1000];
 var barColors =  ["#11C9FC","#1153FC" ,"#11FCBA"];
@@ -72,11 +73,10 @@ var points_chart = new Chart(points_image, {
         scales: {
             yAxes: [{
                 ticks: {
-                    beginAtZero: true
+                    beginAtZero: true,
+                    max: y_points[2] + 200 
                 }
             }]
         }
 }
   });
-
-
