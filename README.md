@@ -148,3 +148,4 @@ Next time, we will start the sprint full force to take advantage of every single
 Our team is relatively satisfied with what we’ve completed, but again, we did think we would fit a lot more into one sprint. We think we were a bit ambitious since none of us have ever done a sprint before and had no basis for knowing how much of our work could be accomplished. At the same time, we think that each sprint could accomplish different amounts of work based on everyone's weekly schedules and the complexity of what we are working on. 
 
 6. Which group was invited? What are your observations/notes? Everybody was present?
+We worked with team project group 10. Everybody was present at their sprint review and contributed to the conversation. They had an overall smooth sprint with a bit of hiccups in figuring out all the platforms necessary to document the project. Each person took their turn assessing what went well and poorly, and why. 
