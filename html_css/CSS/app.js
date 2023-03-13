@@ -34,7 +34,8 @@ signinModalBg.addEventListener('click', () => {
 
 var x_attendance = ['Attended', 'Missed'];
 var y_attendance = [18,3];
-var barColors = [
+
+var pieColors = [
     "rgba(0,0,255,1.0)",
     "rgba(17, 201, 252, 1)",
   ];
@@ -44,16 +45,28 @@ var attendance_chart = new Chart(attendance_image, {
     data: {
       labels: x_attendance,
       datasets: [{
-        backgroundColor: barColors,
+        backgroundColor: pieColors,
         data: y_attendance
       }]
     },
     options: {
-      title: {
-        display: true,
-        text: "Attendance"
-      }
     }
+  });
+
+var x_points = ['Your Points', 'MC Average', 'Maximum Points'];
+var y_points = [630, 450, 1000];
+
+var points_image = document.getElementById("points-chart");
+var points_chart = new Chart(points_image, {
+    type: "bar",
+    data: {
+      labels: xValues,
+      datasets: [{
+        backgroundColor: barColors,
+        data: yValues
+      }]
+    },
+    options: {...}
   });
 
 
