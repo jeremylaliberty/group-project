@@ -5,10 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="app.js"></script>
-    <script type="text/javascript" src='https://unpkg.com/@turf/turf@6/turf.min.js'></script>
+    <script src='https://unpkg.com/@turf/turf@6/turf.min.js'></script>
    
 </head>
 <body>
     Hello, World!
 </body>
+
+    <script>
+        var pt = turf.point([-77, 44]);
+        var poly = turf.polygon([[
+        [-81, 41],
+        [-81, 47],
+        [-72, 47],
+        [-72, 41],
+        [-81, 41]
+    ]]);
+        console.log(turf.booleanPointInPolygon(pt, poly));
+
+
+    </script>
 </html>
