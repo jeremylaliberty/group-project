@@ -4,25 +4,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script type = "text/javascript" src = 'https://cdnjs.cloudflare.com/ajax/libs/Turf.js/3.6.3/turf.js'> </script>
     <script src="app.js"></script>
-    <script src='https://unpkg.com/@turf/turf@6/turf.min.js'></script>
+    
    
 </head>
 <body>
     Hello, World!
 </body>
 
-    <script>
-        var pt = turf.point([-77, 44]);
-        var poly = turf.polygon([[
+    <!-- <script>
+        var current_location = turf.point([-77, 44]);
+        var polygon = turf.polygon([[
         [-81, 41],
         [-81, 47],
         [-72, 47],
         [-72, 41],
         [-81, 41]
     ]]);
-        console.log(turf.booleanPointInPolygon(pt, poly));
+        console.log(turf.booleanPointInPolygon(current_location, polygon));
 
 
-    </script>
+    </script> -->
 </html>
