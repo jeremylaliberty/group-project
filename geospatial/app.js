@@ -1,9 +1,16 @@
 // use this file to test geospatial features of the site
 // going to use gps instead of ip
 
-
 var hub_center = turf.point([-89.3956, 43.0744]);
-var hub = turf.buffer(hub_center, 0.25, {units: 'miles'});
+var hub = turf.buffer(hub_center, 0.1, {units: 'miles'});
+
+var grainger_center = turf.point([-89.4016, 43.0727]);
+var grainger = turf.buffer(grainger_center, 0.1, {units: 'miles'});
+
+
+var gphi_center = turf.point([-89.3950, 43.0760]);
+var gphi = turf.buffer(gphi_center, 0.1, {units: 'miles'});
+
 
 var x = document.getElementById("demo");
 
@@ -22,10 +29,16 @@ function myPosition(position) {
   my_location = turf.point([long, lat]);
 
   if (turf.booleanPointInPolygon(my_location, hub)) {
-    x.innerHTML = "You're in the Hub"
+    x.innerHTML = "You're at the Hub"
+  } 
+  else if (turf.booleanPointInPolygon(my_location, grainger)) {
+    x.innerHTML = "You're at Grainger"
+  }
+  else if (turf.booleanPointInPolygon(my_location, gphi)) {
+    x.innerHTML = "You're at GPhi"
+  }
+  else {
+    x.innerHTML = "You're not at any of the recognized locations."
   }
 
 }
-
-// var hub_center = turf.point([-89.3956, 43.0744]);
-// var hub = turf.buffer(hub_center, 0.25, {units: 'miles'});
