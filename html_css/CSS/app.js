@@ -6,7 +6,7 @@ let profile = document.querySelector('#profile');
 let home_btn = document.querySelector('#home-btn');
 let network_btn = document.querySelector('#network-btn');
 let attendance_btn = document.querySelector('#attendance-btn');
-let profile_btn = document.querySelector('#attendance-btn');
+let profile_btn = document.querySelector('#profile-btn');
 
 function homePage(){
   home.classList.remove('is-hidden');
@@ -29,7 +29,7 @@ function atttendancePage(){
   attendance.classList.remove('is-hidden');
 }
 
-function atttendancePage(){
+function profilePage(){
   home.classList.add('is-hidden');
   network.classList.add('is-hidden');
   profile.classList.remove('is-hidden');
