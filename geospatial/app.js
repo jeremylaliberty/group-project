@@ -10,12 +10,19 @@ var current_location = turf.point([-77, 44]);
     ]]);
         console.log(turf.booleanPointInPolygon(current_location, polygon));
 
-const successCallback = (position) => {
-  console.log(position);
-};
 
-const errorCallback = (error) => {
-  console.log(error);
-};
+var x = document.getElementById("demo");
 
-navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+// going to use gps instead of ip
+function getLocation() { 
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
