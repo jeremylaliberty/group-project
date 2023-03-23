@@ -47,25 +47,25 @@
         </div>
 
         <div class="navbar-end">
-          <a class="navbar-item">
+          <a id = "home-btn" class="navbar-item">
             <span style="color: white;">
               <i class="fa-solid fa-house fa-2x bordered-icon"></i>
             </span>
 
           </a>
-          <a class="navbar-item">
+          <a id = "network-btn" class="navbar-item">
             <span style="color: white; ">
               <i class="fa-solid fa-globe fa-2x bordered-icon"></i>
             </span>
 
           </a>
 
-          <a class="navbar-item">
+          <a id = "attendance-btn" class="navbar-item">
             <span style="color: white; ">
               <i class="fa-solid fa-hand fa-2x bordered-icon"></i>
             </span>
           </a>
-          <a class="navbar-item">
+          <a id = "profile-btn" class="navbar-item">
             <span style="color: white;">
               <i class="fa-solid fa-user fa-2x bordered-icon"></i>
             </span>
@@ -206,97 +206,108 @@
     </div>
     <button id="close-sign-up" class="modal-close is-large" aria-label="close"></button>
   </div>
-  <div id="main">
-    <div class="columns">
-      <!-- Attendance section -->
-      <div class="column">
-        <div class="card">
-          <div class="card-image" style="margin-top: 5px;">
-            <figure class=" is-4by3">
-              <canvas id="myChart"></canvas>
-            </figure>
-          </div>
-          <div class="card-content">
-            <div class="media">
-  
-              <div class="media-content">
-                <p class="title is-centered is-3">Attendance</p>
-              </div>
-            </div>
-  
-            <div class="content">
-              You have attended <strong>18</strong> of a possible <strong>21</strong> meetings, giving you an attendance
-              rate of <strong>85.7%</strong>.
-              <br>
-              <br>
-            </div>
-          </div>
+
+  <div id = "home" class="columns">
+    <!-- Attendance section -->
+    <div class="column">
+      <div class="card">
+        <div class="card-image" style="margin-top: 5px;">
+          <figure class=" is-4by3">
+            <canvas id="myChart"></canvas>
+          </figure>
         </div>
-      </div>
-      <!-- Points section -->
-      <div class="column">
-        <div class="card">
-          <div class="card-image" style="margin-top: 5px;">
-            <figure class=" is-4by3">
-              <canvas id="points-chart"></canvas>
-            </figure>
-          </div>
-          <div class="card-content">
-            <div class="media">
-  
-              <div class="media-content">
-                <p class="title is-3">Points</p>
-              </div>
-            </div>
-  
-            <div class="content">
-              You have accumulated <strong>630</strong> of a possible <strong>1000</strong> points. The average in your
-              member class is <strong>450</strong>, which puts you in the <strong>75th</strong> percentile.
-  
-              <br>
+        <div class="card-content">
+          <div class="media">
+
+            <div class="media-content">
+              <p class="title is-centered is-3">Attendance</p>
             </div>
           </div>
-        </div>
-      </div>
-      <!-- User info section -->
-      <div class="column">
-        <div class="card">
-  
-          <div class="card-content">
-            <div class="media">
-              <div class="media-left">
-                <figure class="image is-48x48">
-                  <img src="images/smiley.png" alt="Placeholder image">
-                </figure>
-              </div>
-              <div class="media-content">
-                <p class="title is-4">Anna Geweke</p>
-                <p class="subtitle is-6">@annageweke</p>
-              </div>
-            </div>
-  
-            <div class="content">
-  
-              <strong>Member Class:</strong> Fall 2019
-              <br>
-              <br>
-              <strong>Hometown:</strong> Chicago, IL
-              <br>
-              <br>
-              <strong>Expected Graduation:</strong> Spring 2023
-              <br>
-              <br>
-              <strong>Bio:</strong>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem inventore tempora eius obcaecati,
-              soluta iste ullam nemo dicta, eaque asperiores ratione reiciendis ipsa neque id?
-              <br>
-              <br>
-              <button class="button has-text-white is-favorite"><strong>Edit Profile</strong></button>
-            </div>
+
+          <div class="content">
+            You have attended <strong>18</strong> of a possible <strong>21</strong> meetings, giving you an attendance
+            rate of <strong>85.7%</strong>.
+            <br>
+            <br>
           </div>
         </div>
       </div>
     </div>
+    <!-- Points section -->
+    <div class="column">
+      <div class="card">
+        <div class="card-image" style="margin-top: 5px;">
+          <figure class=" is-4by3">
+            <canvas id="points-chart"></canvas>
+          </figure>
+        </div>
+        <div class="card-content">
+          <div class="media">
+
+            <div class="media-content">
+              <p class="title is-3">Points</p>
+            </div>
+          </div>
+
+          <div class="content">
+            You have accumulated <strong>630</strong> of a possible <strong>1000</strong> points. The average in your
+            member class is <strong>450</strong>, which puts you in the <strong>75th</strong> percentile.
+
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- User info section -->
+    <div class="column">
+      <div class="card">
+
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+              <figure class="image is-48x48">
+                <img src="images/smiley.png" alt="Placeholder image">
+              </figure>
+            </div>
+            <div class="media-content">
+              <p class="title is-4">Anna Geweke</p>
+              <p class="subtitle is-6">@annageweke</p>
+            </div>
+          </div>
+
+          <div class="content">
+
+            <strong>Member Class:</strong> Fall 2019
+            <br>
+            <br>
+            <strong>Hometown:</strong> Chicago, IL
+            <br>
+            <br>
+            <strong>Expected Graduation:</strong> Spring 2023
+            <br>
+            <br>
+            <strong>Bio:</strong>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem inventore tempora eius obcaecati,
+            soluta iste ullam nemo dicta, eaque asperiores ratione reiciendis ipsa neque id?
+            <br>
+            <br>
+            <button class="button has-text-white is-favorite"><strong>Edit Profile</strong></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="network" class = "is-hidden">
+    Network placeholder
+  </div>
+
+  <div id="attendance" class = "is-hidden">
+    Attendance placeholder
+  </div>
+
+  <div id="profile" class="is-hidden">
+    Profile placeholder
   </div>
   
 

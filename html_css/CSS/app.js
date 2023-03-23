@@ -1,3 +1,58 @@
+let home = document.querySelector('#home');
+let network = document.querySelector('#network');
+let attendance = document.querySelector('#attendance');
+let profile = document.querySelector('#profile');
+
+let home_btn = document.querySelector('#home-btn');
+let network_btn = document.querySelector('#network-btn');
+let attendance_btn = document.querySelector('#attendance-btn');
+let profile_btn = document.querySelector('#attendance-btn');
+
+function homePage(){
+  home.classList.remove('is-hidden');
+  network.classList.add('is-hidden');
+  profile.classList.add('is-hidden');
+  attendance.classList.add('is-hidden');
+}
+
+function networkPage(){
+  home.classList.add('is-hidden');
+  network.classList.remove('is-hidden');
+  profile.classList.add('is-hidden');
+  attendance.classList.add('is-hidden');
+}
+
+function atttendancePage(){
+  home.classList.add('is-hidden');
+  network.classList.add('is-hidden');
+  profile.classList.add('is-hidden');
+  attendance.classList.remove('is-hidden');
+}
+
+function atttendancePage(){
+  home.classList.add('is-hidden');
+  network.classList.add('is-hidden');
+  profile.classList.remove('is-hidden');
+  attendance.classList.add('is-hidden');
+}
+
+home_btn.addEventListener('click', () => {
+  homePage();
+ });
+
+ network_btn.addEventListener('click', () => {
+  networkPage();
+ });
+
+ attendance_btn.addEventListener('click', () => {
+  atttendancePage();
+ });
+
+ profile_btn.addEventListener('click', () => {
+  profilePage();
+ });
+
+
 let signupbtn = document.querySelector('#signupbtn');
 let signupModal = document.querySelector('#signup-modal');
 let signupModalBg = document.querySelector('#signup-modalbg');
