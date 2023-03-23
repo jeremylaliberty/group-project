@@ -9,3 +9,13 @@ var current_location = turf.point([-77, 44]);
         [-81, 41]
     ]]);
         console.log(turf.booleanPointInPolygon(current_location, polygon));
+
+const successCallback = (position) => {
+  console.log(position);
+};
+
+const errorCallback = (error) => {
+  console.log(error);
+};
+
+navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
