@@ -1,28 +1,31 @@
 // use this file to test geospatial features of the site
+// going to use gps instead of ip
 
-var current_location = turf.point([-77, 44]);
-        var polygon = turf.polygon([[
-        [-81, 41],
-        [-81, 47],
-        [-72, 47],
-        [-72, 41],
-        [-81, 41]
-    ]]);
-        console.log(turf.booleanPointInPolygon(current_location, polygon));
 
+var hub_center = turf.point([-89.3956, 43.0744]);
+var hub = turf.buffer(hub_center, 0.25, {units: 'miles'});
 
 var x = document.getElementById("demo");
 
-// going to use gps instead of ip
+
 function getLocation() { 
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
+    navigator.geolocation.getCurrentPosition(myPosition);
   } else { 
     x.innerHTML = "Geolocation is not supported by this browser.";
   }
 }
 
-function showPosition(position) {
-  x.innerHTML = "Latitude: " + position.coords.latitude + 
-  "<br>Longitude: " + position.coords.longitude;
+function myPosition(position) {
+  long = position.coords.longitude;
+  lat = position.coords.latitude;
+  my_location = turf.point([long, lat]);
+
+  if (turf.booleanPointInPolygon(my_location, hub)) {
+    x.innerHTML = "You're in the Hub"
+  }
+
 }
+
+// var hub_center = turf.point([-89.3956, 43.0744]);
+// var hub = turf.buffer(hub_center, 0.25, {units: 'miles'});
