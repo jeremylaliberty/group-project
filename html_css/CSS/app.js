@@ -103,6 +103,11 @@ editProfilebtn.addEventListener('click', () => {
   editProfileModal.classList.remove('is-active');
  });
 
+ let clearEditProfile = document.querySelector('#clear-edit-profile-btn');
+ let editBio = document.querySelector('#edit-bio');
+ clearEditProfile.addEventListener('click', () => {
+  editBio.value = "";
+ })
 //  This data would be actual member data
 //  since we dont have that yet, we use placeholder data
 var x_attendance = ['Attended', 'Missed'];
