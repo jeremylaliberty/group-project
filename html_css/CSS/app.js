@@ -120,6 +120,8 @@ editProfilebtn.addEventListener('click', () => {
 
  
 
+
+
 //  This data would be actual member data
 //  since we dont have that yet, we use placeholder data
 var x_attendance = ['Attended', 'Missed'];
