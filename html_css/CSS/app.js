@@ -104,8 +104,17 @@ editProfilebtn.addEventListener('click', () => {
  });
 
  let clearEditProfile = document.querySelector('#clear-edit-profile-btn');
+ let editName = document.querySelector('#edit-name');
+ let editHometown = document.querySelector('#edit-hometown');
+ let editMajor = document.querySelector('#edit-major');
+ let editGrad = document.querySelector('#edit-grad');
  let editBio = document.querySelector('#edit-bio');
+
  clearEditProfile.addEventListener('click', () => {
+  editName.value = "";
+  editHometown.value = "";
+  editMajor.value = "";
+  editGrad.value = "";
   editBio.value = "";
  })
 //  This data would be actual member data
