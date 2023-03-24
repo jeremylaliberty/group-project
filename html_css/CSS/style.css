@@ -7,6 +7,19 @@
     font-size: 30px;
   }
 
+  .my-container{
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      width: 80%; 
+      margin: 0 auto; 
+  }
+
+  .attendance-image {
+    width: 40% ; 
+    height: auto ;
+    display: block; 
+    margin: 0 auto;
+  }
+
   .is-favorite{
     background: #ee9ec8 !important;
   }
