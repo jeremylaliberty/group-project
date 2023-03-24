@@ -86,6 +86,23 @@ signinModalBg.addEventListener('click', () => {
  signinModal.classList.remove('is-active');
 });
 
+let editProfilebtn = document.querySelector('#edit-profile-btn');
+let editProfileModal = document.querySelector('#edit-profile-modal');
+let editProfileModalBg = document.querySelector('#edit-profile-modalbg');
+let closeEditProfile = document.querySelector('#close-edit-profile');
+
+editProfilebtn.addEventListener('click', () => {
+  editProfileModal.classList.add('is-active');
+ })
+ 
+ closeEditProfile.addEventListener('click', () => {
+     editProfileModal.classList.remove('is-active');
+ });
+ 
+ editProfileModalBg.addEventListener('click', () => {
+  editProfileModal.classList.remove('is-active');
+ });
+
 //  This data would be actual member data
 //  since we dont have that yet, we use placeholder data
 var x_attendance = ['Attended', 'Missed'];
