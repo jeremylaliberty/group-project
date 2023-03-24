@@ -19,6 +19,12 @@
     display: block; 
     margin: 0 auto;
   }
+  .points-image {
+    width: 35% ; 
+    height: auto ;
+    display: block; 
+    margin: 0 auto;
+  }
 
   .is-favorite{
     background: #ee9ec8 !important;
