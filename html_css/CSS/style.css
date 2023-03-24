@@ -11,6 +11,10 @@
     background: #ee9ec8 !important;
   }
 
+  .is-second-favorite{
+    background: #9EC8EE !important;
+  }
+
   .has-text-favorite{
     color: #ee9ec8 !important;
   }
