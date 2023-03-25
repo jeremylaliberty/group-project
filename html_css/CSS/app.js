@@ -118,7 +118,41 @@ editProfilebtn.addEventListener('click', () => {
   editBio.value = "";
  });
 
+ let admin_page = document.querySelector('#admin-page');
+ let to_user_button = document.querySelector('#switch-to-user-view');
+
+ let user_page = document.querySelector('#user-page');
+ let to_admin_button = document.querySelector('#switch-to-admin-view');
+
+ to_user_button.addEventListener('click', () => {
+  user_page.classList.remove('is-hidden');
+  admin_page.classList.add('is-hidden');
+ });
+
+ to_admin_button.addEventListener('click', () => {
+  user_page.classList.add('is-hidden');
+  admin_page.classList.remove('is-hidden');
+ });
+
+let grad_profile_btn = document.querySelector('#graduate-profile-btn');
+let gradProfileModal = document.querySelector('#graduate-profile-modal');
+let gradProfileModalBg = document.querySelector('#graduate-profile-modalbg');
+let closeGradProfile = document.querySelector('#close-graduate-profile');
+
+grad_profile_btn.addEventListener('click', () => {
+  gradProfileModal.classList.add('is-active');
+ })
  
+ closeGradProfile.addEventListener('click', () => {
+  gradProfileModal.classList.remove('is-active');
+ });
+ 
+ gradProfileModalBg.addEventListener('click', () => {
+  gradProfileModal.classList.remove('is-active');
+ });
+
+ 
+
 
 
 
