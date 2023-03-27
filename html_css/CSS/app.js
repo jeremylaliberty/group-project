@@ -227,3 +227,46 @@ var points_chart = new Chart(points_image, {
         }
 }
   });
+
+
+var grainger_center = turf.point([-89.4016, 43.0727]);
+var grainger = turf.buffer(grainger_center, 0.2, {units: 'miles'});
+
+
+var hub_center = turf.point([-89.3956, 43.0744]);
+var hub = turf.buffer(hub_center, 0.2, {units: 'miles'});
+
+
+var x = document.querySelector("#where-am-i");
+let where_btn = document.querySelector('#where-am-i-btn')
+
+
+
+function getLocation() { 
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(myPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function myPosition(position) {
+  long = position.coords.longitude;
+  lat = position.coords.latitude;
+  my_location = turf.point([long, lat]);
+  
+  if (turf.booleanPointInPolygon(my_location, hub)) {
+    x.innerHTML = "You're at Hub";
+  }
+  else if (turf.booleanPointInPolygon(my_location, grainger)){
+    x.innerHTML = "You're at Grainger";
+  }
+  else {
+    x.innerHTML = "You're not at any of the named locations (Gphi (not yet implemented), Grainger, The Hub)";
+  }
+
+}
+
+where_btn.addEventListener('click', () => {
+  getLocation();
+});
