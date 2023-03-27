@@ -151,6 +151,28 @@ grad_profile_btn.addEventListener('click', () => {
   gradProfileModal.classList.remove('is-active');
  });
 
+let view_profile_btn = document.querySelector('#view-profile-btn');
+let viewProfileModal = document.querySelector('#view-profile-modal');
+let viewProfileModalBg = document.querySelector('#view-profile-modalbg');
+let closeViewProfile = document.querySelector('#close-view-profile');
+function ViewProfile(){
+  // get the right profile here
+  viewProfileModal.classList.add('is-active');
+}
+
+view_profile_btn.addEventListener('click', () => {
+  ViewProfile();
+ })
+ 
+ closeViewProfile.addEventListener('click', () => {
+  viewProfileModal.classList.remove('is-active');
+ });
+ 
+ viewProfileModalBg.addEventListener('click', () => {
+  viewProfileModal.classList.remove('is-active');
+ });
+
+
  
 
 

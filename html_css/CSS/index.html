@@ -225,7 +225,7 @@
           <div class="field">
             <label class="label">Major(s)</label>
             <div class="control">
-              <input id = "edit-major" class="input" type="text" placeholder = "">
+              <input class="input" type="text" placeholder = "">
             </div>
           </div>
   
@@ -341,9 +341,54 @@
       </div>
       <button id="close-edit-profile" class="modal-close is-large" aria-label="close"></button>
     </div>
+
+    <div id="view-profile-modal" class="modal">
+      <div id="view-profile-modalbg" class="modal-background"></div>
+      <div class="modal-content">
+        <div class="card">
+  
+          <div class="card-content">
+            <div class="media">
+              <div class="media-left">
+                <figure class="image is-48x48">
+                  <img src="images/smiley.png" alt="Placeholder image">
+                </figure>
+              </div>
+              <div class="media-content">
+                <p class="title is-4">Anna Geweke</p>
+                <p class="subtitle is-6">@annageweke</p>
+              </div>
+            </div>
+  
+            <div class="content">
+  
+              <strong>Member Class:</strong> Fall 2019
+              <br>
+              <br>
+              <strong>Hometown:</strong> Chicago, IL
+              <br>
+              <br>
+              <strong>Expected Graduation:</strong> Spring 2023
+              <br>
+              <br>
+              <strong>Bio:</strong>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem inventore tempora eius obcaecati,
+              soluta iste ullam nemo dicta, eaque asperiores ratione reiciendis ipsa neque id?
+              <br>
+              <br>
+              <strong>Contact:</strong> (333) 666 999
+            
+            </div>
+          </div>
+        </div>
+        <!-- Any other Bulma elements you want -->
+      </div>
+      <button id="close-view-profile" class="modal-close is-large" aria-label="close"></button>
+    </div>
+
   
   
-    <div id = "home" class="columns">
+    <div id = "home" class="columns is-vcentered">
       <!-- Attendance section -->
       <div class="column" style="margin-left: 5px;">
         <div class="card">
@@ -437,13 +482,58 @@
       </div>
     </div>
 
-    <button id = "switch-to-admin-view" class="button is-fullwidth has-text-white is-favorite has-text-weight-bold">
-      Switch to Admin View
-    </button>
+   
   
     <div id="network" class = "is-hidden">
-      Network placeholder
+    
+    
+
+      <!-- base HTML placeholder for member lists; would have info from firestore inserted here  -->
+      <div id = "member-network-container" class="columns is-multiline">
+        
+        <div class="column is-one-quarter">
+          <div class="card">
+            <div class="card-content">
+              <div class = "columns">
+                <div class="column has-text-left">
+                  <div class="is-inline-block">
+                    <strong>Jeremy Laliberty</strong>
+                  </div>
+                </div>
+                <div class="column has-text-right">
+                  <div class="is-inline-block">
+                    Fall 2019
+                  </div>
+                </div>
+              </div>
+              
+              
+    
+              <div class="has-text-centered">
+                <button id = "view-profile-btn" class="button is-small is-rounded is-inline-block">View Profile</button>
+              </div>
+            </div> 
+          </div>
+        </div>
+
+
+
+      <div id = "alumni-network-container" class="columns is-multiline is-hidden">
+        <div class="column is-one-quarter">
+          <div class="card">
+            <div class="card-content">
+              <strong>Jeremy Laliberty</strong> &nbsp; &nbsp; &nbsp; &nbsp; Fall 2019
+              <br>
+              <br>
+              <div class="has-text-centered">
+                <button  class="button is-small is-rounded is-inline-block">View Profile</button>
+              </div>
+            </div> 
+          </div>
+        </div>
+      </div>
     </div>
+   
   
     <div id="attendance" class = "is-hidden">
       Attendance placeholder
@@ -452,7 +542,11 @@
     <div id="profile" class="is-hidden">
      I dont think we even need this page
     </div>
-    
+  </div>
+
+    <button id = "switch-to-admin-view" class="button is-fullwidth has-text-white is-favorite has-text-weight-bold">
+      Switch to Admin View
+    </button>
     
     <!-- Footer with links to socials -->
     <footer class="footer">
