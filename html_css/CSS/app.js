@@ -230,11 +230,11 @@ var points_chart = new Chart(points_image, {
 
 
 var grainger_center = turf.point([-89.4016, 43.0727]);
-var grainger = turf.buffer(grainger_center, 0.2, {units: 'miles'});
+var grainger = turf.buffer(grainger_center, 0.1, {units: 'miles'});
 
 
 var hub_center = turf.point([-89.3956, 43.0744]);
-var hub = turf.buffer(hub_center, 0.2, {units: 'miles'});
+var hub = turf.buffer(hub_center, 0.1, {units: 'miles'});
 
 
 var x = document.querySelector("#where-am-i");
@@ -256,12 +256,15 @@ function myPosition(position) {
   my_location = turf.point([long, lat]);
   
   if (turf.booleanPointInPolygon(my_location, hub)) {
-    x.innerHTML = "You're at Hub";
+    x.classList.add('has-text-success');
+    x.innerHTML = "You're at the Hub";
   }
   else if (turf.booleanPointInPolygon(my_location, grainger)){
+    x.classList.add('has-text-success');
     x.innerHTML = "You're at Grainger";
   }
   else {
+    x.classList.add('has-text-danger')
     x.innerHTML = "You're not at any of the named locations (Gphi (not yet implemented), Grainger, The Hub)";
   }
 
