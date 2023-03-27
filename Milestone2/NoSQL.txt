@@ -1,0 +1,43 @@
+Collection "Users"
+Document of User:
+{
+    "userID": ObjectID,
+    "name": String, 
+    "email": String,
+    "memberClass": String,
+    "profileType": String,
+    "hometown": String,
+    "major": Array,
+    "expectedGrad": String,
+    "bio": String,
+    "gradYear": String,
+    "company": String,
+    "position": String,
+    "linkedIn": String,
+    "points": Integer,
+    "meetingsAttended": Integer
+}
+
+Restrictions:
+    userID: Unique(UQ), Not null(NN)
+    name: NN
+    email: NN
+    memberClass: NN, valid option from checkdown (like mySQL ENUM)
+    profileType: NN, ENUM("user", "admin", "alumni") 
+
+*** No other restrictions ***
+
+
+
+Collection "Admin"
+The Only Document of Admin:
+{
+    "max_points": Integer
+    "n_meetings": Integer
+}
+
+*** No restrictions for the document of this collection ***
+
+
+
+ 
