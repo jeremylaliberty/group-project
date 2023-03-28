@@ -25,7 +25,7 @@ Restrictions:
     memberClass: NN, valid option from checkdown (like mySQL ENUM)
     profileType: NN, ENUM("user", "admin", "alumni") 
 
-*** No other restrictions ***
+*** No other restrictions of users ***
 
 
 
