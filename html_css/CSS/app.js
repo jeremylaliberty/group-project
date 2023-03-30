@@ -127,11 +127,13 @@ editProfilebtn.addEventListener('click', () => {
  to_user_button.addEventListener('click', () => {
   user_page.classList.remove('is-hidden');
   admin_page.classList.add('is-hidden');
+  to_admin_button.classList.remove('is-hidden');
  });
 
  to_admin_button.addEventListener('click', () => {
   user_page.classList.add('is-hidden');
   admin_page.classList.remove('is-hidden');
+  to_admin_button.classList.add('is-hidden');
  });
 
 let grad_profile_btn = document.querySelector('#graduate-profile-btn');
@@ -243,6 +245,7 @@ let where_btn = document.querySelector('#where-am-i-btn')
 
 
 function getLocation() { 
+  x.innerHTML = "Getting location...";
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(myPosition);
   } else { 
@@ -254,6 +257,7 @@ function myPosition(position) {
   long = position.coords.longitude;
   lat = position.coords.latitude;
   my_location = turf.point([long, lat]);
+  
   
   if (turf.booleanPointInPolygon(my_location, hub)) {
     x.classList.add('has-text-success');
