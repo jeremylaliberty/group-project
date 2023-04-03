@@ -307,12 +307,13 @@ let splashPage = document.querySelector('#splash-page');
 function viewSplashPage(){
  
 }
-
+let uid = "";
 auth.onAuthStateChanged((user) => {
   if (user) {
     user_page.classList.remove('is-hidden');
     splashPage.classList.add('is-hidden');
-    console.log('signed in');
+    loadData(user.uid);
+    
   }
   else{
     splashPage.classList.remove('is-hidden');
@@ -321,6 +322,41 @@ auth.onAuthStateChanged((user) => {
   }
   
 });
+console.log(uid);
+
+let user_mc_val = document.querySelector('#user-mc-val');
+let user_hometown_val = document.querySelector('#user-hometown-val');
+let user_major_val = document.querySelector('#user-major-val');
+let user_egrad_val = document.querySelector('#user-egrad-val');
+let user_bio_val = document.querySelector('#user-bio-val');
+let user_name_val = document.querySelector('#user-name-val');
+
+
+function loadData(uid){
+  var docRef = database.collection("Users").doc(uid);
+  docRef.get().then((doc) => {
+    if (doc.exists) {
+      user_mc_val.innerHTML = doc.data().memberClass;
+      user_hometown_val.innerHTML = doc.data().hometown;
+      user_major_val.innerHTML = doc.data().major;
+      user_egrad_val.innerHTML = doc.data().expectedGrad;
+      user_bio_val.innerHTML = doc.data().bio;
+      user_name_val.innerHTML = doc.data().name;
+
+      console.log(doc.data().bio == '')
+    } else {
+      // doc.data() will be undefined in this case
+      console.log("No such document!");
+    }
+  }).catch((error) => {
+    console.log("Error getting document:", error);
+  });
+};
+
+
+
+
+
 
 
 
