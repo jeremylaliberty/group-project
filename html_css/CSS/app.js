@@ -252,6 +252,8 @@ auth.onAuthStateChanged((user) => {
     user_page.classList.remove('is-hidden');
     splashPage.classList.add('is-hidden');
     loadUserData(user.uid);
+    homePage();
+
     
   }
   else{
@@ -275,6 +277,10 @@ let user_name_val = document.querySelector('#user-name-val');
 var meetings = 0;
 var tot_meetings = 0;
 
+var points = 0;
+var avg_points = 0;
+var max_points = 0;
+
 function loadUserData(uid){
   var docRef = database.collection("Users").doc(uid);
   docRef.get().then((doc) => {
@@ -285,8 +291,9 @@ function loadUserData(uid){
       user_egrad_val.innerHTML = doc.data().expectedGrad;
       user_bio_val.innerHTML = doc.data().bio;
       user_name_val.innerHTML = doc.data().name;
+      configureProfile([doc.data().memberClass, doc.data().hometown, doc.data().major, doc.data().expectedGrad , doc.data().bio ]);
       meetings = doc.data().meetings;
-      console.log(doc.data().bio == '')
+      points = doc.data().points;
     } else {
       // doc.data() will be undefined in this case
       console.log("No such document!");
@@ -300,6 +307,9 @@ function loadUserData(uid){
       tot_meetings = doc.data().meetings;
       let missed = tot_meetings - meetings;
       graphAttendance([meetings, missed]);
+      avg_points = doc.data().avg_pts;
+      max_points = doc.data().max_pts;
+      graphPoints([points, avg_points, max_points]);
     } else {
       // doc.data() will be undefined in this case
       console.log("No such document!");
@@ -308,15 +318,24 @@ function loadUserData(uid){
     console.log("Error getting document:", error);
   });
 };
+;
 
 
+function configureProfile(values) {
+  var profileInfo = [];
+  profileInfo.push(document.querySelector('#user-mc'));
+  profileInfo.push(document.querySelector('#user-hometown'));
+  profileInfo.push(document.querySelector('#user-major'));
+  profileInfo.push(document.querySelector('#user-egrad'));
+  profileInfo.push(document.querySelector('#user-bio'));
+  for (let i = 0; i < profileInfo.length; i++) {
+    if (values[i] == ''){
+      profileInfo[i].classList.add('is-hidden');
+    }
+  }
 
+}
 
-
-
-
-//  This data would be actual member data
-//  since we dont have that yet, we use placeholder data
 function graphAttendance(y) {
   var x_attendance = ['Attended', 'Missed'];
   var pieColors = [
@@ -338,34 +357,42 @@ function graphAttendance(y) {
     });
 }
 
+function graphPoints(y) {
 
+  var x_points = ['Your Points', 'MC Average', 'Maximum Points'];
+  var barColors =  ["#EE9EC8","#9EC8EE","#C8EE9E" ];
 
-// same here
-var x_points = ['Your Points', 'MC Average', 'Maximum Points'];
-var y_points = [630, 450, 1000];
-var barColors =  ["#EE9EC8","#9EC8EE","#C8EE9E" ];
-
-var points_image = document.getElementById("points-chart");
-var points_chart = new Chart(points_image, {
-    type: "bar",
-    data: {
-      labels: x_points,
-      datasets: [{
-        backgroundColor: barColors,
-        data: y_points
-      }]
-    },
-    options: {
-        legend: {display: false}, 
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true,
-                    max: y_points[2] + 200 
-                }
-            }]
-        }
+  var points_image = document.getElementById("points-chart");
+  new Chart(points_image, {
+      type: "bar",
+      data: {
+        labels: x_points,
+        datasets: [{
+          backgroundColor: barColors,
+          data: y
+        }]
+      },
+      options: {
+          legend: {display: false}, 
+          scales: {
+              yAxes: [{
+                  ticks: {
+                      display: false,
+                      beginAtZero: true,
+                      max: y[2] + 200 
+                  }
+              }]
+          }
+  }
+    });
 }
-  });
+
+function attendanceMessage(attended, total){
+  console.log(attended, total)
+}
+
+
+
+
 
 
