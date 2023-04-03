@@ -251,8 +251,7 @@ auth.onAuthStateChanged((user) => {
   if (user) {
     user_page.classList.remove('is-hidden');
     splashPage.classList.add('is-hidden');
-    loadProfileData(user.uid);
-    y_attendance.push(17);
+    loadUserData(user.uid);
     
   }
   else{
@@ -271,11 +270,12 @@ let user_egrad_val = document.querySelector('#user-egrad-val');
 let user_bio_val = document.querySelector('#user-bio-val');
 let user_name_val = document.querySelector('#user-name-val');
 
-var x_attendance = ['Attended', 'Missed'];
-var y_attendance = [];
 
 
-function loadProfileData(uid){
+var meetings = 0;
+var tot_meetings = 0;
+
+function loadUserData(uid){
   var docRef = database.collection("Users").doc(uid);
   docRef.get().then((doc) => {
     if (doc.exists) {
@@ -285,9 +285,21 @@ function loadProfileData(uid){
       user_egrad_val.innerHTML = doc.data().expectedGrad;
       user_bio_val.innerHTML = doc.data().bio;
       user_name_val.innerHTML = doc.data().name;
-      y_attendance.push(doc.data().meetings);
-
+      meetings = doc.data().meetings;
       console.log(doc.data().bio == '')
+    } else {
+      // doc.data() will be undefined in this case
+      console.log("No such document!");
+    }
+  }).catch((error) => {
+    console.log("Error getting document:", error);
+  });
+  var adminRef = database.collection("Admin").doc('data');
+  adminRef.get().then((doc) => {
+    if (doc.exists) {
+      tot_meetings = doc.data().meetings;
+      let missed = tot_meetings - meetings;
+      graphAttendance([meetings, missed]);
     } else {
       // doc.data() will be undefined in this case
       console.log("No such document!");
@@ -305,24 +317,28 @@ function loadProfileData(uid){
 
 //  This data would be actual member data
 //  since we dont have that yet, we use placeholder data
-
-var pieColors = [
+function graphAttendance(y) {
+  var x_attendance = ['Attended', 'Missed'];
+  var pieColors = [
     "#ee9ec8",
     "#9EC8EE",
   ];
-var attendance_image = document.getElementById("myChart");
-var attendance_chart = new Chart(attendance_image, {
-    type: "doughnut",
-    data: {
-      labels: x_attendance,
-      datasets: [{
-        backgroundColor: pieColors,
-        data: y_attendance
-      }]
-    },
-    options: {
-    }
-  });
+  var attendance_image = document.getElementById("myChart");
+  new Chart(attendance_image, {
+      type: "doughnut",
+      data: {
+        labels: x_attendance,
+        datasets: [{
+          backgroundColor: pieColors,
+          data: y
+        }]
+      },
+      options: {
+      }
+    });
+}
+
+
 
 // same here
 var x_points = ['Your Points', 'MC Average', 'Maximum Points'];
@@ -351,6 +367,5 @@ var points_chart = new Chart(points_image, {
         }
 }
   });
-
 
 
