@@ -265,12 +265,7 @@ auth.onAuthStateChanged((user) => {
 });
 console.log(uid);
 
-let user_mc_val = document.querySelector('#user-mc-val');
-let user_hometown_val = document.querySelector('#user-hometown-val');
-let user_major_val = document.querySelector('#user-major-val');
-let user_egrad_val = document.querySelector('#user-egrad-val');
-let user_bio_val = document.querySelector('#user-bio-val');
-let user_name_val = document.querySelector('#user-name-val');
+
 
 
 
@@ -285,13 +280,15 @@ function loadUserData(uid){
   var docRef = database.collection("Users").doc(uid);
   docRef.get().then((doc) => {
     if (doc.exists) {
-      user_mc_val.innerHTML = doc.data().memberClass;
-      user_hometown_val.innerHTML = doc.data().hometown;
-      user_major_val.innerHTML = doc.data().major;
-      user_egrad_val.innerHTML = doc.data().expectedGrad;
-      user_bio_val.innerHTML = doc.data().bio;
-      user_name_val.innerHTML = doc.data().name;
-      configureProfile([doc.data().memberClass, doc.data().hometown, doc.data().major, doc.data().expectedGrad , doc.data().bio ]);
+      const hometown_val = doc.data().hometown;
+      const major_val = doc.data().major;
+      const expectedGrad_val = doc.data().expectedGrad;
+      const bio_val = doc.data().bio;
+      const name_val = doc.data().name;
+      const mc_val = doc.data().memberClass;
+      loadProfile(hometown_val, major_val, expectedGrad_val, bio_val, name_val, mc_val);
+      configureProfile([mc_val, hometown_val, major_val, expectedGrad_val, bio_val ]);
+      loadEditProfile(hometown_val, major_val, expectedGrad_val, bio_val, name_val, mc_val);
       meetings = doc.data().meetings;
       points = doc.data().points;
     } else {
@@ -323,6 +320,22 @@ function loadUserData(uid){
 };
 ;
 
+function loadProfile(hometown_val, major_val, expectedGrad_val, bio_val, name_val, mc_val) {
+  let user_mc_val = document.querySelector('#user-mc-val');
+  let user_hometown_val = document.querySelector('#user-hometown-val');
+  let user_major_val = document.querySelector('#user-major-val');
+  let user_egrad_val = document.querySelector('#user-egrad-val');
+  let user_bio_val = document.querySelector('#user-bio-val');
+  let user_name_val = document.querySelector('#user-name-val');
+  user_hometown_val.innerHTML = hometown_val;
+  user_major_val.innerHTML = major_val;
+  user_egrad_val.innerHTML = expectedGrad_val;
+  user_bio_val.innerHTML = bio_val;
+  user_name_val.innerHTML = name_val;
+  user_mc_val.innerHTML = mc_val;
+
+}
+
 
 function configureProfile(values) {
   var profileInfo = [];
@@ -337,6 +350,23 @@ function configureProfile(values) {
     }
   }
 
+}
+
+function loadEditProfile(hometown_val, major_val, expectedGrad_val, bio_val, name_val, mc_val){
+  editName.value = name_val;
+  editHometown.value = hometown_val;
+  editMajor.value = major_val;
+  editGrad.value = expectedGrad_val;
+  editBio.value = bio_val;
+  
+  let editMC = document.querySelector('#mySelect');
+  
+  for(var i, j = 0; i = mySelect.options[j]; j++) {
+    if(i.value == mc_val) {
+        editMC.selectedIndex = j;
+        break;
+    }
+}
 }
 
 function graphAttendance(y) {
