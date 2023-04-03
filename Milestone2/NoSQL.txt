@@ -32,7 +32,8 @@ Restrictions:
 Collection "Admin"
 The Only Document of Admin:
 {
-    "max_points": Integer
+    "avg_points": Integer,
+    "max_points": Integer,
     "n_meetings": Integer
 }
 
