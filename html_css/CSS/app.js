@@ -282,6 +282,8 @@ where_btn.addEventListener('click', () => {
 let signInEmail = document.querySelector('#sign-in-email');
 let signInPass = document.querySelector('#sign-in-password');
 let submitSignIn = document.querySelector('#sign-in-submit');
+let signInMsg = document.querySelector('#sign-in-msg');
+
 
 submitSignIn.addEventListener('click', () => {
   auth.signInWithEmailAndPassword(signInEmail.value, signInPass.value)
@@ -295,7 +297,7 @@ submitSignIn.addEventListener('click', () => {
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
-    console.log(errorCode, errorMessage);
+    signInMsg.innerHTML = "Login failed. Please check your email and password."
   });
 });
 
