@@ -1,3 +1,5 @@
+
+
 let home = document.querySelector('#home');
 let network = document.querySelector('#network');
 let attendance = document.querySelector('#attendance');
@@ -278,7 +280,25 @@ where_btn.addEventListener('click', () => {
   getLocation();
 });
 
-let bio = {
-  text: 'ha ha ha ha'.repeat(3)
-};
-database.collection('Users').doc('7IBPnqs56APqblxIc1FOYxWe2B42').set(bio);
+
+
+signInEmail = document.querySelector('#sign-in-email');
+signInPass = document.querySelector('#sign-in-password');
+submitSignIn = document.querySelector('#sign-in-submit');
+
+submitSignIn.addEventListener('click', () => {
+  auth.signInWithEmailAndPassword(signInEmail.value, signInPass.value)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    console.log(user);
+    console.log('signed in')
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    console.log(errorCode, errorMessage);
+  });
+});
+
