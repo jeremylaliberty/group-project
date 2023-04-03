@@ -173,75 +173,14 @@ view_profile_btn.addEventListener('click', () => {
   viewProfileModal.classList.remove('is-active');
  });
 
-
- 
-
-
-
-
-//  This data would be actual member data
-//  since we dont have that yet, we use placeholder data
-var x_attendance = ['Attended', 'Missed'];
-var y_attendance = [18,3];
-var pieColors = [
-    "#ee9ec8",
-    "#9EC8EE",
-  ];
-var attendance_image = document.getElementById("myChart");
-var attendance_chart = new Chart(attendance_image, {
-    type: "doughnut",
-    data: {
-      labels: x_attendance,
-      datasets: [{
-        backgroundColor: pieColors,
-        data: y_attendance
-      }]
-    },
-    options: {
-    }
-  });
-
-// same here
-var x_points = ['Your Points', 'MC Average', 'Maximum Points'];
-var y_points = [630, 450, 1000];
-var barColors =  ["#EE9EC8","#9EC8EE","#C8EE9E" ];
-
-var points_image = document.getElementById("points-chart");
-var points_chart = new Chart(points_image, {
-    type: "bar",
-    data: {
-      labels: x_points,
-      datasets: [{
-        backgroundColor: barColors,
-        data: y_points
-      }]
-    },
-    options: {
-        legend: {display: false}, 
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true,
-                    max: y_points[2] + 200 
-                }
-            }]
-        }
-}
-  });
-
-
 var grainger_center = turf.point([-89.4016, 43.0727]);
 var grainger = turf.buffer(grainger_center, 0.1, {units: 'miles'});
-
 
 var hub_center = turf.point([-89.3956, 43.0744]);
 var hub = turf.buffer(hub_center, 0.1, {units: 'miles'});
 
-
 var x = document.querySelector("#where-am-i");
 let where_btn = document.querySelector('#where-am-i-btn')
-
-
 
 function getLocation() { 
   x.innerHTML = "Getting location...";
@@ -312,7 +251,8 @@ auth.onAuthStateChanged((user) => {
   if (user) {
     user_page.classList.remove('is-hidden');
     splashPage.classList.add('is-hidden');
-    loadData(user.uid);
+    loadProfileData(user.uid);
+    y_attendance.push(17);
     
   }
   else{
@@ -331,8 +271,11 @@ let user_egrad_val = document.querySelector('#user-egrad-val');
 let user_bio_val = document.querySelector('#user-bio-val');
 let user_name_val = document.querySelector('#user-name-val');
 
+var x_attendance = ['Attended', 'Missed'];
+var y_attendance = [];
 
-function loadData(uid){
+
+function loadProfileData(uid){
   var docRef = database.collection("Users").doc(uid);
   docRef.get().then((doc) => {
     if (doc.exists) {
@@ -342,6 +285,7 @@ function loadData(uid){
       user_egrad_val.innerHTML = doc.data().expectedGrad;
       user_bio_val.innerHTML = doc.data().bio;
       user_name_val.innerHTML = doc.data().name;
+      y_attendance.push(doc.data().meetings);
 
       console.log(doc.data().bio == '')
     } else {
@@ -359,6 +303,54 @@ function loadData(uid){
 
 
 
+//  This data would be actual member data
+//  since we dont have that yet, we use placeholder data
+
+var pieColors = [
+    "#ee9ec8",
+    "#9EC8EE",
+  ];
+var attendance_image = document.getElementById("myChart");
+var attendance_chart = new Chart(attendance_image, {
+    type: "doughnut",
+    data: {
+      labels: x_attendance,
+      datasets: [{
+        backgroundColor: pieColors,
+        data: y_attendance
+      }]
+    },
+    options: {
+    }
+  });
+
+// same here
+var x_points = ['Your Points', 'MC Average', 'Maximum Points'];
+var y_points = [630, 450, 1000];
+var barColors =  ["#EE9EC8","#9EC8EE","#C8EE9E" ];
+
+var points_image = document.getElementById("points-chart");
+var points_chart = new Chart(points_image, {
+    type: "bar",
+    data: {
+      labels: x_points,
+      datasets: [{
+        backgroundColor: barColors,
+        data: y_points
+      }]
+    },
+    options: {
+        legend: {display: false}, 
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true,
+                    max: y_points[2] + 200 
+                }
+            }]
+        }
+}
+  });
 
 
 
