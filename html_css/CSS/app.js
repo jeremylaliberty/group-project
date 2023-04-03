@@ -90,7 +90,15 @@ let editProfileModal = document.querySelector('#edit-profile-modal');
 let editProfileModalBg = document.querySelector('#edit-profile-modalbg');
 let closeEditProfile = document.querySelector('#close-edit-profile');
 
+var hometown_val = '';
+var major_val = '';
+var expectedGrad_val = '';
+var bio_val = '';
+var name_val = '';
+var mc_val = '';
+
 editProfilebtn.addEventListener('click', () => {
+  loadEditProfile(hometown_val, major_val, expectedGrad_val, bio_val, name_val, mc_val);
   editProfileModal.classList.add('is-active');
  })
  
@@ -276,19 +284,20 @@ var points = 0;
 var avg_points = 0;
 var max_points = 0;
 
+
+
 function loadUserData(uid){
   var docRef = database.collection("Users").doc(uid);
   docRef.get().then((doc) => {
     if (doc.exists) {
-      const hometown_val = doc.data().hometown;
-      const major_val = doc.data().major;
-      const expectedGrad_val = doc.data().expectedGrad;
-      const bio_val = doc.data().bio;
-      const name_val = doc.data().name;
-      const mc_val = doc.data().memberClass;
+      hometown_val = doc.data().hometown;
+      major_val = doc.data().major;
+      expectedGrad_val = doc.data().expectedGrad;
+      bio_val = doc.data().bio;
+      name_val = doc.data().name;
+      mc_val = doc.data().memberClass;
       loadProfile(hometown_val, major_val, expectedGrad_val, bio_val, name_val, mc_val);
       configureProfile([mc_val, hometown_val, major_val, expectedGrad_val, bio_val ]);
-      loadEditProfile(hometown_val, major_val, expectedGrad_val, bio_val, name_val, mc_val);
       meetings = doc.data().meetings;
       points = doc.data().points;
     } else {
@@ -360,7 +369,7 @@ function loadEditProfile(hometown_val, major_val, expectedGrad_val, bio_val, nam
   editBio.value = bio_val;
   
   let editMC = document.querySelector('#mySelect');
-  
+
   for(var i, j = 0; i = mySelect.options[j]; j++) {
     if(i.value == mc_val) {
         editMC.selectedIndex = j;
