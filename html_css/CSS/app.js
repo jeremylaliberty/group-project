@@ -32,10 +32,7 @@ function atttendancePage(){
 }
 
 function profilePage(){
-  home.classList.add('is-hidden');
-  network.classList.add('is-hidden');
-  profile.classList.remove('is-hidden');
-  attendance.classList.add('is-hidden');
+  auth.signOut();
 }
 
 home_btn.addEventListener('click', () => {
@@ -282,17 +279,17 @@ where_btn.addEventListener('click', () => {
 
 
 
-signInEmail = document.querySelector('#sign-in-email');
-signInPass = document.querySelector('#sign-in-password');
-submitSignIn = document.querySelector('#sign-in-submit');
+let signInEmail = document.querySelector('#sign-in-email');
+let signInPass = document.querySelector('#sign-in-password');
+let submitSignIn = document.querySelector('#sign-in-submit');
 
 submitSignIn.addEventListener('click', () => {
   auth.signInWithEmailAndPassword(signInEmail.value, signInPass.value)
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
+    signinModal.classList.remove('is-active');
     console.log(user);
-    console.log('signed in!')
     // ...
   })
   .catch((error) => {
@@ -301,4 +298,29 @@ submitSignIn.addEventListener('click', () => {
     console.log(errorCode, errorMessage);
   });
 });
+
+let splashPage = document.querySelector('#splash-page');
+
+
+function viewSplashPage(){
+ 
+}
+
+auth.onAuthStateChanged((user) => {
+  if (user) {
+    user_page.classList.remove('is-hidden');
+    splashPage.classList.add('is-hidden');
+    console.log('signed in');
+  }
+  else{
+    splashPage.classList.remove('is-hidden');
+    user_page.classList.add('is-hidden');
+    console.log('signed out');
+  }
+  
+});
+
+
+
+
 
