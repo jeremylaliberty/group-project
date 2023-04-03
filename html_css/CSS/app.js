@@ -292,7 +292,7 @@ submitSignIn.addEventListener('click', () => {
     // Signed in 
     const user = userCredential.user;
     console.log(user);
-    console.log('signed in')
+    console.log('signed in!')
     // ...
   })
   .catch((error) => {
