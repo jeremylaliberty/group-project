@@ -311,6 +311,8 @@ function loadUserData(uid){
       avg_points = doc.data().avg_pts;
       max_points = doc.data().max_pts;
       graphPoints([points, avg_points, max_points]);
+      pointsMessage(points, avg_points, max_points);
+
     } else {
       // doc.data() will be undefined in this case
       console.log("No such document!");
@@ -389,13 +391,22 @@ function graphPoints(y) {
 }
 
 function attendanceMessage(attended, total){
-  attended_msg = document.querySelector('#attended-meetings');
-  total_msg = document.querySelector('#total-meetings');
-  rate_msg = document.querySelector('#attendance-rate');
+  let attended_msg = document.querySelector('#attended-meetings');
+  let total_msg = document.querySelector('#total-meetings');
+  let rate_msg = document.querySelector('#attendance-rate');
   attended_msg.innerHTML = attended;
   total_msg.innerHTML = total;
   rate = (attended/total*100).toFixed(1);
   rate_msg.innerHTML = `${rate}%`;
+}
+
+function pointsMessage(points, avg, max){
+  let points_msg = document.querySelector('#my-points');
+  let max_points_msg = document.querySelector('#max-points');
+  let avg_points_msg = document.querySelector('#avg-points');
+  points_msg.innerHTML = points;
+  max_points_msg.innerHTML = max;
+  avg_points_msg.innerHTML = avg;
 }
 
 
