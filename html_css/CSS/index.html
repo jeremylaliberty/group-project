@@ -13,7 +13,364 @@
 </head>
 
 <body>
-<div id = "user-page">
+<!-- MODALS -->
+
+<!-- Sign in modal -->
+<div id="signin-modal" class="modal">
+  <div id="signin-modalbg" class="modal-background"></div>
+  <div class="modal-content">
+    <div class="box">
+      <div class="field">
+        <label class="label">Email</label>
+        <p class="control has-icons-left has-icons-right">
+          <input id = "sign-in-email" class="input" type="email" placeholder="Email">
+          <span class="icon is-small is-left">
+            <i class="fas fa-envelope"></i>
+          </span>
+          <span class="icon is-small is-right">
+            <i class="fas fa-check"></i>
+          </span>
+        </p>
+      </div>
+      <div class="field">
+        <label class="label">Password</label>
+        <p class="control has-icons-left">
+          <input id = "sign-in-password" class="input" type="password" placeholder="Password">
+          <span class="icon is-small is-left">
+            <i class="fas fa-lock"></i>
+          </span>
+        </p>
+      </div>
+      <div class="field">
+        <p class="has-text-right control">
+          <button id = "sign-in-submit" class="button is-favorite has-text-white is-inline-block">
+            <strong >Login</strong>
+          </button>
+        </p>
+      </div>
+    </div>
+    <!-- Any other Bulma elements you want -->
+  </div>
+  <button id="sign-in-close" class="modal-close is-large" aria-label="close"></button>
+</div>
+
+<!-- Sign up modal -->
+<div id="signup-modal" class="modal">
+  <div id="signup-modalbg" class="modal-background"></div>
+  <div class="modal-content">
+    <div class="box">
+      <div class="field">
+        <label class="label">Name</label>
+        <div class="control has-icons-left has-icons-right">
+          <input class="input" type="text">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Email</label>
+        <div class="control has-icons-left has-icons-right">
+          <input class="input " type="email"  >
+          <span class="icon is-small is-left">
+            <i class="fas fa-envelope"></i>
+          </span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Password</label>
+        <p class="control has-icons-left">
+          <input class="input" type="password" placeholder="Password">
+          <span class="icon is-small is-left">
+            <i class="fas fa-lock"></i>
+          </span>
+        </p>
+      </div>
+
+      <div class="field">
+        <label class="label">Member Class</label>
+        <div class="control">
+          <div class="select">
+            <select>
+              <option>Spring 2023</option>
+              <option>Fall 2023</option>
+              <option>Spring 2022</option>
+              <option>Fall 2022</option>
+              <option>Spring 2021</option>
+              <option>Fall 2021</option>
+              <option>Spring 2020</option>
+              <option>Fall 2020</option>
+              <option>Spring 2019</option>
+              <option>Fall 2019</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="field">
+        <div class="control">
+          <label class="checkbox">
+            <input type="checkbox">
+            I agree to the <a href="#">terms and conditions</a>
+          </label>
+        </div>
+      </div>
+
+
+      <div class="field">
+        <div class="control has-text-right">
+          <button class="button has-text-white is-inline-block is-favorite"><strong>Submit</strong></button>
+        </div>
+      </div>
+    </div>
+    <!-- Any other Bulma elements you want -->
+  </div>
+  <button id="close-sign-up" class="modal-close is-large" aria-label="close"></button>
+</div>
+
+<!-- graduate profile modal -->
+<div id="graduate-profile-modal" class="modal">
+  <div id="graduate-profile-modalbg" class="modal-background"></div>
+  
+  <div class="modal-content">
+    
+    <div class="box">
+      <div class="has-text-weight-bold is-size-4 has-text-centered">Graduate to an Alumni Profile</div>
+      <br>
+      <div class="has-text-black-bis is-size-6 has-text-centered">Help to grow the Gphi network by providing some additional info. </div>
+  
+      <br>
+      <div class="field">
+        <label class="label">Graduation Year</label>
+        <div class="control">
+          <input class="input" type="text" placeholder = "">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Major(s)</label>
+        <div class="control">
+          <input class="input" type="text" placeholder = "">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Company</label>
+        <div class="control">
+          <input  class="input" type="text" placeholder = "">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Position</label>
+        <div class="control">
+          <input  class="input" type="text" placeholder = "">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">LinkedIn Profile URL</label>
+        <div class="control">
+          <input class="input" type="text" placeholder = "(the most imporant field)">
+        </div>
+      </div>
+
+       
+      <div class="has-text-danger is-size-6 has-text-centered">* Warning: Converting to an Alumni Profile is PERMANENT. Any data related to points and attendance will be lost. *</div>
+      <br>
+      <div class="field">
+        <div class="control">
+          <button id = "" class="button has-text-white is-favorite"><strong>Submit</strong></button>
+        </div>
+      </div>
+    </div>
+    <!-- Any other Bulma elements you want -->
+  </div>
+  <button id="close-graduate-profile" class="modal-close is-large" aria-label="close"></button>
+</div>
+
+<!-- edit profile modal -->
+<div id="edit-profile-modal" class="modal">
+  <div id="edit-profile-modalbg" class="modal-background"></div>
+  
+  <div class="modal-content">
+    
+    <div class="box">
+      <div class="has-text-weight-bold is-size-4 has-text-centered">Edit Profile</div>
+      <div class="field">
+        <label class="label">Name</label>
+        <div class="control">
+          <input id = "edit-name" class="input" type="text" placeholder = "required">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Hometown</label>
+        <div class="control">
+          <input id = "edit-hometown" class="input" type="text" placeholder = "optional">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Major</label>
+        <div class="control">
+          <input id = "edit-major" class="input" type="text" placeholder = "optional">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Expected Graduation</label>
+        <div class="control">
+          <input id = "edit-grad" class="input" type="text" placeholder = "optional">
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Bio</label>
+        <div class="control">
+          <textarea id = "edit-bio" class="textarea" placeholder="optional"></textarea>
+        </div>
+      </div>
+
+      <div class="field">
+        <label class="label">Member Class</label>
+        <div class="control">
+          <div class="select">
+            <select>
+              <option>Spring 2023</option>
+              <option>Fall 2023</option>
+              <option>Spring 2022</option>
+              <option>Fall 2022</option>
+              <option>Spring 2021</option>
+              <option>Fall 2021</option>
+              <option>Spring 2020</option>
+              <option>Fall 2020</option>
+              <option>Spring 2019</option>
+              <option>Fall 2019</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="field is-grouped">
+        <div class="control">
+          <button class="button has-text-white is-favorite"><strong>Submit</strong></button>
+        </div>
+        <div class="control">
+          <button id = "clear-edit-profile-btn" class="button is-danger">Clear</button>
+        </div>
+      </div>
+    </div>
+    <!-- Any other Bulma elements you want -->
+  </div>
+  <button id="close-edit-profile" class="modal-close is-large" aria-label="close"></button>
+</div>
+
+<div id="view-profile-modal" class="modal">
+  <div id="view-profile-modalbg" class="modal-background"></div>
+  <div class="modal-content">
+    <div class="card">
+
+      <div class="card-content">
+        <div class="media">
+          <div class="media-left">
+            <figure class="image is-48x48">
+              <img src="images/smiley.png" alt="Placeholder image">
+            </figure>
+          </div>
+          <div class="media-content">
+            <p class="title is-4">Anna Geweke</p>
+          </div>
+        </div>
+
+        <div class="content">
+
+          <strong>Member Class:</strong> Fall 2019
+          <br>
+          <br>
+          <strong>Hometown:</strong> Chicago, IL
+          <br>
+          <br>
+          <strong>Expected Graduation:</strong> Spring 2023
+          <br>
+          <br>
+          <strong>Bio:</strong>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem inventore tempora eius obcaecati,
+          soluta iste ullam nemo dicta, eaque asperiores ratione reiciendis ipsa neque id?
+          <br>
+          <br>
+          <strong>Contact:</strong> (333) 666 999
+        
+        </div>
+      </div>
+    </div>
+    <!-- Any other Bulma elements you want -->
+  </div>
+  <button id="close-view-profile" class="modal-close is-large" aria-label="close"></button>
+</div>
+
+
+
+
+<!-- SPLASH PAGE -->
+<div id="splash-page" class = "">
+  
+  <section class="section is-small is-favorite p-3">
+    <div class="container">
+      <h1 class="is-size-6 has-text-centered has-text-weight-semibold has-text-danger-light">
+        Gamma Phi Beta - Gamma Chapter
+      </h1>
+    </div>
+
+  </section>
+  <header class="is-favorite">
+    <nav class="navbar has-background-danger-withe-ter is-white" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand pl-5">
+        <a href="">
+          <img src="images/logo.png" alt="" width="80" height="50">
+        </a>
+
+        <h1 class="has-text-weight-bold has-text-centered has-text-favorite is-size-3 p-3 ml-5
+                ">
+          Tracking System</h1>
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+
+        </div>
+
+        <div class="navbar-end">
+
+          <div class="navbar-item">
+            <div class="border">
+              <p id="signupbtn" class="button has-text-black" style='border: none; font-size: large;'>
+                <strong>Sign up</strong>
+              </p>
+            </div>
+          </div>
+          <div class="navbar-item">
+            <div class="border">
+              <p id="signinbtn" class="button has-text-black" style='border: none; font-size: large;'>
+                <strong>Log in</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+</div>
+
+<!-- USER PAGE - Main -->
+<div id = "user-page" class = "is-hidden">
     <!-- Website Header -->
     <section class="section is-small is-favorite p-3">
       <div class="container">
@@ -70,322 +427,11 @@
               <span style="color: white;">
                 <i class="fa-solid fa-user fa-2x bordered-icon"></i>
               </span>
-            </a>
-  
-            <div class="navbar-item">
-              <div class="border">
-                <p id="signupbtn" class="button has-text-black" style='border: none; font-size: large;'>
-                  <strong>Sign up</strong>
-                </p>
-              </div>
-            </div>
-            <div class="navbar-item">
-              <div class="border">
-                <p id="signinbtn" class="button has-text-black" style='border: none; font-size: large;'>
-                  <strong>Log in</strong>
-                </p>
-              </div>
-            </div>
+            </a>         
           </div>
         </div>
       </nav>
     </header>
-  
-    <!-- Sign in modal -->
-    <div id="signin-modal" class="modal">
-      <div id="signin-modalbg" class="modal-background"></div>
-      <div class="modal-content">
-        <div class="box">
-          <div class="field">
-            <label class="label">Email</label>
-            <p class="control has-icons-left has-icons-right">
-              <input id = "sign-in-email" class="input" type="email" placeholder="Email">
-              <span class="icon is-small is-left">
-                <i class="fas fa-envelope"></i>
-              </span>
-              <span class="icon is-small is-right">
-                <i class="fas fa-check"></i>
-              </span>
-            </p>
-          </div>
-          <div class="field">
-            <label class="label">Password</label>
-            <p class="control has-icons-left">
-              <input id = "sign-in-password" class="input" type="password" placeholder="Password">
-              <span class="icon is-small is-left">
-                <i class="fas fa-lock"></i>
-              </span>
-            </p>
-          </div>
-          <div class="field">
-            <p class="has-text-right control">
-              <button id = "sign-in-submit" class="button is-favorite has-text-white is-inline-block">
-                <strong >Login</strong>
-              </button>
-            </p>
-          </div>
-        </div>
-        <!-- Any other Bulma elements you want -->
-      </div>
-      <button id="sign-in-close" class="modal-close is-large" aria-label="close"></button>
-    </div>
-  
-    <!-- Sign up modal -->
-    <div id="signup-modal" class="modal">
-      <div id="signup-modalbg" class="modal-background"></div>
-      <div class="modal-content">
-        <div class="box">
-          <div class="field">
-            <label class="label">Name</label>
-            <div class="control has-icons-left has-icons-right">
-              <input class="input" type="text">
-            </div>
-          </div>
-  
-          <div class="field">
-            <label class="label">Email</label>
-            <div class="control has-icons-left has-icons-right">
-              <input class="input " type="email"  >
-              <span class="icon is-small is-left">
-                <i class="fas fa-envelope"></i>
-              </span>
-            </div>
-          </div>
-  
-          <div class="field">
-            <label class="label">Password</label>
-            <p class="control has-icons-left">
-              <input class="input" type="password" placeholder="Password">
-              <span class="icon is-small is-left">
-                <i class="fas fa-lock"></i>
-              </span>
-            </p>
-          </div>
-  
-          <div class="field">
-            <label class="label">Member Class</label>
-            <div class="control">
-              <div class="select">
-                <select>
-                  <option>Spring 2023</option>
-                  <option>Fall 2023</option>
-                  <option>Spring 2022</option>
-                  <option>Fall 2022</option>
-                  <option>Spring 2021</option>
-                  <option>Fall 2021</option>
-                  <option>Spring 2020</option>
-                  <option>Fall 2020</option>
-                  <option>Spring 2019</option>
-                  <option>Fall 2019</option>
-                </select>
-              </div>
-            </div>
-          </div>
-  
-  
-          <div class="field">
-            <div class="control">
-              <label class="checkbox">
-                <input type="checkbox">
-                I agree to the <a href="#">terms and conditions</a>
-              </label>
-            </div>
-          </div>
-  
-  
-          <div class="field">
-            <div class="control has-text-right">
-              <button class="button has-text-white is-inline-block is-favorite"><strong>Submit</strong></button>
-            </div>
-          </div>
-        </div>
-        <!-- Any other Bulma elements you want -->
-      </div>
-      <button id="close-sign-up" class="modal-close is-large" aria-label="close"></button>
-    </div>
-  
-    <!-- graduate profile modal -->
-    <div id="graduate-profile-modal" class="modal">
-      <div id="graduate-profile-modalbg" class="modal-background"></div>
-      
-      <div class="modal-content">
-        
-        <div class="box">
-          <div class="has-text-weight-bold is-size-4 has-text-centered">Graduate to an Alumni Profile</div>
-          <br>
-          <div class="has-text-black-bis is-size-6 has-text-centered">Help to grow the Gphi network by providing some additional info. </div>
-      
-          <br>
-          <div class="field">
-            <label class="label">Graduation Year</label>
-            <div class="control">
-              <input class="input" type="text" placeholder = "">
-            </div>
-          </div>
-  
-          <div class="field">
-            <label class="label">Major(s)</label>
-            <div class="control">
-              <input class="input" type="text" placeholder = "">
-            </div>
-          </div>
-  
-          <div class="field">
-            <label class="label">Company</label>
-            <div class="control">
-              <input  class="input" type="text" placeholder = "">
-            </div>
-          </div>
-
-          <div class="field">
-            <label class="label">Position</label>
-            <div class="control">
-              <input  class="input" type="text" placeholder = "">
-            </div>
-          </div>
-  
-          <div class="field">
-            <label class="label">LinkedIn Profile URL</label>
-            <div class="control">
-              <input class="input" type="text" placeholder = "(the most imporant field)">
-            </div>
-          </div>
-
-           
-          <div class="has-text-danger is-size-6 has-text-centered">* Warning: Converting to an Alumni Profile is PERMANENT. Any data related to points and attendance will be lost. *</div>
-          <br>
-          <div class="field">
-            <div class="control">
-              <button id = "" class="button has-text-white is-favorite"><strong>Submit</strong></button>
-            </div>
-          </div>
-        </div>
-        <!-- Any other Bulma elements you want -->
-      </div>
-      <button id="close-graduate-profile" class="modal-close is-large" aria-label="close"></button>
-    </div>
-
-
-    <div id="edit-profile-modal" class="modal">
-      <div id="edit-profile-modalbg" class="modal-background"></div>
-      
-      <div class="modal-content">
-        
-        <div class="box">
-          <div class="has-text-weight-bold is-size-4 has-text-centered">Edit Profile</div>
-          <div class="field">
-            <label class="label">Name</label>
-            <div class="control">
-              <input id = "edit-name" class="input" type="text" placeholder = "required">
-            </div>
-          </div>
-  
-          <div class="field">
-            <label class="label">Hometown</label>
-            <div class="control">
-              <input id = "edit-hometown" class="input" type="text" placeholder = "optional">
-            </div>
-          </div>
-  
-          <div class="field">
-            <label class="label">Major</label>
-            <div class="control">
-              <input id = "edit-major" class="input" type="text" placeholder = "optional">
-            </div>
-          </div>
-  
-          <div class="field">
-            <label class="label">Expected Graduation</label>
-            <div class="control">
-              <input id = "edit-grad" class="input" type="text" placeholder = "optional">
-            </div>
-          </div>
-  
-          <div class="field">
-            <label class="label">Bio</label>
-            <div class="control">
-              <textarea id = "edit-bio" class="textarea" placeholder="optional"></textarea>
-            </div>
-          </div>
-  
-          <div class="field">
-            <label class="label">Member Class</label>
-            <div class="control">
-              <div class="select">
-                <select>
-                  <option>Spring 2023</option>
-                  <option>Fall 2023</option>
-                  <option>Spring 2022</option>
-                  <option>Fall 2022</option>
-                  <option>Spring 2021</option>
-                  <option>Fall 2021</option>
-                  <option>Spring 2020</option>
-                  <option>Fall 2020</option>
-                  <option>Spring 2019</option>
-                  <option>Fall 2019</option>
-                </select>
-              </div>
-            </div>
-          </div>
-  
-  
-          <div class="field is-grouped">
-            <div class="control">
-              <button class="button has-text-white is-favorite"><strong>Submit</strong></button>
-            </div>
-            <div class="control">
-              <button id = "clear-edit-profile-btn" class="button is-danger">Clear</button>
-            </div>
-          </div>
-        </div>
-        <!-- Any other Bulma elements you want -->
-      </div>
-      <button id="close-edit-profile" class="modal-close is-large" aria-label="close"></button>
-    </div>
-
-    <div id="view-profile-modal" class="modal">
-      <div id="view-profile-modalbg" class="modal-background"></div>
-      <div class="modal-content">
-        <div class="card">
-  
-          <div class="card-content">
-            <div class="media">
-              <div class="media-left">
-                <figure class="image is-48x48">
-                  <img src="images/smiley.png" alt="Placeholder image">
-                </figure>
-              </div>
-              <div class="media-content">
-                <p class="title is-4">Anna Geweke</p>
-              </div>
-            </div>
-  
-            <div class="content">
-  
-              <strong>Member Class:</strong> Fall 2019
-              <br>
-              <br>
-              <strong>Hometown:</strong> Chicago, IL
-              <br>
-              <br>
-              <strong>Expected Graduation:</strong> Spring 2023
-              <br>
-              <br>
-              <strong>Bio:</strong>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem inventore tempora eius obcaecati,
-              soluta iste ullam nemo dicta, eaque asperiores ratione reiciendis ipsa neque id?
-              <br>
-              <br>
-              <strong>Contact:</strong> (333) 666 999
-            
-            </div>
-          </div>
-        </div>
-        <!-- Any other Bulma elements you want -->
-      </div>
-      <button id="close-view-profile" class="modal-close is-large" aria-label="close"></button>
-    </div>
-
   
   
     <div id = "home" class="columns is-vcentered">
@@ -559,7 +605,7 @@
     </div>
   </div>
 
-    <button id = "switch-to-admin-view" class="button is-fullwidth has-text-white is-favorite has-text-weight-bold">
+    <button id = "switch-to-admin-view" class="is-hidden button is-fullwidth has-text-white is-favorite has-text-weight-bold">
       Switch to Admin View
     </button>
     
