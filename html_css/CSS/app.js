@@ -307,6 +307,7 @@ function loadUserData(uid){
       tot_meetings = doc.data().meetings;
       let missed = tot_meetings - meetings;
       graphAttendance([meetings, missed]);
+      attendanceMessage(meetings, tot_meetings);
       avg_points = doc.data().avg_pts;
       max_points = doc.data().max_pts;
       graphPoints([points, avg_points, max_points]);
@@ -388,7 +389,13 @@ function graphPoints(y) {
 }
 
 function attendanceMessage(attended, total){
-  console.log(attended, total)
+  attended_msg = document.querySelector('#attended-meetings');
+  total_msg = document.querySelector('#total-meetings');
+  rate_msg = document.querySelector('#attendance-rate');
+  attended_msg.innerHTML = attended;
+  total_msg.innerHTML = total;
+  rate = (attended/total*100).toFixed(1);
+  rate_msg.innerHTML = `${rate}%`;
 }
 
 
