@@ -665,5 +665,37 @@
 
 
 </body>
+<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+
+<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-storage.js"></script>
+
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-firestore.js"></script>
+
+
+
+<script>
+    
+    const firebaseConfig = {
+    apiKey: "AIzaSyCcKDHITJOZVCxRB04OOeoFtw3-kmFvDdI",
+    authDomain: "is424-2c845.firebaseapp.com",
+    projectId: "is424-2c845",
+    storageBucket: "is424-2c845.appspot.com",
+    messagingSenderId: "713581582188",
+    appId: "1:713581582188:web:e8b9af5991240486738549"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    // define authentication variable
+    let auth = firebase.auth();
+    let database = firebase.firestore();
+
+    // define a storage reference
+    let ref = firebase.storage().ref();
+</script>
 <script src="app.js"> </script>
 </html>

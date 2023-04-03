@@ -277,3 +277,8 @@ function myPosition(position) {
 where_btn.addEventListener('click', () => {
   getLocation();
 });
+
+let bio = {
+  text: 'ha ha ha ha'.repeat(3)
+};
+database.collection('Users').doc('7IBPnqs56APqblxIc1FOYxWe2B42').set(bio);
