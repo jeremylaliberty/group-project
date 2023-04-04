@@ -181,14 +181,11 @@ view_profile_btn.addEventListener('click', () => {
   viewProfileModal.classList.remove('is-active');
  });
 
-var grainger_center = turf.point([-89.4016, 43.0727]);
-var grainger = turf.buffer(grainger_center, 0.1, {units: 'miles'});
-
-var hub_center = turf.point([-89.3956, 43.0744]);
-var hub = turf.buffer(hub_center, 0.1, {units: 'miles'});
-
+let where_btn = document.querySelector('#where-am-i-btn');
 var x = document.querySelector("#where-am-i");
-let where_btn = document.querySelector('#where-am-i-btn')
+
+
+
 
 function getLocation() { 
   x.innerHTML = "Getting location...";
@@ -203,6 +200,11 @@ function myPosition(position) {
   long = position.coords.longitude;
   lat = position.coords.latitude;
   my_location = turf.point([long, lat]);
+  var grainger_center = turf.point([-89.4016, 43.0727]);
+  var grainger = turf.buffer(grainger_center, 0.1, {units: 'miles'});
+
+  var hub_center = turf.point([-89.3956, 43.0744]);
+  var hub = turf.buffer(hub_center, 0.1, {units: 'miles'});
   
   
   if (turf.booleanPointInPolygon(my_location, hub)) {
