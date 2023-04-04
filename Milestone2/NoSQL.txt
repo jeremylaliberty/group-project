@@ -17,27 +17,34 @@ Document of User:
     "points": Integer,
     "meetingsAttended": Integer
 }
-
 Restrictions:
     userID: Unique(UQ), Not null(NN)
     name: NN
     email: NN
-    memberClass: NN, valid option from checkdown (like mySQL ENUM)
-    profileType: NN, ENUM("user", "admin", "alumni") 
-
+    memberClass: NN, valid option from checkdown (like mySQL ENUM), options list mutable to admin
+    profileType: NN, ENUM("user", "admin", "alumni") , automatically "user" on sign-up
 *** No other restrictions of users ***
-
 
 
 Collection "Admin"
 The Only Document of Admin:
 {
+    "id": Object ID,
     "avg_points": Integer,
     "max_points": Integer,
-    "n_meetings": Integer
+    "n_meetings": Integer,
+    "validMC": Array
 }
 
-*** No restrictions for the document of this collection ***
+Collection "Meetings"
+Sample document of a meeting:
+{
+    "meetingID": Object ID,
+    "meetingTime": DateTime,
+    "meetingLocation": String,
+    "adminComment": String,
+}
+
 
 
 
