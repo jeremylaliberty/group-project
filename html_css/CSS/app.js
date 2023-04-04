@@ -453,5 +453,3 @@ function pointsMessage(points, avg, max){
 
 
 
-
-
