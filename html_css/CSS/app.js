@@ -292,6 +292,7 @@ var avg_vals = 0;
 
 
 function loadUserData(uid){
+
   var docRef = database.collection("Users").doc(uid);
   docRef.get().then((doc) => {
     if (doc.exists) {
