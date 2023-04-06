@@ -264,7 +264,6 @@ auth.onAuthStateChanged((user) => {
     loadUserData(user.uid);
     homePage();
 
-    
   }
   else{
     splashPage.classList.remove('is-hidden');
@@ -301,9 +300,6 @@ function loadUserData(uid){
   adminRef.get().then((doc) => {
     if (doc.exists) {
       tot_meetings = doc.data().meetings;
-      missed = tot_meetings - meetings;
-      graphAttendance([meetings, missed]);
-      attendanceMessage(meetings, tot_meetings);
       max_points = doc.data().max_pts;
     } else {
       // doc.data() will be undefined in this case
@@ -333,6 +329,9 @@ function loadUserData(uid){
               all_points.push(doc.data().points);
           }      
         );
+      missed = tot_meetings - meetings;
+      graphAttendance([meetings, missed]);
+      attendanceMessage(meetings, tot_meetings);
       percentile = pointsPercentile(points, all_points).toFixed(0);
       avg_points = avg_vals/avg_count;
       graphPoints([points, avg_points, max_points]);
@@ -343,8 +342,7 @@ function loadUserData(uid){
       });
 
       loadProfile(hometown_val, major_val, expectedGrad_val, bio_val, name_val, mc_val);
-      configureProfile([mc_val, hometown_val, major_val, expectedGrad_val, bio_val ]);
-      
+      configureProfile([mc_val, hometown_val, major_val, expectedGrad_val, bio_val ]);      
     } else {
       // doc.data() will be undefined in this case
       console.log("No such document!");
@@ -426,7 +424,7 @@ function graphAttendance(y) {
 }
 
 function graphPoints(y) {
-  console.log(y[1]);
+  
   var x_points = ['Your Points', 'MC Average', 'Maximum Points'];
   var barColors =  ["#EE9EC8","#9EC8EE","#C8EE9E" ];
 
