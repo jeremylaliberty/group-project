@@ -351,7 +351,7 @@ function loadUserData(uid){
     console.log("Error getting document:", error);
   });
 };
-;
+
 
 function loadProfile(hometown_val, major_val, expectedGrad_val, bio_val, name_val, mc_val) {
   let user_mc_val = document.querySelector('#user-mc-val');
