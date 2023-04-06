@@ -286,6 +286,9 @@ var points = 0;
 var avg_points = 0;
 var max_points = 0;
 
+var avg_count = 0;
+var avg_vals = 0;
+
 
 
 function loadUserData(uid){
@@ -298,6 +301,22 @@ function loadUserData(uid){
       bio_val = doc.data().bio;
       name_val = doc.data().name;
       mc_val = doc.data().memberClass;
+      
+
+      database.collection("Users").where("memberClass", "==", mc_val)
+      .get()
+      .then((querySnapshot) => {
+          querySnapshot.forEach((doc) => {
+              avg_vals += doc.data().points;
+              avg_count += 1 ; 
+          }      
+        );
+      avg_points = avg_vals/avg_count;
+      })
+      .catch((error) => {
+          console.log("Error getting documents: ", error);
+      });
+
       loadProfile(hometown_val, major_val, expectedGrad_val, bio_val, name_val, mc_val);
       configureProfile([mc_val, hometown_val, major_val, expectedGrad_val, bio_val ]);
       meetings = doc.data().meetings;
@@ -316,7 +335,6 @@ function loadUserData(uid){
       let missed = tot_meetings - meetings;
       graphAttendance([meetings, missed]);
       attendanceMessage(meetings, tot_meetings);
-      avg_points = doc.data().avg_pts;
       max_points = doc.data().max_pts;
       graphPoints([points, avg_points, max_points]);
       pointsMessage(points, avg_points, max_points);
@@ -449,6 +467,9 @@ function pointsMessage(points, avg, max){
   max_points_msg.innerHTML = max;
   avg_points_msg.innerHTML = avg;
 }
+
+
+
 
 
 
