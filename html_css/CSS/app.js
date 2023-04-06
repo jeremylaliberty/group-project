@@ -292,6 +292,21 @@ var avg_vals = 0;
 
 
 function loadUserData(uid){
+  var adminRef = database.collection("Admin").doc('data');
+  adminRef.get().then((doc) => {
+    if (doc.exists) {
+      tot_meetings = doc.data().meetings;
+      let missed = tot_meetings - meetings;
+      graphAttendance([meetings, missed]);
+      attendanceMessage(meetings, tot_meetings);
+      max_points = doc.data().max_pts;
+    } else {
+      // doc.data() will be undefined in this case
+      console.log("No such document!");
+    }
+  }).catch((error) => {
+    console.log("Error getting document:", error);
+  });
 
   var docRef = database.collection("Users").doc(uid);
   docRef.get().then((doc) => {
@@ -302,6 +317,8 @@ function loadUserData(uid){
       bio_val = doc.data().bio;
       name_val = doc.data().name;
       mc_val = doc.data().memberClass;
+      meetings = doc.data().meetings;
+      points = doc.data().points;
       database.collection("Users").where("memberClass", "==", mc_val)
       .get()
       .then((querySnapshot) => {
@@ -311,6 +328,8 @@ function loadUserData(uid){
           }      
         );
       avg_points = avg_vals/avg_count;
+      graphPoints([points, avg_points, max_points]);
+      pointsMessage(points, avg_points, max_points);
       })
       .catch((error) => {
           console.log("Error getting documents: ", error);
@@ -318,26 +337,7 @@ function loadUserData(uid){
 
       loadProfile(hometown_val, major_val, expectedGrad_val, bio_val, name_val, mc_val);
       configureProfile([mc_val, hometown_val, major_val, expectedGrad_val, bio_val ]);
-      meetings = doc.data().meetings;
-      points = doc.data().points;
-    } else {
-      // doc.data() will be undefined in this case
-      console.log("No such document!");
-    }
-  }).catch((error) => {
-    console.log("Error getting document:", error);
-  });
-  var adminRef = database.collection("Admin").doc('data');
-  adminRef.get().then((doc) => {
-    if (doc.exists) {
-      tot_meetings = doc.data().meetings;
-      let missed = tot_meetings - meetings;
-      graphAttendance([meetings, missed]);
-      attendanceMessage(meetings, tot_meetings);
-      max_points = doc.data().max_pts;
-      graphPoints([points, avg_points, max_points]);
-      pointsMessage(points, avg_points, max_points);
-
+      
     } else {
       // doc.data() will be undefined in this case
       console.log("No such document!");
@@ -419,7 +419,7 @@ function graphAttendance(y) {
 }
 
 function graphPoints(y) {
-
+  console.log(y[1]);
   var x_points = ['Your Points', 'MC Average', 'Maximum Points'];
   var barColors =  ["#EE9EC8","#9EC8EE","#C8EE9E" ];
 
