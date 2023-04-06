@@ -289,6 +289,11 @@ var max_points = 0;
 var avg_count = 0;
 var avg_vals = 0;
 
+var all_points = [];
+var percentile = 0;
+
+var missed = 0;
+
 
 
 function loadUserData(uid){
@@ -296,7 +301,7 @@ function loadUserData(uid){
   adminRef.get().then((doc) => {
     if (doc.exists) {
       tot_meetings = doc.data().meetings;
-      let missed = tot_meetings - meetings;
+      missed = tot_meetings - meetings;
       graphAttendance([meetings, missed]);
       attendanceMessage(meetings, tot_meetings);
       max_points = doc.data().max_pts;
@@ -324,12 +329,14 @@ function loadUserData(uid){
       .then((querySnapshot) => {
           querySnapshot.forEach((doc) => {
               avg_vals += doc.data().points;
-              avg_count += 1 ; 
+              avg_count += 1; 
+              all_points.push(doc.data().points);
           }      
         );
+      percentile = pointsPercentile(points, all_points).toFixed(0);
       avg_points = avg_vals/avg_count;
       graphPoints([points, avg_points, max_points]);
-      pointsMessage(points, avg_points, max_points);
+      pointsMessage(points, avg_points, max_points, percentile);
       })
       .catch((error) => {
           console.log("Error getting documents: ", error);
@@ -458,14 +465,29 @@ function attendanceMessage(attended, total){
   rate_msg.innerHTML = `${rate}%`;
 }
 
-function pointsMessage(points, avg, max){
+function pointsMessage(points, avg, max, percentile){
   let points_msg = document.querySelector('#my-points');
   let max_points_msg = document.querySelector('#max-points');
   let avg_points_msg = document.querySelector('#avg-points');
+  let percentile_msg = document.querySelector('#my-percentile');
+  percentile_msg.innerHTML = `${percentile}th`;
   points_msg.innerHTML = points;
   max_points_msg.innerHTML = max;
   avg_points_msg.innerHTML = avg;
 }
+
+function pointsPercentile(points, all_points){
+    let count = 0;
+    all_points.forEach(val => {
+      if (val < points) {
+        count++;
+      } else if (val == points) {
+        count += 0.5;
+      }
+    });
+    return 100 * count / all_points.length;
+}
+
 
 
 
