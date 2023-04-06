@@ -301,8 +301,6 @@ function loadUserData(uid){
       bio_val = doc.data().bio;
       name_val = doc.data().name;
       mc_val = doc.data().memberClass;
-      
-
       database.collection("Users").where("memberClass", "==", mc_val)
       .get()
       .then((querySnapshot) => {
