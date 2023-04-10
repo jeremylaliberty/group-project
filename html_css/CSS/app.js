@@ -289,8 +289,8 @@ sign_up_btn.addEventListener('click', () =>{
       memberClass: sign_up_mc,
       bio: "",
       major: "",
-      meetings: 0,
-      points: 0,
+      meetings: 15, // These vals will be set to 0 once we are all set up
+      points: 620, // ditto
       expectedGrad: "",
       hometown: ""
     })
