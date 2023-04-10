@@ -163,26 +163,7 @@ grad_profile_btn.addEventListener('click', () => {
   gradProfileModal.classList.remove('is-active');
  });
 
-//let view_profile_btn = document.querySelector('#view-profile-btn');
-let viewProfileModal = document.querySelector('#view-profile-modal');
-let viewProfileModalBg = document.querySelector('#view-profile-modalbg');
-let closeViewProfile = document.querySelector('#close-view-profile');
-function ViewProfile(){
-  // get the right profile here
-  viewProfileModal.classList.add('is-active');
-}
 
-// view_profile_btn.addEventListener('click', () => {
-//   ViewProfile();
-//  })
- 
- closeViewProfile.addEventListener('click', () => {
-  viewProfileModal.classList.remove('is-active');
- });
- 
- viewProfileModalBg.addEventListener('click', () => {
-  viewProfileModal.classList.remove('is-active');
- });
 
 let where_btn = document.querySelector('#where-am-i-btn');
 var x = document.querySelector("#where-am-i");
@@ -568,9 +549,33 @@ function getSuffix(percentile) {
   return "th";
 }
 
+
+//let view_profile_btn = document.querySelector('#view-profile-btn');
+let viewProfileModal = document.querySelector('#view-profile-modal');
+let viewProfileModalBg = document.querySelector('#view-profile-modalbg');
+let closeViewProfile = document.querySelector('#close-view-profile');
+
+let view_name = document.querySelector('#view-name');
+let view_mc = document.querySelector('#view-mc');
+let view_egrad = document.querySelector('#view-egrad');
+let view_bio = document.querySelector('#view-bio');
+let view_hometown = document.querySelector('#view-hometown');
+
+
+
+
+ 
+ closeViewProfile.addEventListener('click', () => {
+  viewProfileModal.classList.remove('is-active');
+ });
+ 
+ viewProfileModalBg.addEventListener('click', () => {
+  viewProfileModal.classList.remove('is-active');
+ });
+
+let network_container = document.querySelector('#member-network-container');
+
 function loadNetwork(){
-  let network_container = document.querySelector('#member-network-container');
-  let count = 0;
   database.collection("Users").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
       console.log(doc.id);
@@ -601,6 +606,30 @@ function loadNetwork(){
     });
 });
 }
+
+network_container.addEventListener("click", (event) => {
+  const button = event.target;
+  if (button.tagName === "BUTTON" && button.id.startsWith("user-button-")) {
+    const view_uid = button.id.substring("user-button-".length);
+    database.collection('Users').doc(view_uid).get().then((doc) => {
+      if (doc.exists) {
+        view_name.innerHTML = doc.data().name;
+        view_mc.innerHTML = doc.data().memberClass;
+        view_egrad.innerHTML = doc.data().expectedGrad;
+        view_bio.innerHTML = doc.data().bio;
+        view_hometown.innerHTML = doc.data().hometown;
+
+        viewProfileModal.classList.add('is-active');
+
+      } else {
+          // doc.data() will be undefined in this case
+          console.log("No such document!");
+      }
+  }).catch((error) => {
+      console.log("Error getting document:", error);
+  });
+}
+});
 
 
 
