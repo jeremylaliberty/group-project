@@ -254,9 +254,7 @@ submitSignIn.addEventListener('click', () => {
 let splashPage = document.querySelector('#splash-page');
 
 
-function viewSplashPage(){
- 
-}
+
 let uid = "";
 auth.onAuthStateChanged((user) => {
   if (user) {
