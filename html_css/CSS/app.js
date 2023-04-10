@@ -19,6 +19,7 @@ function homePage(){
 }
 
 function networkPage(){
+  loadNetwork();
   home.classList.add('is-hidden');
   network.classList.remove('is-hidden');
   profile.classList.add('is-hidden');
@@ -162,7 +163,7 @@ grad_profile_btn.addEventListener('click', () => {
   gradProfileModal.classList.remove('is-active');
  });
 
-let view_profile_btn = document.querySelector('#view-profile-btn');
+//let view_profile_btn = document.querySelector('#view-profile-btn');
 let viewProfileModal = document.querySelector('#view-profile-modal');
 let viewProfileModalBg = document.querySelector('#view-profile-modalbg');
 let closeViewProfile = document.querySelector('#close-view-profile');
@@ -171,9 +172,9 @@ function ViewProfile(){
   viewProfileModal.classList.add('is-active');
 }
 
-view_profile_btn.addEventListener('click', () => {
-  ViewProfile();
- })
+// view_profile_btn.addEventListener('click', () => {
+//   ViewProfile();
+//  })
  
  closeViewProfile.addEventListener('click', () => {
   viewProfileModal.classList.remove('is-active');
@@ -565,6 +566,40 @@ function getSuffix(percentile) {
       return "rd";
   }
   return "th";
+}
+
+function loadNetwork(){
+  let network_container = document.querySelector('#member-network-container');
+  let count = 0;
+  database.collection("Users").get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      console.log(doc.id);
+        network_container.innerHTML += `
+        <p class = "is-hidden">${doc.id}</p>
+        <div class="column is-one-quarter">
+          <div class="card">
+            <div class="card-content">
+              <div class = "columns">
+                <div class="column is-three-fifths has-text-left">
+                  <div class="is-inline-block">
+                    <strong>${doc.data().name}</strong>
+                  </div>
+                </div>
+                <div class="column has-text-right">
+                  <div class="is-inline-block">
+                  ${doc.data().memberClass}
+                  </div>
+                </div>
+              </div>
+              <div class="has-text-centered">
+                <button id = "user-button-${doc.id}" class="button is-small is-rounded is-inline-block">View Profile</button>
+              </div>
+            </div> 
+          </div>
+        </div>
+        `     
+    });
+});
 }
 
 
