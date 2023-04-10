@@ -312,6 +312,30 @@ sign_up_btn.addEventListener('click', () =>{
   
 });
 
+let submit_edit_profile_btn = document.querySelector("#submit-edit-profile-btn");
+submit_edit_profile_btn.addEventListener('click', () => {
+  let edit_mc = document.querySelector('#MySelect option:checked').value;
+  let edit_uid = document.querySelector('#uid').innerHTML;
+  var docRef = database.collection("Users").doc(edit_uid);
+  docRef.update({
+    name: editName.value,
+    hometown: editHometown.value,
+    expectedGrad: editGrad.value,
+    bio: editBio.value,
+    major: editMajor.value,
+    memberClass: edit_mc
+
+  })
+  .then(() => {
+      editProfileModal.classList.remove('is-active');
+      location.reload();
+  })
+  .catch((error) => {
+      // The document probably doesn't exist.
+      console.error("Error updating document: ", error);
+  });
+})
+
 
 
 
@@ -380,7 +404,7 @@ function loadUserData(uid){
           console.log("Error getting documents: ", error);
       });
 
-      loadProfile(hometown_val, major_val, expectedGrad_val, bio_val, name_val, mc_val);
+      loadProfile(hometown_val, major_val, expectedGrad_val, bio_val, name_val, mc_val, uid);
       configureProfile([mc_val, hometown_val, major_val, expectedGrad_val, bio_val ]);      
     } else {
       // doc.data() will be undefined in this case
@@ -392,19 +416,21 @@ function loadUserData(uid){
 };
 
 
-function loadProfile(hometown_val, major_val, expectedGrad_val, bio_val, name_val, mc_val) {
+function loadProfile(hometown_val, major_val, expectedGrad_val, bio_val, name_val, mc_val, uid) {
   let user_mc_val = document.querySelector('#user-mc-val');
   let user_hometown_val = document.querySelector('#user-hometown-val');
   let user_major_val = document.querySelector('#user-major-val');
   let user_egrad_val = document.querySelector('#user-egrad-val');
   let user_bio_val = document.querySelector('#user-bio-val');
   let user_name_val = document.querySelector('#user-name-val');
+  let uid_val = document.querySelector('#uid');
   user_hometown_val.innerHTML = hometown_val;
   user_major_val.innerHTML = major_val;
   user_egrad_val.innerHTML = expectedGrad_val;
   user_bio_val.innerHTML = bio_val;
   user_name_val.innerHTML = name_val;
   user_mc_val.innerHTML = mc_val;
+  uid_val.innerHTML = uid;
 
 }
 
