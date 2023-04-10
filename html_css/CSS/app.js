@@ -33,6 +33,7 @@ function atttendancePage(){
 
 function profilePage(){
   auth.signOut();
+  location.reload();
 }
 
 home_btn.addEventListener('click', () => {
