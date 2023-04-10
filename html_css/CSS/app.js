@@ -561,6 +561,10 @@ let view_egrad = document.querySelector('#view-egrad');
 let view_bio = document.querySelector('#view-bio');
 let view_hometown = document.querySelector('#view-hometown');
 
+let view_mc_container = document.querySelector('#view-mc-container');
+let view_egrad_container = document.querySelector('#view-egrad-container');
+let view_bio_container = document.querySelector('#view-bio-container');
+let view_hometown_container = document.querySelector('#view-hometown-container');
 
 
 
@@ -613,13 +617,38 @@ network_container.addEventListener("click", (event) => {
     const view_uid = button.id.substring("user-button-".length);
     database.collection('Users').doc(view_uid).get().then((doc) => {
       if (doc.exists) {
+
+        if ( doc.data().memberClass == ''){
+          view_mc_container.classList.add('is-hidden');
+        } else if ( doc.data().memberClass != ''){
+          view_mc_container.classList.remove('is-hidden');
+        }
+
+        if ( doc.data().expectedGrad == ''){
+          view_egrad_container.classList.add('is-hidden');
+        } else if ( doc.data().expectedGrad != ''){
+          view_egrad_container.classList.remove('is-hidden');
+        }
+
+        if (doc.data().bio == ''){
+          view_bio_container.classList.add('is-hidden');
+        } else if (doc.data().bio != ''){
+          view_bio_container.classList.remove('is-hidden');
+        }
+
+        if (doc.data().hometown == ''){
+          view_hometown_container.classList.add('is-hidden');
+        } else if (doc.data().hometown != ''){
+          view_hometown_container.classList.remove('is-hidden');
+        }
+        
         view_name.innerHTML = doc.data().name;
         view_mc.innerHTML = doc.data().memberClass;
         view_egrad.innerHTML = doc.data().expectedGrad;
         view_bio.innerHTML = doc.data().bio;
         view_hometown.innerHTML = doc.data().hometown;
-        formatViewProfile();
         viewProfileModal.classList.add('is-active');
+   
 
       } else {
           // doc.data() will be undefined in this case
@@ -629,29 +658,10 @@ network_container.addEventListener("click", (event) => {
       console.log("Error getting document:", error);
   });
 }
+
 });
 
-function formatViewProfile(){
-  let view_mc_container = document.querySelector('#view-mc-container');
-  let view_egrad_container = document.querySelector('#view-egrad-container');
-  let view_bio_container = document.querySelector('#view-bio-container');
-  let view_hometown_container = document.querySelector('#view-hometown-container');
 
-  if (view_mc.innerHTML == ''){
-    view_mc_container.classList.add('is-hidden');
-  }
-  if (view_egrad.innerHTML == ''){
-    view_egrad_container.classList.add('is-hidden');
-  }
-  if (view_bio.innerHTML == ''){
-    view_bio_container.classList.add('is-hidden');
-  }
-  if (view_hometown.innerHTML == ''){
-    view_hometown_container.classList.add('is-hidden');
-  }
-
-
-}
 
 
 
