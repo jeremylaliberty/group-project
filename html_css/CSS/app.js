@@ -324,7 +324,6 @@ submit_edit_profile_btn.addEventListener('click', () => {
     bio: editBio.value,
     major: editMajor.value,
     memberClass: edit_mc
-
   })
   .then(() => {
       editProfileModal.classList.remove('is-active');
