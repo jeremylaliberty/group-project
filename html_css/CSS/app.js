@@ -1,5 +1,6 @@
 
 
+
 let home = document.querySelector('#home');
 let network = document.querySelector('#network');
 let attendance = document.querySelector('#attendance');
@@ -527,12 +528,14 @@ function attendanceMessage(attended, total){
   rate_msg.innerHTML = `${rate}%`;
 }
 
+
 function pointsMessage(points, avg, max, percentile){
   let points_msg = document.querySelector('#my-points');
   let max_points_msg = document.querySelector('#max-points');
   let avg_points_msg = document.querySelector('#avg-points');
   let percentile_msg = document.querySelector('#my-percentile');
-  percentile_msg.innerHTML = `${percentile}th`;
+  let suffix = getSuffix(percentile);
+  percentile_msg.innerHTML = `${percentile}${suffix}`;
   points_msg.innerHTML = points;
   max_points_msg.innerHTML = max;
   avg_points_msg.innerHTML = avg;
@@ -550,6 +553,19 @@ function pointsPercentile(points, all_points){
     return 100 * count / all_points.length;
 }
 
+function getSuffix(percentile) {
+  let remainder = percentile % 10
+  if (remainder == 1 && percentile != 11) {
+      return "st";
+  }
+  if (remainder == 2 && percentile != 12) {
+      return "nd";
+  }
+  if (remainder == 3 && percentile != 13) {
+      return "rd";
+  }
+  return "th";
+}
 
 
 
