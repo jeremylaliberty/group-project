@@ -273,11 +273,6 @@ auth.onAuthStateChanged((user) => {
 });
 console.log(uid);
 
-function signUp(email, password){ 
-
-  
-}
-
 let sign_up_btn = document.querySelector('#sign-up-button');
 sign_up_btn.addEventListener('click', () =>{
   let sign_up_email = document.querySelector('#sign-up-email').value;
@@ -294,8 +289,10 @@ sign_up_btn.addEventListener('click', () =>{
       memberClass: sign_up_mc,
       bio: "",
       major: "",
-      meetings: 10,
-      points: 750,
+      meetings: 0,
+      points: 0,
+      expectedGrad: "",
+      hometown: ""
     })
       .then(() => {
           console.log("Document successfully written!");
