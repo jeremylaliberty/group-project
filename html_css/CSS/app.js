@@ -618,7 +618,7 @@ network_container.addEventListener("click", (event) => {
         view_egrad.innerHTML = doc.data().expectedGrad;
         view_bio.innerHTML = doc.data().bio;
         view_hometown.innerHTML = doc.data().hometown;
-
+        formatViewProfile();
         viewProfileModal.classList.add('is-active');
 
       } else {
@@ -630,6 +630,28 @@ network_container.addEventListener("click", (event) => {
   });
 }
 });
+
+function formatViewProfile(){
+  let view_mc_container = document.querySelector('#view-mc-container');
+  let view_egrad_container = document.querySelector('#view-egrad-container');
+  let view_bio_container = document.querySelector('#view-bio-container');
+  let view_hometown_container = document.querySelector('#view-hometown-container');
+
+  if (view_mc.innerHTML == ''){
+    view_mc_container.classList.add('is-hidden');
+  }
+  if (view_egrad.innerHTML == ''){
+    view_egrad_container.classList.add('is-hidden');
+  }
+  if (view_bio.innerHTML == ''){
+    view_bio_container.classList.add('is-hidden');
+  }
+  if (view_hometown.innerHTML == ''){
+    view_hometown_container.classList.add('is-hidden');
+  }
+
+
+}
 
 
 
