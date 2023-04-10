@@ -580,6 +580,7 @@ let view_hometown_container = document.querySelector('#view-hometown-container')
 let network_container = document.querySelector('#member-network-container');
 
 function loadNetwork(){
+  network_container.innerHTML = '';
   database.collection("Users").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
       console.log(doc.id);
