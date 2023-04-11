@@ -28,9 +28,9 @@ What are you planning to do today? <br>
 Any problems you are facing? <br>
 
 Anouk: <br>
-What did you do yesterday? <br>
-What are you planning to do today? <br>
-Any problems you are facing? <br>
+What did you do yesterday? <br> I outlined the README2.md doc and filled out our progress thus far. I also researched markdown language to format our document. <br>
+What are you planning to do today? <br> I continued to add progress in our README doc and checked in with the team on our next target area to accomplish. I outlined the README2.md doc and filled out our progress thus far. <br>
+Any problems you are facing? <br> I did not face any problems today. <br>
 
 Kennedy: <br>
 What did you do yesterday? <br>
@@ -54,9 +54,9 @@ What are you planning to do today? <br>
 Any problems you are facing? <br>
 
 Anouk: <br>
-What did you do yesterday? <br>
-What are you planning to do today? <br>
-Any problems you are facing? <br>
+What did you do yesterday? <br> I continued to add progress in our README doc and checked in with the team on our next target area to accomplish. I outlined the README2.md doc and filled out our progress thus far. <br>
+What are you planning to do today? <br> Today, I will create the Trello board and add our tasks to keep the team organized. <br> 
+Any problems you are facing? <br>  Figuring out what tasks we need to accomplish was a bit of a challenge as it felt like we are handling a lot of different moving parts for this sprint, but it all worked out in the end. 
 
 Kennedy: <br>
 What did you do yesterday? <br>
