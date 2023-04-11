@@ -22,11 +22,11 @@ Any problems are you facing?
 
 SPRINT REVIEW:
 
-What did you learn from doing our first sprint?
-What did go well? Why?
-What didn’t go well? Why not?
-How can you make things better next time?
-Are you satisfied with what you already completed?
-Which group was invited? What are your observations/notes? Everybody was present?
+What did you learn from doing our first sprint? <br>
+What did go well? Why? <br>
+What didn’t go well? Why not? <br>
+How can you make things better next time? <br>
+Are you satisfied with what you already completed? <br>
+Which group was invited? What are your observations/notes? Everybody was present? <br>
 
 GITHUB REPO:
