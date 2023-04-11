@@ -1,10 +1,10 @@
-USER STORIES:
+**User Stories**:
 
 1. As an administrator, I need to be able to add new members to the system.
 2. As an administrator, I need to be able to correct any errors in the attendance and points tracking system.
 3. As a user, I want to be able to network with other members of the organization. 
 
-TASKS:
+**Tasks**:
 | Task | Story Number | Duration | Priority | Complexity | Lead Person |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 | Create firebase database | 1,2,3 | 2 hours | 10 | average |  |
@@ -14,11 +14,11 @@ TASKS:
 | Create networking profile page | 3 | 2 hours | 9 | average |  |
 | Initialize log in/sign up in firebase | 1,3 | 30 mins | 8 | average |  |
 
-TRELLO BOARD LINK: https://trello.com/b/VgC3Fq6g/gamma-phi-beta-system-sprint-2
+**Trello Board Link**: https://trello.com/b/VgC3Fq6g/gamma-phi-beta-system-sprint-2
 
-3 SCREENSHOTS OF BURNDOWN CHART:
+**3 screenshots of burndown chart**:
 
-DAILY SCRUMS:
+**Daily Scrums**:
 
 #1 <br>
 Jeremy: <br>
@@ -72,7 +72,7 @@ What did you do yesterday? <br>
 What are you planning to do today? <br>
 Any problems you are facing? <br>
 
-SPRINT REVIEW:
+**Sprint Review**:
 
 1. What did you learn from doing this sprint? <br>
 We learned how to hook up the website to firebase for our websites needs. We also learned how to create and differentiate the user interface vs the admin interface. This sprint, we also did a far better job of staying on top of our time and spacing out our work. <br>
@@ -89,4 +89,4 @@ Next time, we would still like to try to start our sprint even earlier than we d
 
 6. Which group was invited? What are your observations/notes? Everybody was present? <br>
 
-GITHUB REPO: https://github.com/jeremylaliberty/group-project
+**Github Repo**: https://github.com/jeremylaliberty/group-project
