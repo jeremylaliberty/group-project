@@ -4,15 +4,19 @@ USER STORIES:
 2. As an administrator, I need to be able to correct any errors in the attendance and points tracking system.
 3. As a user, I want to be able to network with other members of the organization. 
 
-TASKS
+TASKS:
 | Task | Story Number | Duration | Priority | Complexity | Lead Person |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+| Create firebase database | 1,2,3 | 2 hours | 10 | average |  |
+| Attach website to firebase | 1,2,3 | 30 mins | 10 | average |  |
+| Identify seperate admin profile for admin accessibility | 1,2 | 3 hours | 7 | high |  |
+| Add photos to website | 1,2,3 | 1 hour | 3 | low |  |
+| Create networking profile page | 3 | 2 hours | 9 | average |  |
+| Initialize log in/sign up in firebase | 1,3 | 30 mins | 8 | average |  |
 
-TRELLO BOARD LINK:
+TRELLO BOARD LINK: https://trello.com/b/VgC3Fq6g/gamma-phi-beta-system-sprint-2
 
-3 SCREENSHOTS OF BURNDOWN CHART
+3 SCREENSHOTS OF BURNDOWN CHART:
 
 DAILY SCRUMS:
 
