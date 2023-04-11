@@ -365,6 +365,10 @@ function loadUserData(uid){
       mc_val = doc.data().memberClass;
       meetings = doc.data().meetings;
       points = doc.data().points;
+      profileType = doc.data().profileType;
+      if(profileType == 'admin'){
+        to_admin_button.classList.remove('is-hidden');
+      };
       database.collection("Users").where("memberClass", "==", mc_val)
       .get()
       .then((querySnapshot) => {
