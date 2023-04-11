@@ -1,6 +1,14 @@
-USER STORIES
+USER STORIES:
+
+1. As an administrator, I need to be able to add new members to the system.
+2. As an administrator, I need to be able to correct any errors in the attendance and points tracking system.
+3. As a user, I want to be able to network with other members of the organization. 
 
 TASKS
+| Task | Story Number | Duration | Priority | Complexity | Lead Person |
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
 
 TRELLO BOARD LINK:
 
