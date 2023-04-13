@@ -13,363 +13,368 @@
 </head>
 
 <body>
-<!-- MODALS -->
+  <!-- MODALS -->
 
-<!-- Sign in modal -->
-<div id="signin-modal" class="modal">
-  <div id="signin-modalbg" class="modal-background"></div>
-  <div class="modal-content">
-    <div class="box">
-      <div class="field">
-        <label class="label">Email</label>
-        <p class="control has-icons-left has-icons-right">
-          <input id = "sign-in-email" class="input" type="email" placeholder="Email">
-          <span class="icon is-small is-left">
-            <i class="fas fa-envelope"></i>
-          </span>
-          <span class="icon is-small is-right">
-            <i class="fas fa-check"></i>
-          </span>
-        </p>
+  <!-- Sign in modal -->
+  <div id="signin-modal" class="modal">
+    <div id="signin-modalbg" class="modal-background"></div>
+    <div class="modal-content">
+      <div class="box">
+        <div class="field">
+          <label class="label">Email</label>
+          <p class="control has-icons-left has-icons-right">
+            <input id="sign-in-email" class="input" type="email" placeholder="Email">
+            <span class="icon is-small is-left">
+              <i class="fas fa-envelope"></i>
+            </span>
+            <span class="icon is-small is-right">
+              <i class="fas fa-check"></i>
+            </span>
+          </p>
+        </div>
+        <div class="field">
+          <label class="label">Password</label>
+          <p class="control has-icons-left">
+            <input id="sign-in-password" class="input" type="password" placeholder="Password">
+            <span class="icon is-small is-left">
+              <i class="fas fa-lock"></i>
+            </span>
+          </p>
+        </div>
+        <div class="field">
+          <p class="has-text-right control">
+            <button id="sign-in-submit" class="button is-favorite has-text-white is-inline-block">
+              <strong>Login</strong>
+            </button>
+          </p>
+        </div>
+        <p class="has-text-danger" id='sign-in-msg'> </p>
       </div>
-      <div class="field">
-        <label class="label">Password</label>
-        <p class="control has-icons-left">
-          <input id = "sign-in-password" class="input" type="password" placeholder="Password">
-          <span class="icon is-small is-left">
-            <i class="fas fa-lock"></i>
-          </span>
-        </p>
-      </div>
-      <div class="field">
-        <p class="has-text-right control">
-          <button id = "sign-in-submit" class="button is-favorite has-text-white is-inline-block">
-            <strong >Login</strong>
-          </button>
-        </p>
-      </div>
-      <p class = "has-text-danger" id = 'sign-in-msg'> </p>
+      <!-- Any other Bulma elements you want -->
     </div>
-    <!-- Any other Bulma elements you want -->
+    <button id="sign-in-close" class="modal-close is-large" aria-label="close"></button>
   </div>
-  <button id="sign-in-close" class="modal-close is-large" aria-label="close"></button>
-</div>
 
-<!-- Sign up modal -->
-<div id="signup-modal" class="modal">
-  <div id="signup-modalbg" class="modal-background"></div>
-  <div class="modal-content">
-    <div class="box">
-      <div class="field">
-        <label class="label" >Name</label>
-        <div class="control has-icons-left has-icons-right">
-          <input class="input" type="text" id = "sign-up-name">
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="label" >Email</label>
-        <div class="control has-icons-left has-icons-right">
-          <input class="input " id = "sign-up-email" type="email"  >
-          <span class="icon is-small is-left">
-            <i class="fas fa-envelope"></i>
-          </span>
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="label">Password</label>
-        <p class="control has-icons-left">
-          <input class="input" type="password" placeholder="Password" id = "sign-up-password">
-          <span class="icon is-small is-left">
-            <i class="fas fa-lock"></i>
-          </span>
-        </p>
-      </div>
-
-      <div class="field">
-        <label class="label">Member Class</label>
-        <div class="control">
-          <div class="select">
-            <select id = "sign-up-mc">
-              <option>Spring 2023</option>
-              <option>Fall 2023</option>
-              <option>Spring 2022</option>
-              <option>Fall 2022</option>
-              <option>Spring 2021</option>
-              <option>Fall 2021</option>
-              <option>Spring 2020</option>
-              <option>Fall 2020</option>
-              <option>Spring 2019</option>
-              <option>Fall 2019</option>
-            </select>
-          </div>
-        </div>
-      </div>
-
-
-      
-
-      <div class="field">
-        <div class="control has-text-right">
-          <button id = "sign-up-button" class="button has-text-white is-inline-block is-favorite"><strong>Submit</strong></button>
-        </div>
-      </div>
-    </div>
-    <!-- Any other Bulma elements you want -->
-  </div>
-  <button id="close-sign-up" class="modal-close is-large" aria-label="close"></button>
-</div>
-
-<!-- graduate profile modal -->
-<div id="graduate-profile-modal" class="modal">
-  <div id="graduate-profile-modalbg" class="modal-background"></div>
-  
-  <div class="modal-content">
-    
-    <div class="box">
-      <div class="has-text-weight-bold is-size-4 has-text-centered">Graduate to an Alumni Profile</div>
-      <br>
-      <div class="has-text-black-bis is-size-6 has-text-centered">Help to grow the Gphi network by providing some additional info. </div>
-  
-      <br>
-      <div class="field">
-        <label class="label">Graduation Year</label>
-        <div class="control">
-          <input class="input" type="text" placeholder = "">
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="label">Major(s)</label>
-        <div class="control">
-          <input class="input" type="text" placeholder = "">
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="label">Company</label>
-        <div class="control">
-          <input  class="input" type="text" placeholder = "">
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="label">Position</label>
-        <div class="control">
-          <input  class="input" type="text" placeholder = "">
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="label">LinkedIn Profile URL</label>
-        <div class="control">
-          <input class="input" type="text" placeholder = "(the most imporant field)">
-        </div>
-      </div>
-
-       
-      <div class="has-text-danger is-size-6 has-text-centered">* Warning: Converting to an Alumni Profile is PERMANENT. Any data related to points and attendance will be lost. *</div>
-      <br>
-      <div class="field">
-        <div class="control">
-          <button id = "" class="button has-text-white is-favorite"><strong>Submit</strong></button>
-        </div>
-      </div>
-    </div>
-    <!-- Any other Bulma elements you want -->
-  </div>
-  <button id="close-graduate-profile" class="modal-close is-large" aria-label="close"></button>
-</div>
-
-<!-- edit profile modal -->
-<div id="edit-profile-modal" class="modal">
-  <div id="edit-profile-modalbg" class="modal-background"></div>
-  
-  <div class="modal-content">
-    
-    <div class="box">
-      <div class="has-text-weight-bold is-size-4 has-text-centered">Edit Profile</div>
-      <div class="field">
-        <label class="label">Name</label>
-        <div class="control">
-          <input id = "edit-name" class="input" type="text" >
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="label">Hometown</label>
-        <div class="control">
-          <input id = "edit-hometown" class="input" type="text" >
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="label">Major</label>
-        <div class="control">
-          <input id = "edit-major" class="input" type="text" >
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="label">Expected Graduation</label>
-        <div class="control">
-          <input id = "edit-grad" class="input" type="text">
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="label">Bio</label>
-        <div class="control">
-          <textarea id = "edit-bio" class="textarea" ></textarea>
-        </div>
-      </div>
-
-      <div class="field">
-        <label class="label">Member Class</label>
-        <div class="control">
-          <div class="select">
-            <select id = "mySelect">
-              <option>Spring 2023</option>
-              <option>Fall 2023</option>
-              <option>Spring 2022</option>
-              <option>Fall 2022</option>
-              <option>Spring 2021</option>
-              <option>Fall 2021</option>
-              <option>Spring 2020</option>
-              <option>Fall 2020</option>
-              <option>Spring 2019</option>
-              <option>Fall 2019</option>
-            </select>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="field is-grouped">
-        <div class="control">
-          <button id  = "submit-edit-profile-btn" class="button has-text-white is-favorite"><strong>Submit</strong></button>
-        </div>
-        <div class="control">
-          <button id = "clear-edit-profile-btn" class="button is-danger">Clear</button>
-        </div>
-      </div>
-    </div>
-    <!-- Any other Bulma elements you want -->
-  </div>
-  <button id="close-edit-profile" class="modal-close is-large" aria-label="close"></button>
-</div>
-
-
-
-<div id="view-profile-modal" class="modal">
-  <div id="view-profile-modalbg" class="modal-background"></div>
-  <div class="modal-content">
-    <div class="card">
-
-      <div class="card-content">
-        <div class="media">
-          <div class="media-left">
-            <figure class="image is-48x48">
-              <img src="images/smiley.png" alt="Placeholder image">
-            </figure>
-          </div>
-          <div class="media-content">
-            <p id = "view-name" class="title is-4"></p>
+  <!-- Sign up modal -->
+  <div id="signup-modal" class="modal">
+    <div id="signup-modalbg" class="modal-background"></div>
+    <div class="modal-content">
+      <div class="box">
+        <div class="field">
+          <label class="label">Name</label>
+          <div class="control has-icons-left has-icons-right">
+            <input class="input" type="text" id="sign-up-name">
           </div>
         </div>
 
-        <div class="content">
+        <div class="field">
+          <label class="label">Email</label>
+          <div class="control has-icons-left has-icons-right">
+            <input class="input " id="sign-up-email" type="email">
+            <span class="icon is-small is-left">
+              <i class="fas fa-envelope"></i>
+            </span>
+          </div>
+        </div>
 
-          <p id="view-mc-container">
-            <strong>Member Class:</strong> <span id="view-mc"></span> 
+        <div class="field">
+          <label class="label">Password</label>
+          <p class="control has-icons-left">
+            <input class="input" type="password" placeholder="Password" id="sign-up-password">
+            <span class="icon is-small is-left">
+              <i class="fas fa-lock"></i>
+            </span>
           </p>
-          <p id="view-hometown-container">
-            <strong>Hometown:</strong> <span id="view-hometown"></span> 
-          </p>
-          
-         
-          <p id="view-egrad-container">
-            <strong>Expected Graduation:</strong> <span id="view-egrad"></span> 
-          </p>
+        </div>
 
-          <p id="view-bio-container">
-            <strong>Bio:</strong> <span id="view-bio"></span> 
-          </p>
-          <!-- might delete this -->
-          <strong>Contact:</strong> (333) 666 999  
-          
-        
+        <div class="field">
+          <label class="label">Member Class</label>
+          <div class="control">
+            <div class="select">
+              <select id="sign-up-mc">
+                <option>Spring 2023</option>
+                <option>Fall 2023</option>
+                <option>Spring 2022</option>
+                <option>Fall 2022</option>
+                <option>Spring 2021</option>
+                <option>Fall 2021</option>
+                <option>Spring 2020</option>
+                <option>Fall 2020</option>
+                <option>Spring 2019</option>
+                <option>Fall 2019</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <div class="field">
+          <div class="control has-text-right">
+            <button id="sign-up-button"
+              class="button has-text-white is-inline-block is-favorite"><strong>Submit</strong></button>
+          </div>
         </div>
       </div>
+      <!-- Any other Bulma elements you want -->
     </div>
-    <!-- Any other Bulma elements you want -->
+    <button id="close-sign-up" class="modal-close is-large" aria-label="close"></button>
   </div>
-  <button id="close-view-profile" class="modal-close is-large" aria-label="close"></button>
-</div>
+
+  <!-- graduate profile modal -->
+  <div id="graduate-profile-modal" class="modal">
+    <div id="graduate-profile-modalbg" class="modal-background"></div>
+
+    <div class="modal-content">
+
+      <div class="box">
+        <div class="has-text-weight-bold is-size-4 has-text-centered">Graduate to an Alumni Profile</div>
+        <br>
+        <div class="has-text-black-bis is-size-6 has-text-centered">Help to grow the Gphi network by providing some
+          additional info. </div>
+
+        <br>
+        <div class="field">
+          <label class="label">Graduation Year</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Major(s)</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Company</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Position</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">LinkedIn Profile URL</label>
+          <div class="control">
+            <input class="input" type="text" placeholder="(the most imporant field)">
+          </div>
+        </div>
 
 
-
-
-<!-- SPLASH PAGE -->
-<div id="splash-page" class = "">
-  
-  <section class="section is-small is-favorite p-3">
-    <div class="container">
-      <h1 class="is-size-6 has-text-centered has-text-weight-semibold has-text-danger-light">
-        Gamma Phi Beta - Gamma Chapter
-      </h1>
+        <div class="has-text-danger is-size-6 has-text-centered">* Warning: Converting to an Alumni Profile is
+          PERMANENT. Any data related to points and attendance will be lost. *</div>
+        <br>
+        <div class="field">
+          <div class="control">
+            <button id="" class="button has-text-white is-favorite"><strong>Submit</strong></button>
+          </div>
+        </div>
+      </div>
+      <!-- Any other Bulma elements you want -->
     </div>
+    <button id="close-graduate-profile" class="modal-close is-large" aria-label="close"></button>
+  </div>
 
-  </section>
-  <header class="is-favorite">
-    <nav class="navbar has-background-danger-withe-ter is-white" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand pl-5">
-        <a href="">
-          <img src="images/logo.png" alt="" width="80" height="50">
-        </a>
+  <!-- edit profile modal -->
+  <div id="edit-profile-modal" class="modal">
+    <div id="edit-profile-modalbg" class="modal-background"></div>
 
-        <h1 class="has-text-weight-bold has-text-centered has-text-favorite is-size-3 p-3 ml-5
+    <div class="modal-content">
+
+      <div class="box">
+        <div class="has-text-weight-bold is-size-4 has-text-centered">Edit Profile</div>
+        <div class="field">
+          <label class="label">Name</label>
+          <div class="control">
+            <input id="edit-name" class="input" type="text">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Hometown</label>
+          <div class="control">
+            <input id="edit-hometown" class="input" type="text">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Major</label>
+          <div class="control">
+            <input id="edit-major" class="input" type="text">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Expected Graduation</label>
+          <div class="control">
+            <input id="edit-grad" class="input" type="text">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Bio</label>
+          <div class="control">
+            <textarea id="edit-bio" class="textarea"></textarea>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Member Class</label>
+          <div class="control">
+            <div class="select">
+              <select id="mySelect">
+                <option>Spring 2023</option>
+                <option>Fall 2023</option>
+                <option>Spring 2022</option>
+                <option>Fall 2022</option>
+                <option>Spring 2021</option>
+                <option>Fall 2021</option>
+                <option>Spring 2020</option>
+                <option>Fall 2020</option>
+                <option>Spring 2019</option>
+                <option>Fall 2019</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="field is-grouped">
+          <div class="control">
+            <button id="submit-edit-profile-btn"
+              class="button has-text-white is-favorite"><strong>Submit</strong></button>
+          </div>
+          <div class="control">
+            <button id="clear-edit-profile-btn" class="button is-danger">Clear</button>
+          </div>
+        </div>
+      </div>
+      <!-- Any other Bulma elements you want -->
+    </div>
+    <button id="close-edit-profile" class="modal-close is-large" aria-label="close"></button>
+  </div>
+
+
+
+  <div id="view-profile-modal" class="modal">
+    <div id="view-profile-modalbg" class="modal-background"></div>
+    <div class="modal-content">
+      <div class="card">
+
+        <div class="card-content">
+          <div class="media">
+            <div class="media-left">
+              <figure class="image is-48x48">
+                <img src="images/smiley.png" alt="Placeholder image">
+              </figure>
+            </div>
+            <div class="media-content">
+              <p id="view-name" class="title is-4"></p>
+            </div>
+          </div>
+
+          <div class="content">
+
+            <p id="view-mc-container">
+              <strong>Member Class:</strong> <span id="view-mc"></span>
+            </p>
+            <p id="view-hometown-container">
+              <strong>Hometown:</strong> <span id="view-hometown"></span>
+            </p>
+
+
+            <p id="view-egrad-container">
+              <strong>Expected Graduation:</strong> <span id="view-egrad"></span>
+            </p>
+
+            <p id="view-bio-container">
+              <strong>Bio:</strong> <span id="view-bio"></span>
+            </p>
+            <!-- might delete this -->
+            <strong>Contact:</strong> (333) 666 999
+
+
+          </div>
+        </div>
+      </div>
+      <!-- Any other Bulma elements you want -->
+    </div>
+    <button id="close-view-profile" class="modal-close is-large" aria-label="close"></button>
+  </div>
+
+
+
+
+  <!-- SPLASH PAGE -->
+  <div id="splash-page" class="">
+
+    <section class="section is-small is-favorite p-3">
+      <div class="container">
+        <h1 class="is-size-6 has-text-centered has-text-weight-semibold has-text-danger-light">
+          Gamma Phi Beta - Gamma Chapter
+        </h1>
+      </div>
+
+    </section>
+    <header class="is-favorite">
+      <nav class="navbar has-background-danger-withe-ter is-white" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand pl-5">
+          <a href="">
+            <img src="images/logo.png" alt="" width="80" height="50">
+          </a>
+
+          <h1 class="has-text-weight-bold has-text-centered has-text-favorite is-size-3 p-3 ml-5
                 ">
-          Tracking System</h1>
+            Tracking System</h1>
 
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
-
-      <div id="navbarBasicExample" class="navbar-menu">
-        <div class="navbar-start">
-
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+            data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
         </div>
 
-        <div class="navbar-end">
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
 
-          <div class="navbar-item">
-            <div class="border">
-              <p id="signupbtn" class="button has-text-black" style='border: none; font-size: large;'>
-                <strong>Sign up</strong>
-              </p>
-            </div>
           </div>
-          <div class="navbar-item">
-            <div class="border">
-              <p id="signinbtn" class="button has-text-black" style='border: none; font-size: large;'>
-                <strong>Log in</strong>
-              </p>
 
+          <div class="navbar-end">
+
+            <div class="navbar-item">
+              <div class="border">
+                <p id="signupbtn" class="button has-text-black" style='border: none; font-size: large;'>
+                  <strong>Sign up</strong>
+                </p>
+              </div>
+            </div>
+            <div class="navbar-item">
+              <div class="border">
+                <p id="signinbtn" class="button has-text-black" style='border: none; font-size: large;'>
+                  <strong>Log in</strong>
+                </p>
+
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </nav>
-  </header>
-</div>
+      </nav>
+    </header>
+  </div>
 
-<!-- USER PAGE - Main -->
-<div id = "user-page" class = "is-hidden">
+  <!-- USER PAGE - Main -->
+  <div id="user-page" class="is-hidden">
     <!-- Website Header -->
     <section class="section is-small is-favorite p-3">
       <div class="container">
@@ -377,7 +382,7 @@
           Gamma Phi Beta - Gamma Chapter
         </h1>
       </div>
-  
+
       <!-- Logo and Navigation bar -->
     </section>
     <header class="is-favorite">
@@ -386,54 +391,55 @@
           <a href="">
             <img src="images/logo.png" alt="" width="80" height="50">
           </a>
-  
+
           <h1 class="has-text-weight-bold has-text-centered has-text-favorite is-size-3 p-3 ml-5
                   ">
             Tracking System</h1>
-  
-          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+
+          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+            data-target="navbarBasicExample">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
           </a>
         </div>
-  
+
         <div id="navbarBasicExample" class="navbar-menu">
           <div class="navbar-start">
-  
+
           </div>
-  
+
           <div class="navbar-end">
-            <a id = "home-btn" class="navbar-item">
+            <a id="home-btn" class="navbar-item">
               <span style="color: white;">
                 <i class="fa-solid fa-house fa-2x bordered-icon"></i>
               </span>
-  
+
             </a>
-            <a id = "network-btn" class="navbar-item">
+            <a id="network-btn" class="navbar-item">
               <span style="color: white; ">
                 <i class="fa-solid fa-globe fa-2x bordered-icon"></i>
               </span>
-  
+
             </a>
-  
-            <a id = "attendance-btn" class="navbar-item">
+
+            <a id="attendance-btn" class="navbar-item">
               <span style="color: white; ">
                 <i class="fa-solid fa-hand fa-2x bordered-icon"></i>
               </span>
             </a>
-            <a id = "profile-btn" class="navbar-item">
+            <a id="profile-btn" class="navbar-item">
               <span style="color: white;">
                 <i class="fa-solid fa-user fa-2x bordered-icon"></i>
               </span>
-            </a>         
+            </a>
           </div>
         </div>
       </nav>
     </header>
-  
-  
-    <div id = "home" class="columns is-vcentered">
+
+
+    <div id="home" class="columns is-vcentered">
       <!-- Attendance section -->
       <div class="column" style="margin-left: 5px;">
         <div class="card">
@@ -444,16 +450,16 @@
           </div>
           <div class="card-content">
             <div class="media">
-  
+
               <div class="media-content">
                 <p class="title is-centered is-3">Attendance</p>
               </div>
             </div>
-  
+
             <div class="content">
-              You have attended <strong id = 'attended-meetings'></strong> 
-              of a possible <strong id = 'total-meetings'></strong> meetings, 
-              giving you an attendance rate of <strong id = 'attendance-rate'></strong>.
+              You have attended <strong id='attended-meetings'></strong>
+              of a possible <strong id='total-meetings'></strong> meetings,
+              giving you an attendance rate of <strong id='attendance-rate'></strong>.
               <br>
               <br>
             </div>
@@ -470,28 +476,28 @@
           </div>
           <div class="card-content">
             <div class="media">
-  
+
               <div class="media-content">
                 <p class="title is-3">Points</p>
               </div>
             </div>
-  
+
             <div class="content">
-              You have accumulated <strong id = "my-points"></strong>
-               of a possible <strong id = "max-points"></strong> 
-               points. The average in your member class is <strong id = "avg-points"></strong>, 
-               which puts you in the <strong id = "my-percentile"></strong> percentile.
-  
+              You have accumulated <strong id="my-points"></strong>
+              of a possible <strong id="max-points"></strong>
+              points. The average in your member class is <strong id="avg-points"></strong>,
+              which puts you in the <strong id="my-percentile"></strong> percentile.
+
               <br>
             </div>
           </div>
         </div>
       </div>
-      <!-- User info section --> 
-      
+      <!-- User info section -->
+
       <div class="column" style="margin-right: 5px;">
         <div class="card">
-  
+
           <div class="card-content">
             <div class="media">
               <div class="media-left">
@@ -500,21 +506,23 @@
                 </figure>
               </div>
               <div class="media-content">
-                <p id = "user-name" class="title is-4"> <span id = "user-name-val"></span> </p>
+                <p id="user-name" class="title is-4"> <span id="user-name-val"></span> </p>
               </div>
             </div>
-  
+
             <div class="content">
 
-              <p id="user-mc"><strong>Member Class:</strong> <span id = "user-mc-val"></span></p>
-              <p id="user-hometown"><strong>Hometown:</strong> <span id = "user-hometown-val"></span></p>              
-              <p id="user-major"><strong>Major:</strong> <span id = "user-major-val"></span></p>            
-              <p id="user-egrad"><strong>Expected Graduation:</strong> <span id = "user-egrad-val"></span></p>            
-              <p id="user-bio"><strong>Bio:</strong> <span id = "user-bio-val"></span></p>
+              <p id="user-mc"><strong>Member Class:</strong> <span id="user-mc-val"></span></p>
+              <p id="user-hometown"><strong>Hometown:</strong> <span id="user-hometown-val"></span></p>
+              <p id="user-major"><strong>Major:</strong> <span id="user-major-val"></span></p>
+              <p id="user-egrad"><strong>Expected Graduation:</strong> <span id="user-egrad-val"></span></p>
+              <p id="user-bio"><strong>Bio:</strong> <span id="user-bio-val"></span></p>
 
               <div class="is-grouped">
-                <button id = "edit-profile-btn" class="button has-text-white is-favorite"><strong>Edit Profile</strong></button>
-                <button id = "graduate-profile-btn" class="button has-text-white is-second-favorite"><strong>Graduate to Alumni Profile</strong></button>
+                <button id="edit-profile-btn" class="button has-text-white is-favorite"><strong>Edit
+                    Profile</strong></button>
+                <button id="graduate-profile-btn" class="button has-text-white is-second-favorite"><strong>Graduate to
+                    Alumni Profile</strong></button>
               </div>
               <div id="uid" class="is-hidden"></div>
             </div>
@@ -523,152 +531,156 @@
       </div>
     </div>
   </div>
-   
-  
-    <div id="network" class = "is-hidden">
-    
-    
 
-      <!-- base HTML placeholder for member lists; would have info from firestore inserted here  -->
-      <div id = "member-network-container" class="columns is-multiline">
-        
-        
+
+  <div id="network" class="is-hidden">
 
 
 
-      
-      </div>
-      
-    </div>  
+    <!-- base HTML placeholder for member lists; would have info from firestore inserted here  -->
+    <div id="member-network-container" class="columns is-multiline">
 
-  
 
-  
-   
-  
-    <div id="attendance" class = "is-hidden">
-      <div class = "card"> 
-        <img class = "user-attendance-image" src="images/users.png" alt="">
-        <br>
-        <div class = "has-text-centered">
-          <button id = "where-am-i-btn" class="button is-inline-block is-large is-rounded">Where am I ?</button>
-        </div>
-        <br>
-        <div id = "where-am-i" class = "has-text-centered"></div>
-        <br>
+
+
+
+
+    </div>
+
+  </div>
+
+
+
+
+
+
+  <div id="attendance" class="is-hidden">
+    <div class="card">
+      <img class="user-attendance-image" src="images/users.png" alt="">
+      <br>
+      <div class="has-text-centered">
+        <button id="where-am-i-btn" class="button is-inline-block is-large is-rounded">Where am I ?</button>
       </div>
       <br>
+      <div id="where-am-i" class="has-text-centered"></div>
+      <br>
     </div>
-    </div>
-  
-    <div id="profile" class="is-hidden">
-     I dont think we even need this page
-    </div>
+    <br>
+  </div>
   </div>
 
-    <button id = "switch-to-admin-view" class="is-hidden button is-fullwidth has-text-white is-favorite has-text-weight-bold">
-      Switch to Admin View
-    </button>
-    
-    <!-- Footer with links to socials -->
-    <footer class="footer">
-      <div class="content has-text-centered">
-        <a href="http://www.facebook.com"><i style="color:#ee9ec8" class="fa-brands fa-2x fa-square-facebook"></i></a>
-        <a href="http://www.instagram.com"><i style="color:#ee9ec8" class="fa-brands fa-2x fa-square-instagram"></i></a>
-        <a href="http://www.twitter.com"><i style="color:#ee9ec8" class="fa-brands fa-2x fa-square-twitter"></i></a>
-      </div>
-    </footer>
-</div>
+  <div id="profile" class="is-hidden">
+    I dont think we even need this page
+  </div>
+  </div>
 
-<!-- END OF USER PAGE HTML -->
+  <button id="switch-to-admin-view"
+    class="is-hidden button is-fullwidth has-text-white is-favorite has-text-weight-bold">
+    Switch to Admin View
+  </button>
 
-<!-- BEGINNING OF ADMIN PAGE HTML -->
-
-<div id="admin-page" class="is-hidden">
-  
-  <!-- Website Header -->
-  <section class="section is-small is-favorite p-3">
-    <div class="container">
-      <h1 class="is-size-6 has-text-centered has-text-weight-semibold has-text-danger-light">
-        Gamma Phi Beta - Gamma Chapter
-      </h1>
+  <!-- Footer with links to socials -->
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <a href="https://www.facebook.com/GammaChapterGPhiB/"><i style="color:#ee9ec8"
+          class="fa-brands fa-2x fa-square-facebook"></i></a>
+      <a href="https://www.instagram.com/wiscogphi/"><i style="color:#ee9ec8"
+          class="fa-brands fa-2x fa-square-instagram"></i></a>
+      <a href="https://twitter.com/gammagpb?lang=en"><i style="color:#ee9ec8"
+          class="fa-brands fa-2x fa-square-twitter"></i></a>
     </div>
+  </footer>
+  </div>
 
-    <!-- Logo and Navigation bar -->
-  </section>
-  <header class="is-favorite">
-    <nav class="navbar has-background-danger-withe-ter is-white" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand pl-5">
-        <a href="">
-          <img src="images/logo.png" alt="" width="80" height="50">
-        </a>
+  <!-- END OF USER PAGE HTML -->
 
-        <h1 class="has-text-weight-bold has-text-centered has-text-favorite is-size-3 p-3 ml-5
+  <!-- BEGINNING OF ADMIN PAGE HTML -->
+
+  <div id="admin-page" class="is-hidden">
+
+    <!-- Website Header -->
+    <section class="section is-small is-favorite p-3">
+      <div class="container">
+        <h1 class="is-size-6 has-text-centered has-text-weight-semibold has-text-danger-light">
+          Gamma Phi Beta - Gamma Chapter
+        </h1>
+      </div>
+
+      <!-- Logo and Navigation bar -->
+    </section>
+    <header class="is-favorite">
+      <nav class="navbar has-background-danger-withe-ter is-white" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand pl-5">
+          <a href="">
+            <img src="images/logo.png" alt="" width="80" height="50">
+          </a>
+
+          <h1 class="has-text-weight-bold has-text-centered has-text-favorite is-size-3 p-3 ml-5
                 ">
-          Tracking System - Admin</h1>
+            Tracking System - Admin</h1>
 
-       
-      </div>
-
-      <div id="navbarBasicExample" class="navbar-menu">
-        <div class="navbar-start">
 
         </div>
 
-        <div class="navbar-end">
-          
+        <div id="navbarBasicExample" class="navbar-menu">
+          <div class="navbar-start">
+
+          </div>
+
+          <div class="navbar-end">
+
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="columns is-multiline">
+      <div id="admin-attendance" class="column" style="margin-left: 5px; margin-top: 10px;">
+        <div class="card">
+
+          <img class="attendance-image" src="images/attendance.png" alt="">
+          <br>
+          <footer class="card-footer">
+            <a href="#" class="card-footer-item has-text-favorite is-size-5 has-text-weight-bold">Edit Attendance</a>
+          </footer>
         </div>
       </div>
-    </nav>
-  </header>
 
-  <div class="columns is-multiline">
-    <div id = "admin-attendance" class="column" style="margin-left: 5px; margin-top: 10px;">
-      <div class="card">
-        
-        <img class = "attendance-image" src="images/attendance.png" alt="">
-        <br>
-        <footer class="card-footer">
-          <a href="#" class="card-footer-item has-text-favorite is-size-5 has-text-weight-bold">Edit Attendance</a>
-        </footer>
+      <div id="admin-meetings" class="column" style="margin-left: 5px; margin-top: 10px;">
+        <div class="card">
+
+          <img class="attendance-image" src="images/attendance.png" alt="">
+          <br>
+          <footer class="card-footer">
+            <a href="#" class="card-footer-item has-text-favorite is-size-5 has-text-weight-bold">Add a Meeting</a>
+            <a href="#" class="card-footer-item has-text-favorite is-size-5 has-text-weight-bold">Delete a Meeting</a>
+          </footer>
+        </div>
+      </div>
+
+      <div id="admin-points" class="column" style=" margin-top: 10px;">
+        <div class="card">
+          <img class="points-image" src="images/points.png" alt="">
+          <br>
+          <footer class="card-footer">
+            <a href="#" class="card-footer-item has-text-favorite is-size-5 has-text-weight-bold">Edit Points</a>
+          </footer>
+        </div>
+      </div>
+
+      <div id="admin-points" class="column" style="margin-right: 5px; margin-top: 10px;">
+        <div class="card">
+          <img class="points-image" src="images/users.png" alt="">
+          <br>
+          <footer class="card-footer">
+            <a href="#" class="card-footer-item has-text-favorite is-size-5 has-text-weight-bold">Add Users</a>
+            <a href="#" class="card-footer-item has-text-favorite is-size-5 has-text-weight-bold">Remove Users</a>
+          </footer>
+        </div>
       </div>
     </div>
 
-    <div id = "admin-meetings" class="column" style="margin-left: 5px; margin-top: 10px;">
-      <div class="card">
-        
-        <img class = "attendance-image" src="images/attendance.png" alt="">
-        <br>
-        <footer class="card-footer">
-          <a href="#" class="card-footer-item has-text-favorite is-size-5 has-text-weight-bold">Add a Meeting</a>
-          <a href="#" class="card-footer-item has-text-favorite is-size-5 has-text-weight-bold">Delete a Meeting</a>
-        </footer>
-      </div>
-    </div>
-
-    <div id="admin-points" class="column" style=" margin-top: 10px;">
-      <div class="card">
-        <img class = "points-image" src="images/points.png" alt="">
-        <br>
-        <footer class="card-footer">
-          <a href="#" class="card-footer-item has-text-favorite is-size-5 has-text-weight-bold">Edit Points</a>
-        </footer>
-      </div>
-    </div>
-
-    <div id="admin-points" class="column" style="margin-right: 5px; margin-top: 10px;">
-      <div class="card">
-        <img class = "points-image" src="images/users.png" alt="">
-        <br>
-        <footer class="card-footer">
-          <a href="#" class="card-footer-item has-text-favorite is-size-5 has-text-weight-bold">Add Users</a>
-          <a href="#" class="card-footer-item has-text-favorite is-size-5 has-text-weight-bold">Remove Users</a>
-        </footer>
-      </div>
-    </div>
-  </div>
-
-    <button id = "switch-to-user-view" class="button is-fullwidth has-text-white is-favorite has-text-weight-bold">
+    <button id="switch-to-user-view" class="button is-fullwidth has-text-white is-favorite has-text-weight-bold">
       Switch to User View
     </button>
 
@@ -676,7 +688,7 @@
   </div>
 
 
-</div>
+  </div>
 
 
 
@@ -695,24 +707,24 @@
 
 
 <script>
-    
-    const firebaseConfig = {
+  const firebaseConfig = {
     apiKey: "AIzaSyCcKDHITJOZVCxRB04OOeoFtw3-kmFvDdI",
     authDomain: "is424-2c845.firebaseapp.com",
     projectId: "is424-2c845",
     storageBucket: "is424-2c845.appspot.com",
     messagingSenderId: "713581582188",
     appId: "1:713581582188:web:e8b9af5991240486738549"
-    };
+  };
 
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    // define authentication variable
-    let auth = firebase.auth();
-    let database = firebase.firestore();
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  // define authentication variable
+  let auth = firebase.auth();
+  let database = firebase.firestore();
 
-    // define a storage reference
-    let ref = firebase.storage().ref();
+  // define a storage reference
+  let ref = firebase.storage().ref();
 </script>
 <script src="app.js"> </script>
+
 </html>
