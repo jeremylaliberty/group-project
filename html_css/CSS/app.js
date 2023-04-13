@@ -297,7 +297,7 @@ sign_up_btn.addEventListener('click', () =>{
 
 let submit_edit_profile_btn = document.querySelector("#submit-edit-profile-btn");
 submit_edit_profile_btn.addEventListener('click', () => {
-  let edit_mc = document.querySelector('#MySelect option:checked').value;
+  let edit_mc = document.querySelector('#memberClass option:checked').value;
   let edit_uid = document.querySelector('#uid').innerHTML;
   var docRef = database.collection("Users").doc(edit_uid);
   docRef.update({
@@ -443,9 +443,9 @@ function loadEditProfile(hometown_val, major_val, expectedGrad_val, bio_val, nam
   editGrad.value = expectedGrad_val;
   editBio.value = bio_val;
   
-  let editMC = document.querySelector('#mySelect');
+  let editMC = document.querySelector('#memberClass');
 
-  for(var i, j = 0; i = mySelect.options[j]; j++) {
+  for(var i, j = 0; i = memberClass.options[j]; j++) {
     if(i.value == mc_val) {
         editMC.selectedIndex = j;
         break;
