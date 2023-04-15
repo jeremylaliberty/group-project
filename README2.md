@@ -7,10 +7,10 @@
 **Tasks**:
 | Task | Story Number | Duration | Priority | Complexity | Lead Person |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-| Create firebase database | 1,2,3 | 2 hours | 10 | average |  |
-| Attach website to firebase | 1,2,3 | 30 mins | 10 | average |  |
+| Create firebase database | 1,2,3 | 2 hours | 10 | average | Jeremy |
+| Attach website to firebase | 1,2,3 | 30 mins | 10 | average | Jeremy |
 | Identify seperate admin profile for admin accessibility | 1,2 | 3 hours | 7 | high |  |
-| Add photos to website | 1,2,3 | 1 hour | 3 | low |  |
+| Add photos to website | 1,2,3 | 1 hour | 3 | low | Anna |
 | Create networking profile page | 3 | 2 hours | 9 | average |  |
 | Initialize log in/sign up in firebase | 1,3 | 30 mins | 8 | average |  |
 
