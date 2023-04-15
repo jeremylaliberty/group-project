@@ -80,13 +80,13 @@ We learned how to hook up the website to firebase for our websites needs. We als
 2. What did go well? Why? <br>
 This sprint we did a really good job of not creating conflicts when pushing to github. We all learned how valuable pulling before every work session is and communicating on which portions of the project we are each working on individually. <br>
 
-3. What didn’t go well? Why not? <br>
+3. What didn’t go well? Why not? <br> We struggled with capturing our trello burndown charts in a timely manner and updating trello in general, even though our project remained on track and our group worked consistently throughout the sprint. <br>
 
 4. How can you make things better next time? <br>
-Next time, we would still like to try to start our sprint even earlier than we did this time, although we did see an improvement. <br>
+Next time, we would still like to try to start our sprint even earlier than we did this time, although we did see an improvement. We also need to do a better job of staying on top of the trello board to have updated documentation on what has been completed continuously. <br>
 
-5. Are you satisfied with what you already completed? <br>
+5. Are you satisfied with what you already completed? <br> Our team is satifisied with everything that has been accomplished this sprint. We feel that we are really wrapping up the project and we have fulfilled all the requirements we were asked to by our client. We also feel that we have successfully stayed within the scrope. <br>
 
-6. Which group was invited? What are your observations/notes? Everybody was present? <br>
+6. Which group was invited? What are your observations/notes? Everybody was present? <br> For this sprint review, we worked with team 10. For their sprint review, the members seemed to be pleased with their organization and the way their project was approaching the end. All members were present and contributing. They mentioned a few more things they needed to get done before the official deadline and all came to an agreement on which area needed the most focus. <br>
 
 **Github Repo**: https://github.com/jeremylaliberty/group-project
