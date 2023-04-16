@@ -10,7 +10,7 @@
 | Create firebase database | 1,2,3 | 2 hours | 10 | average | Jeremy |
 | Attach website to firebase | 1,2,3 | 30 mins | 10 | average | Jeremy |
 | Identify seperate admin profile for admin accessibility | 1,2 | 3 hours | 7 | high |  |
-| Add photos to website | 1,2,3 | 1 hour | 3 | low | Anna |
+| Add photos to website | 1,2,3 | 1 hour | 3 | low | Anna, Kennedy |
 | Create networking profile page | 3 | 2 hours | 9 | average |  |
 | Initialize log in/sign up in firebase | 1,3 | 30 mins | 8 | average |  |
 
@@ -37,9 +37,9 @@ What are you planning to do today? <br> I continued to add progress in our READM
 Any problems you are facing? <br> I did not face any problems today. <br>
 
 Kennedy: <br>
-What did you do yesterday? <br>
-What are you planning to do today? <br>
-Any problems you are facing? <br>
+What did you do yesterday? <br> Yesterday I helped to better understand what we were focusing in on in the second sprint. 
+What are you planning to do today? <br> Today, I am hoping to outline the tasks I need to complete moving forward in this sprint.
+Any problems you are facing? <br> No problems being faced today, just have alot of organization with the team in progress.
 
 Brandon: <br>
 What did you do yesterday? <br>
@@ -63,9 +63,9 @@ What are you planning to do today? <br> Today, I will create the Trello board an
 Any problems you are facing? <br>  Figuring out what tasks we need to accomplish was a bit of a challenge as it felt like we are handling a lot of different moving parts for this sprint, but it all worked out in the end. 
 
 Kennedy: <br>
-What did you do yesterday? <br>
-What are you planning to do today? <br>
-Any problems you are facing? <br>
+What did you do yesterday? <br> Yesterday I began to work on aspects of the visual design of the website.
+What are you planning to do today? <br> Today, I am continuing work on that design. 
+Any problems you are facing? <br> I am not facing any problems right now with the task I am working on. 
 
 Brandon: <br>
 What did you do yesterday? <br>
