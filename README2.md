@@ -14,6 +14,7 @@
 | Create networking profile page | 3 | 3 hours | 9 | average |  |
 | Initialize log in/sign up in firebase | 1,3 | 1 hour | 8 | average |  |
 | Update trello board & README doc | 1,2,3 | 3 hours | 8 | low | Anouk |
+| Create Splash Page | 1,2,3 | 3 hours | 8 | average | Anna |
 
 **Trello Board Link**: https://trello.com/b/VgC3Fq6g/gamma-phi-beta-system-sprint-2
 
