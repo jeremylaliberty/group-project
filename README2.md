@@ -18,9 +18,9 @@
 **Trello Board Link**: https://trello.com/b/VgC3Fq6g/gamma-phi-beta-system-sprint-2
 
 **3 screenshots of burndown chart**: <br>
-<img width="684" alt="Screen Shot 2023-04-16 at 1 18 43 PM" src="https://user-images.githubusercontent.com/91103528/232333581-9f040349-586d-40c8-be45-b8ebfa3c4314.png"> <br> Day 4 <br>
-<img width="688" alt="Day9" src="https://user-images.githubusercontent.com/91103528/232333606-9bdc9b04-0e41-4921-9644-90a76e437bf5.png"> <br> Day 9 <br>
-<img width="686" alt="Day14" src="https://user-images.githubusercontent.com/91103528/232333632-aa56d68b-82dd-4e78-92d4-b11e8132b413.png"> <br> Day 14 <br>
+<img width="684" alt="Day4" src="https://user-images.githubusercontent.com/91103528/232333732-af33b467-3f93-4e4d-b457-97d8cf398f1e.png"> <br> **_Day 4_** <br>
+<img width="688" alt="Day9" src="https://user-images.githubusercontent.com/91103528/232333606-9bdc9b04-0e41-4921-9644-90a76e437bf5.png"> <br> **_Day 9_** <br>
+<img width="687" alt="Day14" src="https://user-images.githubusercontent.com/91103528/232333757-da009b56-36db-4f00-8581-f93a0c030e6e.png"> <br> **_Day 14_** <br>
 
 **Daily Scrums**:
 
