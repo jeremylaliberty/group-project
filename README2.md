@@ -41,9 +41,9 @@ What are you planning to do today? <br> I continued to add progress in our READM
 Any problems you are facing? <br> I did not face any problems today. <br>
 
 Kennedy: <br>
-What did you do yesterday? <br> Yesterday I helped to better understand what we were focusing in on in the second sprint. 
-What are you planning to do today? <br> Today, I am hoping to outline the tasks I need to complete moving forward in this sprint.
-Any problems you are facing? <br> No problems being faced today, just have alot of organization with the team in progress.
+What did you do yesterday? <br> Yesterday I helped to better understand what we were focusing in on in the second sprint. <br>
+What are you planning to do today? <br> Today, I am hoping to outline the tasks I need to complete moving forward in this sprint. <br>
+Any problems you are facing? <br> No problems being faced today, just have alot of organization with the team in progress. <br>
 
 Brandon: <br>
 What did you do yesterday? <br>
@@ -67,9 +67,9 @@ What are you planning to do today? <br> Today, I will create the Trello board an
 Any problems you are facing? <br>  Figuring out what tasks we need to accomplish was a bit of a challenge as it felt like we are handling a lot of different moving parts for this sprint, but it all worked out in the end. 
 
 Kennedy: <br>
-What did you do yesterday? <br> Yesterday I began to work on aspects of the visual design of the website.
-What are you planning to do today? <br> Today, I am continuing work on that design. 
-Any problems you are facing? <br> I am not facing any problems right now with the task I am working on. 
+What did you do yesterday? <br> Yesterday I began to work on aspects of the visual design of the website. <br>
+What are you planning to do today? <br> Today, I am continuing work on that design. <br>
+Any problems you are facing? <br> I am not facing any problems right now with the task I am working on. <br>
 
 Brandon: <br>
 What did you do yesterday? <br>
