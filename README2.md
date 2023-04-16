@@ -13,6 +13,7 @@
 | Add photos to website | 1,2,3 | 1 hour | 3 | low | Anna, Kennedy |
 | Create networking profile page | 3 | 2 hours | 9 | average |  |
 | Initialize log in/sign up in firebase | 1,3 | 30 mins | 8 | average |  |
+| Update trello board & README doc | 1,2,3 | 2 hours | 8 | low | Anouk |
 
 **Trello Board Link**: https://trello.com/b/VgC3Fq6g/gamma-phi-beta-system-sprint-2
 
