@@ -26,14 +26,14 @@
 
 #1 <br>
 Jeremy: <br>
-What did you do yesterday? <br>
+What did you do yesterday? <br> 
 What are you planning to do today? <br>
 Any problems you are facing? <br>
 
 Anna: <br>
-What did you do yesterday? <br>
-What are you planning to do today? <br>
-Any problems you are facing? <br>
+What did you do yesterday? <br> I worked on the padding/spacing on the website.
+What are you planning to do today? <br> Today I began formatting the Splash Page.
+Any problems you are facing? <br> The bottom-margins are not how I intended them to be.
 
 Anouk: <br>
 What did you do yesterday? <br> I outlined the README2.md doc and filled out our progress thus far. I also researched markdown language to format our document. <br>
@@ -57,9 +57,9 @@ What are you planning to do today? <br>
 Any problems you are facing? <br>
 
 Anna: <br>
-What did you do yesterday? <br>
-What are you planning to do today? <br>
-Any problems you are facing? <br>
+What did you do yesterday? <br> Began working on the structure of the Splash page.
+What are you planning to do today? <br> Implementing JS to the Splash page, ensuring it disapears after logging in.
+Any problems you are facing? <br> Implementing images to the Splash Page
 
 Anouk: <br>
 What did you do yesterday? <br> I continued to add progress in our README doc and checked in with the team on our next target area to accomplish. I outlined the README2.md doc and filled out our progress thus far. <br>
