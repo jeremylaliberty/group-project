@@ -18,6 +18,7 @@
 **Trello Board Link**: https://trello.com/b/VgC3Fq6g/gamma-phi-beta-system-sprint-2
 
 **3 screenshots of burndown chart**:
+<img width="691" alt="Screen Shot 2023-04-16 at 1 01 00 PM" src="https://user-images.githubusercontent.com/91103528/232332645-4754abc6-7d78-4e5c-8725-de7f74d2982a.png">
 
 **Daily Scrums**:
 
