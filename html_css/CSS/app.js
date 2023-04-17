@@ -19,7 +19,7 @@ function homePage(){
 }
 
 function networkPage(){
-  loadNetwork();
+  loadNetwork('', 'Member Class');
   home.classList.add('is-hidden');
   network.classList.remove('is-hidden');
   profile.classList.add('is-hidden');
@@ -257,7 +257,7 @@ auth.onAuthStateChanged((user) => {
   }
   
 });
-console.log(uid);
+
 
 let sign_up_btn = document.querySelector('#sign-up-button');
 sign_up_btn.addEventListener('click', () =>{
@@ -586,37 +586,136 @@ let view_hometown_container = document.querySelector('#view-hometown-container')
 
 let network_container = document.querySelector('#member-network-container');
 
-function loadNetwork(){
+function loadNetwork(name, mc){
   network_container.innerHTML = '';
-  database.collection("Users").get().then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      console.log(doc.id);
-        network_container.innerHTML += `
-        <p class = "is-hidden">${doc.id}</p>
-        <div class="column is-one-quarter">
-          <div class="card">
-            <div class="card-content">
-              <div class = "columns">
-                <div class="column is-three-fifths has-text-left">
-                  <div class="is-inline-block">
-                    <strong>${doc.data().name}</strong>
+  if (name == '' && mc == 'Member Class'){
+    database.collection("Users").get().then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+          network_container.innerHTML += `
+          <p class = "is-hidden">${doc.id}</p>
+          <div class="column is-one-quarter">
+            <div class="card">
+              <div class="card-content">
+                <div class = "columns">
+                  <div class="column is-three-fifths has-text-left">
+                    <div class="is-inline-block">
+                      <strong>${doc.data().name}</strong>
+                    </div>
+                  </div>
+                  <div class="column has-text-right">
+                    <div class="is-inline-block">
+                    ${doc.data().memberClass}
+                    </div>
                   </div>
                 </div>
-                <div class="column has-text-right">
-                  <div class="is-inline-block">
-                  ${doc.data().memberClass}
-                  </div>
+                <div class="has-text-centered">
+                  <button id = "user-button-${doc.id}" class="button has-text-white has-text-weight-bold is-small is-rounded is-inline-block is-favorite">View Profile</button>
                 </div>
-              </div>
-              <div class="has-text-centered">
-                <button id = "user-button-${doc.id}" class="button has-text-white has-text-weight-bold is-small is-rounded is-inline-block is-favorite">View Profile</button>
-              </div>
-            </div> 
+              </div> 
+            </div>
           </div>
-        </div>
-        `     
-    });
-});
+          `     
+      });
+  });
+  }
+  else if (name == ''){
+    database.collection("Users").where('memberClass', '==', mc).get().then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+          network_container.innerHTML += `
+          <p class = "is-hidden">${doc.id}</p>
+          <div class="column is-one-quarter">
+            <div class="card">
+              <div class="card-content">
+                <div class = "columns">
+                  <div class="column is-three-fifths has-text-left">
+                    <div class="is-inline-block">
+                      <strong>${doc.data().name}</strong>
+                    </div>
+                  </div>
+                  <div class="column has-text-right">
+                    <div class="is-inline-block">
+                    ${doc.data().memberClass}
+                    </div>
+                  </div>
+                </div>
+                <div class="has-text-centered">
+                  <button id = "user-button-${doc.id}" class="button has-text-white has-text-weight-bold is-small is-rounded is-inline-block is-favorite">View Profile</button>
+                </div>
+              </div> 
+            </div>
+          </div>
+          `     
+      });
+  });
+  }
+  else if (mc != 'Member Class' && name != ''){
+    database.collection("Users").where('memberClass', '==', mc).get().then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        if (doc.data().name.toLowerCase().includes(name.toLowerCase())){
+          network_container.innerHTML += `
+          <p class = "is-hidden">${doc.id}</p>
+          <div class="column is-one-quarter">
+            <div class="card">
+              <div class="card-content">
+                <div class = "columns">
+                  <div class="column is-three-fifths has-text-left">
+                    <div class="is-inline-block">
+                      <strong>${doc.data().name}</strong>
+                    </div>
+                  </div>
+                  <div class="column has-text-right">
+                    <div class="is-inline-block">
+                    ${doc.data().memberClass}
+                    </div>
+                  </div>
+                </div>
+                <div class="has-text-centered">
+                  <button id = "user-button-${doc.id}" class="button has-text-white has-text-weight-bold is-small is-rounded is-inline-block is-favorite">View Profile</button>
+                </div>
+              </div> 
+            </div>
+          </div>
+          `     
+        }
+          
+      });
+  });
+
+  }
+  else {
+    database.collection("Users").get().then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        if (doc.data().name.toLowerCase().includes(name.toLowerCase())){
+          network_container.innerHTML += `
+          <p class = "is-hidden">${doc.id}</p>
+          <div class="column is-one-quarter">
+            <div class="card">
+              <div class="card-content">
+                <div class = "columns">
+                  <div class="column is-three-fifths has-text-left">
+                    <div class="is-inline-block">
+                      <strong>${doc.data().name}</strong>
+                    </div>
+                  </div>
+                  <div class="column has-text-right">
+                    <div class="is-inline-block">
+                    ${doc.data().memberClass}
+                    </div>
+                  </div>
+                </div>
+                <div class="has-text-centered">
+                  <button id = "user-button-${doc.id}" class="button has-text-white has-text-weight-bold is-small is-rounded is-inline-block is-favorite">View Profile</button>
+                </div>
+              </div> 
+            </div>
+          </div>
+          `     
+
+        }        
+      });
+  });
+  }
+  
 }
 
 network_container.addEventListener("click", (event) => {
@@ -669,8 +768,13 @@ network_container.addEventListener("click", (event) => {
 
 });
 
+let filterName = document.querySelector('#filterName');
+let filterMC = document.querySelector('#filterMemberClass');
+let filterButton = document.querySelector('#filter-button');
 
-
+filterButton.addEventListener('click', () => {
+  loadNetwork(filterName.value, filterMC.value);
+ });
 
 
 
