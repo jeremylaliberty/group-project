@@ -606,7 +606,7 @@ function loadNetwork(){
                 </div>
               </div>
               <div class="has-text-centered">
-                <button id = "user-button-${doc.id}" class="button is-small is-rounded is-inline-block">View Profile</button>
+                <button id = "user-button-${doc.id}" class="button has-text-white has-text-weight-bold is-small is-rounded is-inline-block is-favorite">View Profile</button>
               </div>
             </div> 
           </div>
