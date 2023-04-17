@@ -776,6 +776,40 @@ filterButton.addEventListener('click', () => {
   loadNetwork(filterName.value, filterMC.value);
  });
 
+let meetingbtn = document.querySelector('#addMeeting');
+let meetingModal = document.querySelector('#edit-meeting-modal');
+let meetingModalBg = document.querySelector('#edit-meeting-modalbg');
+let closeMeeting = document.querySelector('#close-edit-meeting');
+meetingbtn.addEventListener('click', () => {
+ meetingModal.classList.add('is-active');
+});
+
+closeMeeting.addEventListener('click', () => {
+    meetingModal.classList.remove('is-active');
+});
+
+meetingModalBg.addEventListener('click', () => {
+ meetingModal.classList.remove('is-active');
+});
+
+let submit_meeting_btn = document.querySelector("#submit-meeting-btn");
+submit_meeting_btn.addEventListener('click', () => {
+  let location = document.querySelector('#location').value;
+  let date = document.querySelector('#date').value;
+  let comments = document.querySelector('#comments').value;
+  database.collection("Meetings").add({
+		location: location,
+		date: date,
+		comments: comments
+	})
+  .then(() => {
+      meetingModal.classList.remove('is-active');
+  })
+  .catch((error) => {
+      // The document probably doesn't exist.
+      console.error("Error updating document: ", error);
+  });
+})
 
 
 

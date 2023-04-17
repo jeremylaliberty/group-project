@@ -716,6 +716,7 @@
           <br>
           <footer class="card-footer">
             <a href="#" class="card-footer-item has-text-favorite is-size-5 has-text-weight-bold">Edit Meetings</a>
+            <button class="button has-text-favorite is-size-5 has-text-weight-bold is-inverted" id="addMeeting">Add Meeting</button>
           </footer>
         </div>
       </div>
@@ -739,6 +740,47 @@
           </footer>
         </div>
       </div>
+    </div>
+
+    <!-- Admin New Meeting Modal -->
+    <div id="edit-meeting-modal" class="modal">
+      <div id="edit-meeting-modalbg" class="modal-background"></div>
+  
+      <div class="modal-content">
+  
+        <div class="box">
+          <div class="has-text-weight-bold is-size-4 has-text-centered">Add Meeting</div>
+          <div class="field">
+            <label class="label">Location</label>
+            <div class="control">
+              <input id="location" class="input" type="text">
+            </div>
+          </div>
+  
+          <div class="field">
+            <label class="label">Date</label>
+            <div class="control">
+              <input id="date" class="input" type="date">
+            </div>
+          </div>
+  
+          <div class="field">
+            <label class="label">Comments</label>
+            <div class="control">
+              <input id="Comments" class="input" type="text">
+            </div>
+          </div>
+  
+  
+          <div class="field is-grouped">
+            <div class="control">
+              <button id="submit-meeting-btn"
+                class="button has-text-white is-favorite"><strong>Submit</strong></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button id="close-edit-meeting" class="modal-close is-large" aria-label="close"></button>
     </div>
 
    
