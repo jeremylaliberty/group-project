@@ -9,12 +9,13 @@
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 | Create firebase database | 1,2,3 | 2 hours | 10 | average | Jeremy |
 | Attach website to firebase | 1,2,3 | 1 hour | 10 | average | Jeremy |
-| Identify seperate admin profile for admin accessibility | 1,2 | 4 hours | 7 | high | Brandon |
+| Identify seperate admin profile for admin accessibility | 1,2 | 4 hours | 7 | high | Jeremy |
 | Add photos to website | 1,2,3 | 2 hour | 3 | low | Anna, Kennedy |
 | Create networking profile page | 3 | 3 hours | 9 | average | Jeremy |
-| Initialize log in/sign up in firebase | 1,3 | 1 hour | 8 | average |  |
+| Initialize log in/sign up in firebase | 1,3 | 1 hour | 8 | average | Brandon |
 | Update trello board & README doc | 1,2,3 | 3 hours | 8 | low | Anouk |
-| Create Splash Page | 1,2,3 | 3 hours | 8 | average | Anna |
+| Create splash page | 1,2,3 | 3 hours | 8 | average | Anna |
+| Add new function for admin meeting | 1,2 | 2 hours | 6 | average | Brandon |
 
 **Trello Board Link**: https://trello.com/b/VgC3Fq6g/gamma-phi-beta-system-sprint-2
 
