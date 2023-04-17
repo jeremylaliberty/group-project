@@ -9,12 +9,13 @@
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 | Create firebase database | 1,2,3 | 2 hours | 10 | average | Jeremy |
 | Attach website to firebase | 1,2,3 | 1 hour | 10 | average | Jeremy |
-| Identify seperate admin profile for admin accessibility | 1,2 | 4 hours | 7 | high |  |
+| Identify seperate admin profile for admin accessibility | 1,2 | 4 hours | 7 | high | Jeremy |
 | Add photos to website | 1,2,3 | 2 hour | 3 | low | Anna, Kennedy |
-| Create networking profile page | 3 | 3 hours | 9 | average |  |
-| Initialize log in/sign up in firebase | 1,3 | 1 hour | 8 | average |  |
+| Create networking profile page | 3 | 3 hours | 9 | average | Jeremy |
+| Initialize log in/sign up in firebase | 1,3 | 1 hour | 8 | average | Brandon |
 | Update trello board & README doc | 1,2,3 | 3 hours | 8 | low | Anouk |
-| Create Splash Page | 1,2,3 | 3 hours | 8 | average | Anna |
+| Create splash page | 1,2,3 | 3 hours | 8 | average | Anna |
+| Add new function for admin meeting | 1,2 | 2 hours | 6 | average | Brandon |
 
 **Trello Board Link**: https://trello.com/b/VgC3Fq6g/gamma-phi-beta-system-sprint-2
 
@@ -27,9 +28,9 @@
 
 #1 <br>
 Jeremy: <br>
-What did you do yesterday? <br> I changed the location of the admin-related buttons, and updated the look of network page. Also updated the log-out icon. 
-What are you planning to do today? <br> Create a basic filter / search bar.
-Any problems you are facing? <br> Not at the moment.
+What did you do yesterday? <br> I changed the location of the admin-related buttons, and updated the look of network page. Also updated the log-out icon. <br>
+What are you planning to do today? <br> Create a basic filter / search bar. <br>
+Any problems you are facing? <br> Not at the moment. <br>
 
 Anna: <br>
 What did you do yesterday? <br> I worked on the padding/spacing on the website.
@@ -53,9 +54,9 @@ Any problems you are facing? <br> No problems thus far.
 
 #2 <br>
 Jeremy: <br>
-What did you do yesterday? <br> Created a basic network filter bar with a filter for MC and a search box for name.
-What are you planning to do today? <br> Make the filter bar functional.
-Any problems you are facing? <br> .where() doesn't support checking to see whether a value is in a field, only vice versa.
+What did you do yesterday? <br> Created a basic network filter bar with a filter for MC and a search box for name. <br>
+What are you planning to do today? <br> Make the filter bar functional. <br>
+Any problems you are facing? <br> .where() doesn't support checking to see whether a value is in a field, only vice versa. <br>
 
 Anna: <br>
 What did you do yesterday? <br> Began working on the structure of the Splash page.
