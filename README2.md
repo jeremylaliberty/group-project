@@ -47,9 +47,9 @@ What are you planning to do today? <br> Today, I am hoping to outline the tasks 
 Any problems you are facing? <br> No problems being faced today, just have alot of organization with the team in progress. <br>
 
 Brandon: <br>
-What did you do yesterday? <br>
-What are you planning to do today? <br>
-Any problems you are facing? <br>
+What did you do yesterday? <br> Started working on the modal to create the add meeting functionality for the admin
+What are you planning to do today? <br> Start working on the framework for the meetings collection on firebase. Thinking about what is important to include
+Any problems you are facing? <br> No problems thus far.
 
 #2 <br>
 Jeremy: <br>
@@ -73,9 +73,9 @@ What are you planning to do today? <br> Today, I am continuing work on that desi
 Any problems you are facing? <br> I am not facing any problems right now with the task I am working on. <br>
 
 Brandon: <br>
-What did you do yesterday? <br>
-What are you planning to do today? <br>
-Any problems you are facing? <br>
+What did you do yesterday? <br> Discussed with team members what should be included in the meetings collection and finished the modal.
+What are you planning to do today? <br>Implement the ability to send the meeting date to firebase finish the modal
+Any problems you are facing? <br>Trying to review some of the javascript that we worked on in class because I had some problems sending the values to Firebase
 
 **Sprint Review**:
 
