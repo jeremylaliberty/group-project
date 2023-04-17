@@ -141,6 +141,9 @@ editProfilebtn.addEventListener('click', () => {
  });
 
  to_admin_button.addEventListener('click', () => {
+  network.classList.add('is-hidden');
+  profile.classList.add('is-hidden');
+  attendance.classList.add('is-hidden');
   user_page.classList.add('is-hidden');
   admin_page.classList.remove('is-hidden');
   to_admin_button.classList.add('is-hidden');
