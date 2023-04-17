@@ -2,6 +2,15 @@
     display: flex !important;
     align-items: center !important; /* This centers the child elements vertically */
 }
+.filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background-color: #f2f2f2;
+}
+
+
 
 .header {
     padding: 5px;
