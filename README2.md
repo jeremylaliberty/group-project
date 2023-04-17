@@ -27,9 +27,9 @@
 
 #1 <br>
 Jeremy: <br>
-What did you do yesterday? <br> I changed the location of the admin-related buttons, and updated the look of network page. Also updated the log-out icon. 
-What are you planning to do today? <br> Create a basic filter / search bar.
-Any problems you are facing? <br> Not at the moment.
+What did you do yesterday? <br> I changed the location of the admin-related buttons, and updated the look of network page. Also updated the log-out icon. <br>
+What are you planning to do today? <br> Create a basic filter / search bar. <br>
+Any problems you are facing? <br> Not at the moment. <br>
 
 Anna: <br>
 What did you do yesterday? <br> I worked on the padding/spacing on the website.
@@ -53,9 +53,9 @@ Any problems you are facing? <br>
 
 #2 <br>
 Jeremy: <br>
-What did you do yesterday? <br> Created a basic network filter bar with a filter for MC and a search box for name.
-What are you planning to do today? <br> Make the filter bar functional.
-Any problems you are facing? <br> .where() doesn't support checking to see whether a value is in a field, only vice versa.
+What did you do yesterday? <br> Created a basic network filter bar with a filter for MC and a search box for name. <br>
+What are you planning to do today? <br> Make the filter bar functional. <br>
+Any problems you are facing? <br> .where() doesn't support checking to see whether a value is in a field, only vice versa. <br>
 
 Anna: <br>
 What did you do yesterday? <br> Began working on the structure of the Splash page.
