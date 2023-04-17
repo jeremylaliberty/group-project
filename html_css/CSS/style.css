@@ -1,4 +1,4 @@
-.test1 {
+.nav-end {
     display: flex !important;
     align-items: center !important; /* This centers the child elements vertically */
 }
