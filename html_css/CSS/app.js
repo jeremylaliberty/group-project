@@ -270,6 +270,7 @@ sign_up_btn.addEventListener('click', () =>{
     var user = userCredential.user;
     console.log(user.uid);
     database.collection("Users").doc(`${user.uid}`).set({
+      profilePhoto: sign_up_image,
       name: sign_up_name,
       memberClass: sign_up_mc,
       bio: "",
