@@ -262,7 +262,9 @@ sign_up_btn.addEventListener('click', () =>{
   let sign_up_email = document.querySelector('#sign-up-email').value;
   let sign_up_password = document.querySelector('#sign-up-password').value;
   let sign_up_name = document.querySelector('#sign-up-name').value;
-  let sign_up_image = document.querySelector('#sign-up-image').value;
+  let sign_up_image = document.querySelector('#sign-up-image').files[0];
+  let image = new Date() + "_" + sign_up_image.name;
+  const task = ref.child(image).put(sign_up_image);
   let sign_up_mc = document.querySelector('#sign-up-mc option:checked').value;
   firebase.auth().createUserWithEmailAndPassword(sign_up_email, sign_up_password)
   .then((userCredential) => {
