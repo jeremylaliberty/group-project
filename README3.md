@@ -41,9 +41,9 @@ What are you planning to do today? <br> Answer here. <br>
 Any problems you are facing? <br> Answer here. <br> 
 
 Kennedy: <br>
-What did you do yesterday? <br> Answer here. <br> 
-What are you planning to do today? <br> Answer here. <br> 
-Any problems you are facing? <br> Answer here. <br> 
+What did you do yesterday? <br> Yesterday I worked on some of the bulma and html of the site to better account for spacing <br> 
+What are you planning to do today? <br> Today I am planning to work more on the visuals of the alumni page <br> 
+Any problems you are facing? <br> Struggling with some image implementation but nothing else. <br> 
 
 Brandon: <br>
 What did you do yesterday? <br> Answer here. <br> 
