@@ -1,15 +1,16 @@
 **User Stories**:
 
-1. 
+1. As an administrator, I need to be able to input points for users.
+2. As an administrator, I need to be able to announce when the chapter will be meeting.
 
 **Tasks**:
 | Task | Story Number | Duration | Priority | Complexity | Lead Person |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
+| Other admin functionality |  |  |  |  |  |
+| Editing points on admin side |  |  |  |  |  |
+| Editing users on admin side |  |  |  |  |  |
+| New icon for admin page |  |  |  |  |  |
+| Meeting section |  |  |  |  |  |
 |  |  |  |  |  |  |
 |  |  |  |  |  |  |
 |  |  |  |  |  |  |
