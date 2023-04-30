@@ -12,8 +12,9 @@
 | Adjust navbar icons for aesthetic | 1,2 | 30 min | 7 | low | Anouk |
 | Throw error message for sign up | - | 1 hour | 9 | average |  |
 | Graduate to alumni function | 3 | 2 hours | 9 | high |  |
+| Make alumni main page the network page | 3 | 1 hour | 8 | average |  |
+| Add filter for additional filters to network page | 2 hours | 3 | average |  |  |
 | Final site clean up | 1,2,3 | 1 hour | 10 | average |  |
-|  |  |  |  |  |  |
 |  |  |  |  |  |  |
 |  |  |  |  |  |  |
 
