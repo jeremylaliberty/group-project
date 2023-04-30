@@ -307,7 +307,7 @@ submit_edit_profile_btn.addEventListener('click', () => {
   
   let file = uploadPic.files[0];
   var storageRef = firebase.storage().ref();
-  var testRef = storageRef.child('test5.png');
+  var testRef = storageRef.child(`${edit_uid}.png`);
 
   var metadata = {
     contentType: 'image/png' 
