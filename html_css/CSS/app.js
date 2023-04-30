@@ -827,6 +827,8 @@ testRef.put('images/smiley.png').then((snapshot) => {
   console.log('Uploaded a file!');
 });
 
+// add paths
+
 
 
 
