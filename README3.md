@@ -8,7 +8,7 @@
 **Tasks**:
 | Task | Story Number | Duration | Priority | Complexity | Lead Person |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-| Add profile picture for networking purpose | 4 | 6 hours | 10 | high | Jeremy, Kennedy |
+| Add profile picture for networking purpose | 4 | 6 hours | 10 | high | Jeremy |
 | Adjust image icons on admin side | 1,2 | 30 min | 8 | low | Anouk, Anna |
 | Adjust navbar icons for aesthetic | 1,2 | 30 min | 7 | low | Anouk |
 | Throw error message for sign up | - | 1 hour | 9 | average | Anna |
@@ -16,7 +16,6 @@
 | Make alumni main page the network page | 3 | 1 hour | 8 | average |  |
 | Add filter for additional filters to network page | 3 |  2 hours | 7 | average |  |
 | Final site clean up | 1,2,3 | 1 hour | 10 | average |  |
-| Add profile images to network | 4 | 2 hours | 8 | high | Jeremy |
 |  |  |  |  |  |  |
 |  |  |  |  |  |  |
 |  |  |  |  |  |  |
