@@ -303,6 +303,11 @@ let submit_edit_profile_btn = document.querySelector("#submit-edit-profile-btn")
 submit_edit_profile_btn.addEventListener('click', () => {
   let edit_mc = document.querySelector('#memberClass option:checked').value;
   let edit_uid = document.querySelector('#uid').innerHTML;
+  let uploadPic = document.getElementById("uploadFile");
+  
+  console.log(uploadPic.files[0]);
+  
+
   var docRef = database.collection("Users").doc(edit_uid);
   docRef.update({
     name: editName.value,
@@ -314,7 +319,8 @@ submit_edit_profile_btn.addEventListener('click', () => {
   })
   .then(() => {
       editProfileModal.classList.remove('is-active');
-      location.reload();
+      // location.reload();
+      
   })
   .catch((error) => {
       // The document probably doesn't exist.
@@ -814,7 +820,6 @@ submit_meeting_btn.addEventListener('click', () => {
 
 //image upload 
   let profilePic = document.getElementById("profilePicture");
-  let uploadPic = document.getElementById("uploadFile");
 
 //   uploadPic.onchange = function(){
 //     profilePic.src = URL.createObjectURL(uploadPic.files[0]);
@@ -822,7 +827,9 @@ submit_meeting_btn.addEventListener('click', () => {
 
 
 var storageRef = firebase.storage().ref();
-var testRef = storageRef.child('attendnance.png');
+var testRef = storageRef.child('test4.png');
+file = 'images/attendance.png'
+const blob = new Blob([file]);
 
 ;
 var metadata = {
@@ -831,14 +838,14 @@ var metadata = {
 
 
 
-testRef.put('images/attendance.png', metadata).then((snapshot) => {
-  console.log(snapshot);
-  testRef.getDownloadURL()
-  .then((url) => {
-    // `url` is the download URL for 'images/stars.jpg'
-    console.log(url);
-    profilePic.setAttribute('src', url);
-    console.log(profilePic);
+testRef.put(blob, metadata).then((snapshot) => {
+   console.log(snapshot);
+  // testRef.getDownloadURL()
+  // .then((url) => {
+  //   // `url` is the download URL for 'images/stars.jpg'
+  //   console.log(url);
+  //   profilePic.setAttribute('src', url);
+  //   console.log(profilePic);
 
     // This can be downloaded directly:
     // var xhr = new XMLHttpRequest();
@@ -852,10 +859,10 @@ testRef.put('images/attendance.png', metadata).then((snapshot) => {
     // // Or inserted into an <img> element
     // var img = document.getElementById('myimg');
     // img.setAttribute('src', url);
-  })
-  .catch((error) => {
-    // Handle any errors
-  });
+  // })
+  // .catch((error) => {
+  //   // Handle any errors
+  // });
 });
 
 
