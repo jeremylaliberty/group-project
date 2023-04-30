@@ -267,7 +267,15 @@ sign_up_btn.addEventListener('click', () =>{
   let sign_up_name = document.querySelector('#sign-up-name').value;
   let sign_up_mc = document.querySelector('#sign-up-mc option:checked').value;
   firebase.auth().createUserWithEmailAndPassword(sign_up_email, sign_up_password)
+  .catch(err => {
+
+  // display error message on modal
+
+  const error = document.querySelector('.error');
+  error.innerHTML = `<p>${err.message}</p>`;
+})
   .then((userCredential) => {
+
     // Signed in 
     var user = userCredential.user;
     console.log(user.uid);
@@ -294,6 +302,7 @@ sign_up_btn.addEventListener('click', () =>{
     var errorMessage = error.message;
     console.log(errorCode, errorMessage);
     // ..
+    
   });
   signupModal.classList.remove('is-active');
   
@@ -865,11 +874,6 @@ submit_meeting_btn.addEventListener('click', () => {
       console.error("Error updating document: ", error);
   });
 })
-
-// display error message on modal
-const error = document.querySelector('.error');
-error.innerHTML = `<p>${err.message}</p>`;
-
 
 
 
