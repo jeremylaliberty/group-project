@@ -9,6 +9,7 @@
 | Task | Story Number | Duration | Priority | Complexity | Lead Person |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 | Add profile picture for networking purpose | 4 | 6 hours | 10 | high | Jeremy |
+| Add profile picture to User's homepage | 4 | 2 hours | 10 | high | Kenendy, Jeremy |
 | Adjust image icons on admin side | 1,2 | 30 min | 8 | low | Anouk, Anna |
 | Adjust navbar icons for aesthetic | 1,2 | 30 min | 7 | low | Anouk |
 | Throw error message for sign up | - | 1 hour | 9 | average | Anna |
