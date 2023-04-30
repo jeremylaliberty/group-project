@@ -13,7 +13,7 @@
 | Throw error message for sign up | - | 1 hour | 9 | average |  |
 | Graduate to alumni function | 3 | 2 hours | 9 | high |  |
 | Make alumni main page the network page | 3 | 1 hour | 8 | average |  |
-| Add filter for additional filters to network page | 3 |  2 hours | average |  |  |
+| Add filter for additional filters to network page | 3 |  2 hours | 7 | average |  |
 | Final site clean up | 1,2,3 | 1 hour | 10 | average |  |
 |  |  |  |  |  |  |
 |  |  |  |  |  |  |
@@ -21,8 +21,11 @@
 **Trello Board Link**: https://trello.com/b/UIBt9yOG/gamma-phi-beta-system-sprint-3
 
 **3 screenshots of burndown chart**: <br>
+<img width="702" alt="Pic1" src="https://user-images.githubusercontent.com/91103528/235378278-d3ed530b-2858-417f-a976-43fa7016f13c.png">
 <br> **_Day 4_** <br>
+<img width="690" alt="Pic2" src="https://user-images.githubusercontent.com/91103528/235378282-8b8acafa-7cfa-4263-95b5-dff08db4c4a2.png">
 <br> **_Day 9_** <br>
+<img width="692" alt="Pic3" src="https://user-images.githubusercontent.com/91103528/235378289-63e06a37-026c-4371-b460-f2af3e4478e3.png">
 <br> **_Day 14_** <br>
 
 **Daily Scrums**:
