@@ -820,6 +820,13 @@ submit_meeting_btn.addEventListener('click', () => {
 }
 
 
+var storageRef = firebase.storage().ref();
+var testRef = storageRef.child('test.jpg');
+
+testRef.put('images/smiley.png').then((snapshot) => {
+  console.log('Uploaded a file!');
+});
+
 
 
 
