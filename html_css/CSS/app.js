@@ -864,7 +864,9 @@ submit_meeting_btn.addEventListener('click', () => {
   });
 })
 
-
+// display error message on modal
+const error = document.querySelector('.error');
+error.innerHTML = `<p>${err.message}</p>`;
 
 
 
