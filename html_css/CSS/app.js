@@ -355,7 +355,7 @@ submit_edit_profile_btn.addEventListener('click', () => {
   })
   .then(() => {
       editProfileModal.classList.remove('is-active');
-      location.reload();
+      // location.reload();
       
       
   })
@@ -807,6 +807,8 @@ network_container.addEventListener("click", (event) => {
         view_egrad.innerHTML = doc.data().expectedGrad;
         view_bio.innerHTML = doc.data().bio;
         view_hometown.innerHTML = doc.data().hometown;
+        let container = document.querySelector('#viewProfilePicture');
+        container.innerHTML = `<img src="${doc.data().profilePic}"></img>`;
         viewProfileModal.classList.add('is-active');
    
 
