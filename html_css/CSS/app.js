@@ -305,11 +305,21 @@ submit_edit_profile_btn.addEventListener('click', () => {
   let edit_uid = document.querySelector('#uid').innerHTML;
   let uploadPic = document.getElementById("uploadFile");
   
-  console.log(uploadPic.files[0]);
-  
+  let file = uploadPic.files[0];
+  var storageRef = firebase.storage().ref();
+  var testRef = storageRef.child('test5.png');
+
+  var metadata = {
+    contentType: 'image/png' 
+  };
+
+  testRef.put(file, metadata).then((snapshot) => {
+ });
+
 
   var docRef = database.collection("Users").doc(edit_uid);
   docRef.update({
+    
     name: editName.value,
     hometown: editHometown.value,
     expectedGrad: editGrad.value,
@@ -319,7 +329,7 @@ submit_edit_profile_btn.addEventListener('click', () => {
   })
   .then(() => {
       editProfileModal.classList.remove('is-active');
-      // location.reload();
+      location.reload();
       
   })
   .catch((error) => {
@@ -818,55 +828,7 @@ submit_meeting_btn.addEventListener('click', () => {
   });
 })
 
-//image upload 
-  let profilePic = document.getElementById("profilePicture");
 
-//   uploadPic.onchange = function(){
-//     profilePic.src = URL.createObjectURL(uploadPic.files[0]);
-// }
-
-
-var storageRef = firebase.storage().ref();
-var testRef = storageRef.child('test4.png');
-file = 'images/attendance.png'
-const blob = new Blob([file]);
-
-;
-var metadata = {
-  contentType: 'image/png' 
-};
-
-
-
-testRef.put(blob, metadata).then((snapshot) => {
-   console.log(snapshot);
-  // testRef.getDownloadURL()
-  // .then((url) => {
-  //   // `url` is the download URL for 'images/stars.jpg'
-  //   console.log(url);
-  //   profilePic.setAttribute('src', url);
-  //   console.log(profilePic);
-
-    // This can be downloaded directly:
-    // var xhr = new XMLHttpRequest();
-    // xhr.responseType = 'blob';
-    // xhr.onload = (event) => {
-    //   var blob = xhr.response;
-    // };
-    // xhr.open('GET', url);
-    // xhr.send();
-
-    // // Or inserted into an <img> element
-    // var img = document.getElementById('myimg');
-    // img.setAttribute('src', url);
-  // })
-  // .catch((error) => {
-  //   // Handle any errors
-  // });
-});
-
-
-// add paths
 
 
 
