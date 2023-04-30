@@ -811,6 +811,14 @@ submit_meeting_btn.addEventListener('click', () => {
   });
 })
 
+//image upload 
+  let profilePic = document.getElementById("profilePicture");
+  let uploadPic = document.getElementById("uploadFile");
+
+  uploadPic.onchange = function(){
+    profilePic.src = URL.createObjectURL(uploadPic.files[0]);
+}
+
 
 
 
