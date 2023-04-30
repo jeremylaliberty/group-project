@@ -314,10 +314,36 @@ submit_edit_profile_btn.addEventListener('click', () => {
   };
 
   testRef.put(file, metadata).then((snapshot) => {
+    console.log(snapshot);
  });
 
 
   var docRef = database.collection("Users").doc(edit_uid);
+  const updateProfilePic = async (testRef) => {
+    try {
+      const downloadURL = await testRef.getDownloadURL();
+      console.log(downloadURL);
+      docRef.update({
+        profilePic: downloadURL
+      }).then(() => { }).catch((error) => {
+        // The document probably doesn't exist.
+        console.error("Error updating document: ", error);
+    });
+      // Use the downloadURL for further processing
+    } 
+    catch (error) {
+      console.error('Error getting download URL:', error);
+    }
+  };
+
+  updateProfilePic(testRef)
+  .then(() => {
+    console.log('Profile picture updated successfully');
+  })
+  .catch((error) => {
+    console.error('Error updating profile picture:', error);
+  });
+
   docRef.update({
     
     name: editName.value,
@@ -330,6 +356,7 @@ submit_edit_profile_btn.addEventListener('click', () => {
   .then(() => {
       editProfileModal.classList.remove('is-active');
       location.reload();
+      
       
   })
   .catch((error) => {
@@ -386,6 +413,7 @@ function loadUserData(uid){
       meetings = doc.data().meetings;
       points = doc.data().points;
       profileType = doc.data().profileType;
+      profile_pic = doc.data().profilePic;
       if(profileType == 'admin'){
         to_admin_button.classList.remove('is-hidden');
       };
@@ -410,7 +438,7 @@ function loadUserData(uid){
           console.log("Error getting documents: ", error);
       });
 
-      loadProfile(hometown_val, major_val, expectedGrad_val, bio_val, name_val, mc_val, uid);
+      loadProfile(hometown_val, major_val, expectedGrad_val, bio_val, name_val, mc_val, uid, profile_pic);
       configureProfile([mc_val, hometown_val, major_val, expectedGrad_val, bio_val ]);      
     } else {
       // doc.data() will be undefined in this case
@@ -422,7 +450,7 @@ function loadUserData(uid){
 };
 
 
-function loadProfile(hometown_val, major_val, expectedGrad_val, bio_val, name_val, mc_val, uid) {
+function loadProfile(hometown_val, major_val, expectedGrad_val, bio_val, name_val, mc_val, uid, profile_pic) {
   let user_mc_val = document.querySelector('#user-mc-val');
   let user_hometown_val = document.querySelector('#user-hometown-val');
   let user_major_val = document.querySelector('#user-major-val');
@@ -437,6 +465,14 @@ function loadProfile(hometown_val, major_val, expectedGrad_val, bio_val, name_va
   user_name_val.innerHTML = name_val;
   user_mc_val.innerHTML = mc_val;
   uid_val.innerHTML = uid;
+  let container = document.querySelector('#pro_img_container');
+  container.innerHTML = `<img src="${profile_pic}"></img>`;
+  
+  // let proPic = document.querySelector('#profilePicture');
+  // console.log(proPic);
+  // console.log(profile_pic);
+  // proPic.setAttribute('src', profile_pic);
+  // console.log(proPic);
 
 }
 
