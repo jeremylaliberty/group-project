@@ -154,6 +154,7 @@ let grad_profile_btn = document.querySelector('#graduate-profile-btn');
 let gradProfileModal = document.querySelector('#graduate-profile-modal');
 let gradProfileModalBg = document.querySelector('#graduate-profile-modalbg');
 let closeGradProfile = document.querySelector('#close-graduate-profile');
+let submitGradBtn = document.querySelector('#submit-grad-btn');
 
 grad_profile_btn.addEventListener('click', () => {
   gradProfileModal.classList.add('is-active');
@@ -167,6 +168,9 @@ grad_profile_btn.addEventListener('click', () => {
   gradProfileModal.classList.remove('is-active');
  });
 
+ submitGradBtn.addEventListener('click', () => {
+  attendance.classList.add('is-hidden');
+ });
 
 
 let where_btn = document.querySelector('#where-am-i-btn');
