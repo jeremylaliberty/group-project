@@ -17,9 +17,6 @@
 | Make alumni main page the network page | 3 | 1 hour | 8 | average | Anna, Anouk |
 | Add filter for additional filters to network page | 3 |  2 hours | 7 | average |  |
 | Final site clean up | 1,2,3 | 1 hour | 10 | average |  |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
 
 **Trello Board Link**: https://trello.com/b/UIBt9yOG/gamma-phi-beta-system-sprint-3
 
