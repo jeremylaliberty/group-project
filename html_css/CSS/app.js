@@ -694,11 +694,6 @@ function loadNetwork(name, mc){
           <p class = "is-hidden">${doc.id}</p>
           <div class="column is-one-quarter">
             <div class="card">
-              <div class="card-image">
-               <figure class="image is-4by3">
-                 <img src="${doc.data().profilePic} alt="Placeholder image">
-               </figure>
-              </div>
               <div class="card-content">
                 <div class="media">
                   <div class="media-left">
@@ -729,11 +724,6 @@ function loadNetwork(name, mc){
           <p class = "is-hidden">${doc.id}</p>
           <div class="column is-one-quarter">
             <div class="card">
-              <div class="card-image">
-               <figure class="image is-4by3">
-                 <img src="${doc.data().profilePic} alt="Placeholder image">
-               </figure>
-              </div>
               <div class="card-content">
                 <div class="media">
                   <div class="media-left">
