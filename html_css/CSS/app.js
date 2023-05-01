@@ -160,7 +160,7 @@ editProfilebtn.addEventListener('click', () => {
   attendance.classList.add('is-hidden');
   user_page.classList.add('is-hidden');
   admin_page.classList.remove('is-hidden');
-  to_admin_button.classList.add('is-hidden');
+  alumni_btn.classList.remove('is-hidden');
  });
 
 let grad_profile_btn = document.querySelector('#graduate-profile-btn');
