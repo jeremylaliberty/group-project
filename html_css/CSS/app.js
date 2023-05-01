@@ -291,11 +291,13 @@ sign_up_btn.addEventListener('click', () =>{
     })
       .then(() => {
           console.log("Document successfully written!");
+          signupModal.classList.remove('is-active');
+          editProfileModal.classList.add('is-active');
       })
       .catch((error) => {
           console.error("Error writing document: ", error);
       });
-    // ...
+    
   })
   .catch((error) => {
     var errorCode = error.code;
@@ -304,8 +306,8 @@ sign_up_btn.addEventListener('click', () =>{
     // ..
     
   });
-  setTimeout(() => {
-    signupModal.classList.remove('is-active');}, 1000)
+  // setTimeout(() => {
+  //   signupModal.classList.remove('is-active');}, 1000)
 });
 
 
