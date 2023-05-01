@@ -169,7 +169,7 @@ grad_profile_btn.addEventListener('click', () => {
  });
 
  submitGradBtn.addEventListener('click', () => {
-  attendance.classList.remove('is-hidden');
+  attendance.classList.add('is-hidden');
  });
 
 
