@@ -8,18 +8,15 @@
 **Tasks**:
 | Task | Story Number | Duration | Priority | Complexity | Lead Person |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-| Add profile picture for networking purpose | 4 | 6 hours | 10 | high | Jeremy |
+| Add profile picture for networking purpose | 4 | 6 hours | 10 | high | Kennedy |
 | Add profile picture to User's homepage | 4 | 2 hours | 10 | high | Kenendy, Jeremy |
 | Adjust image icons on admin side | 1,2 | 30 min | 8 | low | Anouk, Anna |
 | Adjust navbar icons for aesthetic | 1,2 | 30 min | 7 | low | Anouk |
 | Throw error message for sign up | - | 1 hour | 9 | average | Anna |
-| Graduate to alumni function | 3 | 2 hours | 9 | high |  |
-| Make alumni main page the network page | 3 | 1 hour | 8 | average |  |
+| Graduate to alumni function | 3 | 2 hours | 9 | high | Anna |
+| Make alumni main page the network page | 3 | 1 hour | 8 | average | Anna, Anouk |
 | Add filter for additional filters to network page | 3 |  2 hours | 7 | average |  |
 | Final site clean up | 1,2,3 | 1 hour | 10 | average |  |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
 
 **Trello Board Link**: https://trello.com/b/UIBt9yOG/gamma-phi-beta-system-sprint-3
 
@@ -51,7 +48,7 @@ Any problems you are facing? <br> Struggling with research/implementation of err
 
 Kennedy: <br>
 What did you do yesterday? <br> Yesterday I worked on some of the bulma and html of the site to better account for spacing. <br> 
-What are you planning to do today? <br> Today I am planning to work more on the visuals of the alumni page. <br> 
+What are you planning to do today? <br> Today I am planning to work more on the visuals of the alumni page, specifically with uploadable images <br> 
 Any problems you are facing? <br> Struggling with some image implementation but nothing else. <br> 
 
 Brandon: <br>
@@ -77,7 +74,7 @@ Any problems you are facing? <br> Creating errors for user sign up. <br>
 
 Kennedy: <br>
 What did you do yesterday? <br> Yesterday I worked on additions to the admin page and also discussed the current version of the site with the client. <br> 
-What are you planning to do today? <br> Today, I am going to try and add some of the visual requests that our client made. <br> 
+What are you planning to do today? <br> Today, I am going to continue working on the image changes for the networking pages<br> 
 Any problems you are facing? <br> None as of right now. <br> 
 
 Brandon: <br>

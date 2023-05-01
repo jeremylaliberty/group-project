@@ -6,17 +6,21 @@ let home = document.querySelector('#home');
 let network = document.querySelector('#network');
 let attendance = document.querySelector('#attendance');
 let profile = document.querySelector('#profile');
+let alumnihome = document.querySelector('#alumni-page');
 
 let home_btn = document.querySelector('#home-btn');
 let network_btn = document.querySelector('#network-btn');
 let attendance_btn = document.querySelector('#attendance-btn');
 let profile_btn = document.querySelector('#profile-btn');
+let alumni_btn = document.querySelector('#alumni-btn')
 
 function homePage(){
   home.classList.remove('is-hidden');
   network.classList.add('is-hidden');
   profile.classList.add('is-hidden');
   attendance.classList.add('is-hidden');
+  alumnihome.classList.add('is-hidden');
+  alumni_btn.classList.add('is-hidden');
 }
 
 function networkPage(){
@@ -25,6 +29,8 @@ function networkPage(){
   network.classList.remove('is-hidden');
   profile.classList.add('is-hidden');
   attendance.classList.add('is-hidden');
+  alumnihome.classList.add('is-hidden');
+  alumni_btn.classList.add('is-hidden');
 }
 
 function atttendancePage(){
@@ -32,6 +38,8 @@ function atttendancePage(){
   network.classList.add('is-hidden');
   profile.classList.add('is-hidden');
   attendance.classList.remove('is-hidden');
+  alumnihome.classList.add('is-hidden');
+  alumni_btn.classList.add('is-hidden');
 }
 
 function profilePage(){
@@ -54,6 +62,10 @@ home_btn.addEventListener('click', () => {
  profile_btn.addEventListener('click', () => {
   profilePage();
  });
+
+ alumni_btn.addEventListener('click', () => {
+  alumniPage();
+ })
 
 
 let signupbtn = document.querySelector('#signupbtn');
@@ -130,6 +142,7 @@ editProfilebtn.addEventListener('click', () => {
  });
 
  let admin_page = document.querySelector('#admin-page');
+ let alumni_page = document.querySelector('#alumni-page');
  let to_user_button = document.querySelector('#switch-to-user-view');
 
  let user_page = document.querySelector('#user-page');
@@ -147,13 +160,14 @@ editProfilebtn.addEventListener('click', () => {
   attendance.classList.add('is-hidden');
   user_page.classList.add('is-hidden');
   admin_page.classList.remove('is-hidden');
-  to_admin_button.classList.add('is-hidden');
+  alumni_btn.classList.remove('is-hidden');
  });
 
 let grad_profile_btn = document.querySelector('#graduate-profile-btn');
 let gradProfileModal = document.querySelector('#graduate-profile-modal');
 let gradProfileModalBg = document.querySelector('#graduate-profile-modalbg');
 let closeGradProfile = document.querySelector('#close-graduate-profile');
+let submitGradBtn = document.querySelector('#submit-grad-btn');
 
 grad_profile_btn.addEventListener('click', () => {
   gradProfileModal.classList.add('is-active');
@@ -167,6 +181,16 @@ grad_profile_btn.addEventListener('click', () => {
   gradProfileModal.classList.remove('is-active');
  });
 
+ submitGradBtn.addEventListener('click', () => {
+  home.classList.add('is-hidden');
+  attendance_btn.classList.add('is-hidden');
+  home_btn.classList.add('is-hidden');
+  alumni_page.classList.remove('is-hidden');
+  alumni_btn.classList.remove('is-hidden');
+  function alumniPage(){
+    
+  }
+ });
 
 
 let where_btn = document.querySelector('#where-am-i-btn');
@@ -661,11 +685,6 @@ function loadNetwork(name, mc){
           <p class = "is-hidden">${doc.id}</p>
           <div class="column is-one-quarter">
             <div class="card">
-              <div class="card-image">
-               <figure class="image is-4by3">
-                 <img src="${doc.data().profilePic} alt="Placeholder image">
-               </figure>
-              </div>
               <div class="card-content">
                 <div class="media">
                   <div class="media-left">
@@ -695,11 +714,6 @@ function loadNetwork(name, mc){
           <p class = "is-hidden">${doc.id}</p>
           <div class="column is-one-quarter">
             <div class="card">
-              <div class="card-image">
-               <figure class="image is-4by3">
-                 <img src="${doc.data().profilePic} alt="Placeholder image">
-               </figure>
-              </div>
               <div class="card-content">
                 <div class="media">
                   <div class="media-left">
@@ -730,11 +744,6 @@ function loadNetwork(name, mc){
           <p class = "is-hidden">${doc.id}</p>
           <div class="column is-one-quarter">
             <div class="card">
-              <div class="card-image">
-               <figure class="image is-4by3">
-                 <img src="${doc.data().profilePic} alt="Placeholder image">
-               </figure>
-              </div>
               <div class="card-content">
                 <div class="media">
                   <div class="media-left">
