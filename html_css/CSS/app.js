@@ -470,13 +470,6 @@ function loadUserData(uid){
       points = doc.data().points;
       profileType = doc.data().profileType;
       profile_pic = doc.data().profilePic;
-      let alumni_page = document.querySelector('#alumni-page');
-
-      if(profileType == 'alumni'){
-        user_page.classList.add('is-hidden');
-        alumni_page.classList.remove('is-hidden');
-        
-      }
       
       if(profileType == 'admin'){
         to_admin_button.classList.remove('is-hidden');
