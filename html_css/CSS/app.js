@@ -662,14 +662,14 @@ function loadNetwork(name, mc){
             <div class="card">
               <div class="card-image">
                <figure class="image is-4by3">
-                 <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                 <img src="${doc.data().profile_pic} alt="Placeholder image">
                </figure>
               </div>
               <div class="card-content">
                 <div class="media">
                   <div class="media-left">
                     <figure class="image is-48x48">
-                      <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                     <img src="${doc.data().profile_pic} alt="Placeholder image">
                     </figure>
                  </div>
                  <div class="content">
@@ -694,23 +694,27 @@ function loadNetwork(name, mc){
           <p class = "is-hidden">${doc.id}</p>
           <div class="column is-one-quarter">
             <div class="card">
+              <div class="card-image">
+               <figure class="image is-4by3">
+                 <img src="${doc.data().profile_pic} alt="Placeholder image">
+               </figure>
+              </div>
               <div class="card-content">
-                <div class = "columns">
-                  <div class="column is-three-fifths has-text-left">
-                    <div class="is-inline-block">
-                      <strong>${doc.data().name}</strong>
-                    </div>
-                  </div>
-                  <div class="column has-text-right">
-                    <div class="is-inline-block">
-                    ${doc.data().memberClass}
-                    </div>
-                  </div>
-                </div>
-                <div class="has-text-centered">
-                  <button id = "user-button-${doc.id}" class="button has-text-white has-text-weight-bold is-small is-rounded is-inline-block is-favorite">View Profile</button>
-                </div>
-              </div> 
+                <div class="media">
+                  <div class="media-left">
+                    <figure class="image is-48x48">
+                     <img src="${doc.data().profile_pic} alt="Placeholder image">
+                    </figure>
+                 </div>
+                 <div class="content">
+                  <p class="title is-4">${doc.data().name}</p>
+                  <p class="subtitle is-6"> ${doc.data().memberClass}</p>
+                 </div>
+               </div>
+               <div class="has-text-centered">
+                <button id = "user-button-${doc.id}" class="button has-text-white has-text-weight-bold is-small is-rounded is-inline-block is-favorite">View Profile</button>
+               </div>
+             </div>
             </div>
           </div>
           `     
