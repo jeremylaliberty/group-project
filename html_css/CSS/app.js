@@ -130,6 +130,7 @@ editProfilebtn.addEventListener('click', () => {
  });
 
  let admin_page = document.querySelector('#admin-page');
+ let alumni_page = document.querySelector('#alumni-page');
  let to_user_button = document.querySelector('#switch-to-user-view');
 
  let user_page = document.querySelector('#user-page');
@@ -170,6 +171,8 @@ grad_profile_btn.addEventListener('click', () => {
 
  submitGradBtn.addEventListener('click', () => {
   home.classList.add('is-hidden');
+  attendance_btn.classList.add('is-hidden');
+  alumni_page.classList.remove('is-hidden');
  });
 
 
