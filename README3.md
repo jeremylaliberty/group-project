@@ -35,9 +35,9 @@
 
 #1 <br>
 Jeremy: <br>
-What did you do yesterday? <br> Answer here. <br>
-What are you planning to do today? <br> Answer here. <br>
-Any problems you are facing? <br> Answer here. <br>
+What did you do yesterday? <br> Started working on adding profile picture to main page. <br>
+What are you planning to do today? <br> Finish completing main page profile picture. <br>
+Any problems you are facing? <br> Images are uploaded to firebase, but not showing. <br>
 
 Anna: <br>
 What did you do yesterday? <br> Answer here. <br> 
@@ -61,9 +61,9 @@ Any problems you are facing? <br> Answer here. <br>
 
 #2 <br>
 Jeremy: <br>
-What did you do yesterday? <br> Answer here. <br> 
-What are you planning to do today? <br> Answer here. <br> 
-Any problems you are facing? <br> Answer here. <br> 
+What did you do yesterday? <br> I finished adding the profile photo to the users main page. <br> 
+What are you planning to do today? <br> I want to add profile photos to the network. <br> 
+Any problems you are facing? <br> None at the moment. <br> 
 
 Anna: <br>
 What did you do yesterday? <br> Answer here. <br> 
