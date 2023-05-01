@@ -6,7 +6,7 @@ let home = document.querySelector('#home');
 let network = document.querySelector('#network');
 let attendance = document.querySelector('#attendance');
 let profile = document.querySelector('#profile');
-let alumnihome = document.querySelector('#alumnipage');
+let alumnihome = document.querySelector('#alumni-page');
 
 let home_btn = document.querySelector('#home-btn');
 let network_btn = document.querySelector('#network-btn');
@@ -64,7 +64,7 @@ home_btn.addEventListener('click', () => {
  });
 
  alumni_btn.addEventListener('click', () => {
-  admin_page();
+  alumniPage();
  })
 
 
@@ -186,7 +186,7 @@ grad_profile_btn.addEventListener('click', () => {
   attendance_btn.classList.add('is-hidden');
   home_btn.classList.add('is-hidden');
   alumni_page.classList.remove('is-hidden');
-  function adminPage(){
+  function alumniPage(){
     
   }
  });
