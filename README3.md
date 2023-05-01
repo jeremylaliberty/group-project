@@ -52,9 +52,9 @@ What are you planning to do today? <br> Today I am planning to work more on the 
 Any problems you are facing? <br> Struggling with some image implementation but nothing else. <br> 
 
 Brandon: <br>
-What did you do yesterday? <br> Answer here. <br> 
-What are you planning to do today? <br> Answer here. <br> 
-Any problems you are facing? <br> Answer here. <br> 
+What did you do yesterday? <br> Started working on the alumni collection on firebase <br> 
+What are you planning to do today? <br> Implementing functionality of creating an alumni user profile when a member graduates <br> 
+Any problems you are facing? <br> Transferring the users login credentials from their member profile to their alumni profile <br> 
 
 #2 <br>
 Jeremy: <br>
@@ -78,9 +78,9 @@ What are you planning to do today? <br> Today, I am going to continue working on
 Any problems you are facing? <br> None as of right now. <br> 
 
 Brandon: <br>
-What did you do yesterday? <br> Answer here. <br> 
-What are you planning to do today? <br> Answer here. <br> 
-Any problems you are facing? <br> Answer here. <br> 
+What did you do yesterday? <br> Continued working on setting up alumni profiles for post grads <br> 
+What are you planning to do today? <br> Fixing errors with being able to return to the alumni homepage from the network page <br> 
+Any problems you are facing? <br> Still having difficulties with solving the problem having the alumni homepage button be available on the navbar <br> 
 
 **Sprint Review**:
 
