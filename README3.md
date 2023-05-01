@@ -37,9 +37,9 @@ What are you planning to do today? <br> Finish completing main page profile pict
 Any problems you are facing? <br> Images are uploaded to firebase, but not showing. <br>
 
 Anna: <br>
-What did you do yesterday? <br> Answer here. <br> 
-What are you planning to do today? <br> Answer here. <br> 
-Any problems you are facing? <br> Answer here. <br> 
+What did you do yesterday? <br> Started working on alumni page <br> 
+What are you planning to do today? <br> finish alumni page and throw error message<br> 
+Any problems you are facing? <br> home page icon disapears on alumni page <br> 
 
 Anouk: <br>
 What did you do yesterday? <br> Yesterday I focused tried to narrow in on the final aspects of the project and gather user stories. <br> 
@@ -63,9 +63,9 @@ What are you planning to do today? <br> I want to add profile photos to the netw
 Any problems you are facing? <br> None at the moment. <br> 
 
 Anna: <br>
-What did you do yesterday? <br> Answer here. <br> 
-What are you planning to do today? <br> Answer here. <br> 
-Any problems you are facing? <br> Answer here. <br> 
+What did you do yesterday? <br> throw in error for signup <br> 
+What are you planning to do today? <br> work on CSS for alumni page <br> 
+Any problems you are facing? <br> None at the moment<br> 
 
 Anouk: <br>
 What did you do yesterday? <br> Yesterday I focused on editing images and icons on the site. <br> 
