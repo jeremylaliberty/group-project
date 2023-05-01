@@ -6,17 +6,21 @@ let home = document.querySelector('#home');
 let network = document.querySelector('#network');
 let attendance = document.querySelector('#attendance');
 let profile = document.querySelector('#profile');
+let alumnihome = document.querySelector('#alumnipage');
 
 let home_btn = document.querySelector('#home-btn');
 let network_btn = document.querySelector('#network-btn');
 let attendance_btn = document.querySelector('#attendance-btn');
 let profile_btn = document.querySelector('#profile-btn');
+let alumni_btn = document.querySelector('#alumni-btn')
 
 function homePage(){
   home.classList.remove('is-hidden');
   network.classList.add('is-hidden');
   profile.classList.add('is-hidden');
   attendance.classList.add('is-hidden');
+  alumnihome.classList.add('is-hidden');
+  alumni_btn.classList.add('is-hidden');
 }
 
 function networkPage(){
@@ -25,6 +29,8 @@ function networkPage(){
   network.classList.remove('is-hidden');
   profile.classList.add('is-hidden');
   attendance.classList.add('is-hidden');
+  alumnihome.classList.add('is-hidden');
+  alumni_btn.classList.add('is-hidden');
 }
 
 function atttendancePage(){
@@ -32,6 +38,8 @@ function atttendancePage(){
   network.classList.add('is-hidden');
   profile.classList.add('is-hidden');
   attendance.classList.remove('is-hidden');
+  alumnihome.classList.add('is-hidden');
+  alumni_btn.classList.add('is-hidden');
 }
 
 function profilePage(){
@@ -54,6 +62,10 @@ home_btn.addEventListener('click', () => {
  profile_btn.addEventListener('click', () => {
   profilePage();
  });
+
+ alumni_btn.addEventListener('click', () => {
+  admin_page();
+ })
 
 
 let signupbtn = document.querySelector('#signupbtn');
@@ -174,6 +186,9 @@ grad_profile_btn.addEventListener('click', () => {
   attendance_btn.classList.add('is-hidden');
   home_btn.classList.add('is-hidden');
   alumni_page.classList.remove('is-hidden');
+  function adminPage(){
+    
+  }
  });
 
 
