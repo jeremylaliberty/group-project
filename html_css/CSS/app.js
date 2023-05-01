@@ -186,6 +186,7 @@ grad_profile_btn.addEventListener('click', () => {
   attendance_btn.classList.add('is-hidden');
   home_btn.classList.add('is-hidden');
   alumni_page.classList.remove('is-hidden');
+  alumni_btn.classList.remove('is-hidden');
   function alumniPage(){
     
   }
