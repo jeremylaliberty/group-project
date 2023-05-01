@@ -304,9 +304,10 @@ sign_up_btn.addEventListener('click', () =>{
     // ..
     
   });
-  signupModal.classList.remove('is-active');
-  
+  setTimeout(() => {
+    signupModal.classList.remove('is-active');}, 1000)
 });
+
 
 let submit_edit_profile_btn = document.querySelector("#submit-edit-profile-btn");
 submit_edit_profile_btn.addEventListener('click', () => {
