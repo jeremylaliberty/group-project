@@ -663,14 +663,14 @@ function loadNetwork(name, mc){
             <div class="card">
               <div class="card-image">
                <figure class="image is-4by3">
-                 <img src="${doc.data().profile_pic} alt="Placeholder image">
+                 <img src="${doc.data().profilePic} alt="Placeholder image">
                </figure>
               </div>
               <div class="card-content">
                 <div class="media">
                   <div class="media-left">
                     <figure class="image is-48x48">
-                     <img src="${doc.data().profile_pic} alt="Placeholder image">
+                     <img src="${doc.data().profilePic} alt="Placeholder image">
                     </figure>
                  </div>
                  <div class="content">
@@ -697,14 +697,14 @@ function loadNetwork(name, mc){
             <div class="card">
               <div class="card-image">
                <figure class="image is-4by3">
-                 <img src="${doc.data().profile_pic} alt="Placeholder image">
+                 <img src="${doc.data().profilePic} alt="Placeholder image">
                </figure>
               </div>
               <div class="card-content">
                 <div class="media">
                   <div class="media-left">
                     <figure class="image is-48x48">
-                     <img src="${doc.data().profile_pic} alt="Placeholder image">
+                     <img src="${doc.data().profilePic} alt="Placeholder image">
                     </figure>
                  </div>
                  <div class="content">
@@ -732,14 +732,14 @@ function loadNetwork(name, mc){
             <div class="card">
               <div class="card-image">
                <figure class="image is-4by3">
-                 <img src="${doc.data().profile_pic} alt="Placeholder image">
+                 <img src="${doc.data().profilePic} alt="Placeholder image">
                </figure>
               </div>
               <div class="card-content">
                 <div class="media">
                   <div class="media-left">
                     <figure class="image is-48x48">
-                     <img src="${doc.data().profile_pic} alt="Placeholder image">
+                     <img src="${doc.data().profilePic} alt="Placeholder image">
                     </figure>
                  </div>
                  <div class="content">
