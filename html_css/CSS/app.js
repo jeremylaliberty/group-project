@@ -208,7 +208,9 @@ grad_profile_btn.addEventListener('click', () => {
       console.error("Error updating document: ", error);
   });
 
-  database.collection("User").doc("uid").delete();
+  // start of function to delete user profile when alumni profile is made
+  
+  // database.collection("User").doc(user.uid).delete();
   
   function alumniPage(){
     
