@@ -207,9 +207,6 @@ grad_profile_btn.addEventListener('click', () => {
       // The document probably doesn't exist.
       console.error("Error updating document: ", error);
   });
-
-  database.collection("User").doc("uid").delete();
-  
   function alumniPage(){
     
   }
@@ -473,6 +470,7 @@ function loadUserData(uid){
       points = doc.data().points;
       profileType = doc.data().profileType;
       profile_pic = doc.data().profilePic;
+      
       if(profileType == 'admin'){
         to_admin_button.classList.remove('is-hidden');
       };
