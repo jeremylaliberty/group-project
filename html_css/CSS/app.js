@@ -451,6 +451,7 @@ function loadUserData(uid){
       });
 
       loadProfile(hometown_val, major_val, expectedGrad_val, bio_val, name_val, mc_val, uid, profile_pic);
+      loadEditProfile(hometown_val, major_val, expectedGrad_val, bio_val, name_val, mc_val);
       configureProfile([mc_val, hometown_val, major_val, expectedGrad_val, bio_val ]);      
     } else {
       // doc.data() will be undefined in this case
