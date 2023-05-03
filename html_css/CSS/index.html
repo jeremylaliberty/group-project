@@ -33,9 +33,22 @@
     <button id = "close-edit-attendance" class="modal-close is-large" aria-label="close"></button>
   </div>
   <!-- Edit Points Modal -->
-  <div id = "edit-poits-modal" class="modal">
+  <div id = "edit-points-modal" class="modal">
     <div id = "edit-points-bg" class="modal-background"></div>
     <div id = "edit-points-content" class="modal-content">
+      
+      <div class="box">
+        <div class="control">
+          <label class="radio">
+            <input type="radio" name="answer">
+            Yes
+          </label>
+          <label class="radio">
+            <input type="radio" name="answer">
+            No
+          </label>
+        </div>
+      </div>
       <!-- Any other Bulma elements you want -->
     </div>
     <button id = "close-edit-points" class="modal-close is-large" aria-label="close"></button>
@@ -767,7 +780,7 @@
           <img class="points-image" src="images/points.png" alt="">
           <br>
           <footer class="card-footer">
-            <a href="#" class="card-footer-item has-text-favorite is-size-5 has-text-weight-bold">Edit Points</a>
+            <a id = "edit-points-click" href="#" class="card-footer-item has-text-favorite is-size-5 has-text-weight-bold">Edit Points</a>
           </footer>
         </div>
       </div>

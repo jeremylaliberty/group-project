@@ -152,7 +152,7 @@ editProfilebtn.addEventListener('click', () => {
   attendance.classList.add('is-hidden');
   user_page.classList.add('is-hidden');
   admin_page.classList.remove('is-hidden');
-  alumni_btn.classList.remove('is-hidden');
+  // alumni_btn.classList.remove('is-hidden');
  });
 
 let grad_profile_btn = document.querySelector('#graduate-profile-btn');
@@ -178,7 +178,7 @@ grad_profile_btn.addEventListener('click', () => {
   attendance_btn.classList.add('is-hidden');
   home_btn.classList.add('is-hidden');
   alumni_page.classList.remove('is-hidden');
-  alumni_btn.classList.remove('is-hidden');
+  // alumni_btn.classList.remove('is-hidden');
   
   let gradYear = document.querySelector("#gradYear").value;
   let major = document.querySelector("#major").value;
@@ -348,12 +348,15 @@ sign_up_btn.addEventListener('click', () =>{
 
 
 let submit_edit_profile_btn = document.querySelector("#submit-edit-profile-btn");
+
+
 submit_edit_profile_btn.addEventListener('click', () => {
   let edit_mc = document.querySelector('#memberClass option:checked').value;
   let edit_uid = document.querySelector('#uid').innerHTML;
   let uploadPic = document.getElementById("uploadFile");
   
   let file = uploadPic.files[0];
+  if (file) {
   var storageRef = firebase.storage().ref();
   var testRef = storageRef.child(`${edit_uid}.png`);
 
@@ -365,35 +368,38 @@ submit_edit_profile_btn.addEventListener('click', () => {
     console.log(snapshot);
  });
 
+  
+ var docRef = database.collection("Users").doc(edit_uid);
+ const updateProfilePic = async (testRef) => {
+   try {
+     const downloadURL = await testRef.getDownloadURL();
+     console.log(downloadURL);
+     docRef.update({
+       profilePic: downloadURL
+     }).then(() => { }).catch((error) => {
+       // The document probably doesn't exist.
+       console.error("Error updating document: ", error);
+   });
+     // Use the downloadURL for further processing
+   } 
+   catch (error) {
+     console.error('Error getting download URL:', error);
+   }
+ };
 
-  var docRef = database.collection("Users").doc(edit_uid);
-  const updateProfilePic = async (testRef) => {
-    try {
-      const downloadURL = await testRef.getDownloadURL();
-      console.log(downloadURL);
-      docRef.update({
-        profilePic: downloadURL
-      }).then(() => { }).catch((error) => {
-        // The document probably doesn't exist.
-        console.error("Error updating document: ", error);
-    });
-      // Use the downloadURL for further processing
-    } 
-    catch (error) {
-      console.error('Error getting download URL:', error);
-    }
-  };
-
-  updateProfilePic(testRef)
-  .then(() => {
-    console.log('Profile picture updated successfully');
-  })
-  .catch((error) => {
-    console.error('Error updating profile picture:', error);
-  });
+ updateProfilePic(testRef)
+ .then(() => {
+   console.log('Profile picture updated successfully');
+ })
+ .catch((error) => {
+   console.error('Error updating profile picture:', error);
+ });
+  }
+  let edit_id = document.querySelector('#uid').innerHTML;
+  var docRef = database.collection("Users").doc(edit_id);
 
   docRef.update({
-    
+   
     name: editName.value,
     hometown: editHometown.value,
     expectedGrad: editGrad.value,
@@ -410,7 +416,8 @@ submit_edit_profile_btn.addEventListener('click', () => {
   .catch((error) => {
       // The document probably doesn't exist.
       console.error("Error updating document: ", error);
-  });
+  }); 
+  
 })
 
 
@@ -965,4 +972,33 @@ editUsersContainer.addEventListener("click", (event) => {
 }
 });
 
+
+let editPtsBtn = document.querySelector('#edit-points-click');
+let editPtsModal = document.querySelector('#edit-points-modal');
+let editPtsModalBg = document.querySelector('#edit-points-bg');
+let closeEditPts = document.querySelector('#close-edit-points');
+editPtsBtn.addEventListener('click', () => {
+  //editPoints();
+  editPtsModal.classList.add('is-active');
+});
+
+closeEditPts.addEventListener('click', () => {
+  editPtsModal.classList.remove('is-active');
+});
+
+editPtsModalBg.addEventListener('click', () => {
+  editPtsModal.classList.remove('is-active');
+});
+function editPoints(){
+  editUsersContainer.innerHTML = '';
+  database.collection("Users").get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      editUsersContainer.innerHTML += `
+      <p>
+          <a  href="#" class = "has-text-danger"> <i id = "user-button-${doc.id}" class="fa-solid fa-trash"></i> </a> <span id = "delete-name-${doc.id}">${doc.data().name}</span>
+      </p>
+      `
+    });
+});
+}
 
