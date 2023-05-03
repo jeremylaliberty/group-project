@@ -189,7 +189,7 @@ grad_profile_btn.addEventListener('click', () => {
   let position = document.querySelector("#position").value;
   let linkedIn = document.querySelector("#linkedIn").value;
   let new_alum_uid = document.querySelector('#uid').innerHTML;
-  database.collection("Users").doc(new_alum_uid).set({
+  database.collection("Users").doc(new_alum_uid).update({
     profileType: "alumni",
 		gradYear: gradYear,
 		major: major,
