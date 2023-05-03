@@ -978,7 +978,7 @@ let editPtsModal = document.querySelector('#edit-points-modal');
 let editPtsModalBg = document.querySelector('#edit-points-bg');
 let closeEditPts = document.querySelector('#close-edit-points');
 editPtsBtn.addEventListener('click', () => {
-  //editPoints();
+  editPoints();
   editPtsModal.classList.add('is-active');
 });
 
@@ -989,16 +989,48 @@ closeEditPts.addEventListener('click', () => {
 editPtsModalBg.addEventListener('click', () => {
   editPtsModal.classList.remove('is-active');
 });
+let editPtsContainer = document.querySelector('#edit-points-container');
 function editPoints(){
-  editUsersContainer.innerHTML = '';
+  editPtsContainer.innerHTML = '';
   database.collection("Users").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-      editUsersContainer.innerHTML += `
-      <p>
-          <a  href="#" class = "has-text-danger"> <i id = "user-button-${doc.id}" class="fa-solid fa-trash"></i> </a> <span id = "delete-name-${doc.id}">${doc.data().name}</span>
-      </p>
+      editPtsContainer.innerHTML += `
+      <div class="control">
+          <label class="radio">
+          <input id = "edit-points-${doc.id}" type="checkbox" name="answer" class = "edit-points">
+
+            ${doc.data().name}:  <span id = "points-${doc.id}">${doc.data().points}</span> pts.
+          </label>
+        </div>
       `
     });
 });
 }
+
+
+let submitEditPts = document.querySelector('#submit-edit-points');
+
+
+submitEditPts.addEventListener('click', () => {
+  const added_pts = document.querySelector('#added-points').value;
+
+  const boxes = editPtsContainer.querySelectorAll('.edit-points');
+  boxes.forEach(function(box) {
+    if (box.checked) {
+      const uid = box.id.substring("edit-points-".length);
+      let pts = document.querySelector(`#points-${uid}`).innerHTML; 
+      database.collection("Users").doc(uid).update({
+        points: parseInt(pts)+ parseInt(added_pts)
+      }) .then(() => {
+       
+        
+        
+    })
+    .catch((error) => {
+        // The document probably doesn't exist.
+        console.error("Error updating document: ", error);
+    }); 
+    }
+  });
+});
 

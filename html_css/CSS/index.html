@@ -37,19 +37,24 @@
     <div id = "edit-points-bg" class="modal-background"></div>
     <div id = "edit-points-content" class="modal-content">
       
-      <div class="box">
+      <div id = "edit-points-container" class="box">
         <div class="control">
           <label class="radio">
             <input type="radio" name="answer">
             Yes
           </label>
-          <label class="radio">
-            <input type="radio" name="answer">
-            No
-          </label>
         </div>
+
       </div>
       <!-- Any other Bulma elements you want -->
+      <div class="field is-grouped">
+        <div class="control has-icons-left has-icons-right">
+          <input class="input " id="added-points" type="text" placeholder="Points to be added (negative number to remove)">
+        </div>
+        <div class="control">
+          <button id = "submit-edit-points" class="button">Submit</button>
+        </div>
+      </div>
     </div>
     <button id = "close-edit-points" class="modal-close is-large" aria-label="close"></button>
   </div>
