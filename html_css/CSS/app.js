@@ -39,6 +39,14 @@ function atttendancePage(){
   alumnihome.classList.add('is-hidden');
 }
 
+function alumniPage(){
+  home.classList.add('is-hidden');
+  network.classList.add('is-hidden');
+  profile.classList.add('is-hidden');
+  attendance.classList.add('is-hidden');
+  alumnihome.classList.remove('is-hidden');
+}
+
 function profilePage(){
   auth.signOut();
   location.reload();
