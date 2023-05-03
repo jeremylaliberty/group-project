@@ -12,7 +12,6 @@ let home_btn = document.querySelector('#home-btn');
 let network_btn = document.querySelector('#network-btn');
 let attendance_btn = document.querySelector('#attendance-btn');
 let profile_btn = document.querySelector('#profile-btn');
-let alumni_btn = document.querySelector('#alumni-btn')
 
 function homePage(){
   home.classList.remove('is-hidden');
@@ -20,7 +19,6 @@ function homePage(){
   profile.classList.add('is-hidden');
   attendance.classList.add('is-hidden');
   alumnihome.classList.add('is-hidden');
-  alumni_btn.classList.add('is-hidden');
 }
 
 function networkPage(){
@@ -30,7 +28,6 @@ function networkPage(){
   profile.classList.add('is-hidden');
   attendance.classList.add('is-hidden');
   alumnihome.classList.add('is-hidden');
-  alumni_btn.classList.add('is-hidden');
 }
 
 function atttendancePage(){
@@ -39,7 +36,6 @@ function atttendancePage(){
   profile.classList.add('is-hidden');
   attendance.classList.remove('is-hidden');
   alumnihome.classList.add('is-hidden');
-  alumni_btn.classList.add('is-hidden');
 }
 
 function profilePage(){
@@ -62,10 +58,6 @@ home_btn.addEventListener('click', () => {
  profile_btn.addEventListener('click', () => {
   profilePage();
  });
-
- alumni_btn.addEventListener('click', () => {
-  alumniPage();
- })
 
 
 let signupbtn = document.querySelector('#signupbtn');
