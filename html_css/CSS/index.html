@@ -14,6 +14,32 @@
 
 <body>
   <!-- MODALS -->
+  <!-- Edit Users Modal -->
+  <div id = "edit-users-modal" class="modal">
+    <div id = "edit-users-bg" class="modal-background"></div>
+    <div id = "edit-users-content" class="modal-content">
+      <div class="box" id="edit-users-box">
+        
+      </div>
+    </div>
+    <button id = "close-edit-users" class="modal-close is-large" aria-label="close"></button>
+  </div>
+  <!-- Edit Attendnace Modal -->
+  <div id = "edit-attendance-modal" class="modal">
+    <div id = "edit-attendance-bg" class="modal-background"></div>
+    <div id = "edit-attendance-content" class="modal-content">
+      <!-- Any other Bulma elements you want -->
+    </div>
+    <button id = "close-edit-attendance" class="modal-close is-large" aria-label="close"></button>
+  </div>
+  <!-- Edit Points Modal -->
+  <div id = "edit-poits-modal" class="modal">
+    <div id = "edit-points-bg" class="modal-background"></div>
+    <div id = "edit-points-content" class="modal-content">
+      <!-- Any other Bulma elements you want -->
+    </div>
+    <button id = "close-edit-points" class="modal-close is-large" aria-label="close"></button>
+  </div>
 
   <!-- Sign in modal -->
   <div id="signin-modal" class="modal">
@@ -758,7 +784,7 @@
           <img class="points-image" src="images/users.png" alt="">
           <br>
           <footer class="card-footer">
-            <a href="#" class="card-footer-item has-text-favorite is-size-5 has-text-weight-bold">Edit Users</a>
+            <a id = "edit-users-click" href="#" class="card-footer-item has-text-favorite is-size-5 has-text-weight-bold">Remove Users</a>
           </footer>
         </div>
       </div>

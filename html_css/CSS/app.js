@@ -930,3 +930,47 @@ submit_meeting_btn.addEventListener('click', () => {
 
 
 
+let editUsersBtn = document.querySelector('#edit-users-click');
+let editUsersModal = document.querySelector('#edit-users-modal');
+let editUsersModalBg = document.querySelector('#edit-users-bg');
+let closeEditUsers = document.querySelector('#close-edit-users');
+editUsersBtn.addEventListener('click', () => {
+  editUsers();
+  editUsersModal.classList.add('is-active');
+});
+
+closeEditUsers.addEventListener('click', () => {
+  editUsersModal.classList.remove('is-active');
+});
+
+editUsersModalBg.addEventListener('click', () => {
+  editUsersModal.classList.remove('is-active');
+});
+let editUsersContainer = document.querySelector('#edit-users-box');
+function editUsers(){
+  editUsersContainer.innerHTML = '';
+  database.collection("Users").get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      editUsersContainer.innerHTML += `
+      <p>
+          <a  href="#" class = "has-text-danger"> <i id = "user-button-${doc.id}" class="fa-solid fa-trash"></i> </a> <span id = "delete-name-${doc.id}">${doc.data().name}</span>
+      </p>
+      `
+    });
+});
+}
+
+editUsersContainer.addEventListener("click", (event) => {
+  const anchor = event.target;
+  if (anchor.tagName === "I" && anchor.id.startsWith("user-button-")) {
+    const view_uid = anchor.id.substring("user-button-".length);
+    database.collection("Users").doc(`${view_uid}`).delete();
+    let name = document.querySelector(`#delete-name-${view_uid}`).innerHTML;
+    editUsersContainer.innerHTML += `
+    <br>
+    <p class = "has-text-danger"> ${name} deleted successfully.
+    `
+}
+});
+
+
