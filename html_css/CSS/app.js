@@ -199,9 +199,7 @@ grad_profile_btn.addEventListener('click', () => {
       // The document probably doesn't exist.
       console.error("Error updating document: ", error);
   });
-  function alumniPage(){
-    
-  }
+
  });
 
 
