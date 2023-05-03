@@ -971,6 +971,67 @@ editUsersContainer.addEventListener("click", (event) => {
 });
 
 
+let editAttBtn = document.querySelector('#edit-attendance-click');
+let editAttModal = document.querySelector('#edit-attendance-modal');
+let editAttModalBg = document.querySelector('#edit-attendance-bg');
+let closeEditAtt = document.querySelector('#close-edit-attendance');
+editAttBtn.addEventListener('click', () => {
+  editAttendance();
+  editAttModal.classList.add('is-active');
+});
+
+closeEditAtt.addEventListener('click', () => {
+  editAttModal.classList.remove('is-active');
+});
+
+editAttModalBg.addEventListener('click', () => {
+  editAttModal.classList.remove('is-active');
+});
+let editAttContainer = document.querySelector('#edit-attendance-container');
+function editAttendance(){
+  editAttContainer.innerHTML = '';
+  database.collection("Users").get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      editAttContainer.innerHTML += `
+      <div class="control">
+          <label class="radio">
+          <input id = "edit-meetings-${doc.id}" type="checkbox" name="answer" class = "edit-meetings">
+
+            ${doc.data().name}:  <span id = "meetings-${doc.id}">${doc.data().meetings}</span> meetings.
+          </label>
+        </div>
+      `
+    });
+});
+}
+
+
+let submitEditAtt = document.querySelector('#submit-edit-attendance');
+
+
+submitEditAtt.addEventListener('click', () => {
+  const added_meetings = document.querySelector('#added-meetings').value;
+
+  const boxes = editAttContainer.querySelectorAll('.edit-meetings');
+  boxes.forEach(function(box) {
+    if (box.checked) {
+      const uid = box.id.substring("edit-meetings-".length);
+      let meetings = document.querySelector(`#meetings-${uid}`).innerHTML; 
+      database.collection("Users").doc(uid).update({
+        meetings: parseInt(meetings)+ parseInt(added_meetings)
+      }) .then(() => {
+       
+        
+        
+    })
+    .catch((error) => {
+        // The document probably doesn't exist.
+        console.error("Error updating document: ", error);
+    }); 
+    }
+  });
+});
+
 let editPtsBtn = document.querySelector('#edit-points-click');
 let editPtsModal = document.querySelector('#edit-points-modal');
 let editPtsModalBg = document.querySelector('#edit-points-bg');

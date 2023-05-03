@@ -24,39 +24,49 @@
     </div>
     <button id = "close-edit-users" class="modal-close is-large" aria-label="close"></button>
   </div>
-  <!-- Edit Attendnace Modal -->
-  <div id = "edit-attendance-modal" class="modal">
-    <div id = "edit-attendance-bg" class="modal-background"></div>
-    <div id = "edit-attendance-content" class="modal-content">
-      <!-- Any other Bulma elements you want -->
-    </div>
-    <button id = "close-edit-attendance" class="modal-close is-large" aria-label="close"></button>
-  </div>
+  
   <!-- Edit Points Modal -->
   <div id = "edit-points-modal" class="modal">
     <div id = "edit-points-bg" class="modal-background"></div>
     <div id = "edit-points-content" class="modal-content">
       
       <div id = "edit-points-container" class="box">
-        <div class="control">
-          <label class="radio">
-            <input type="radio" name="answer">
-            Yes
-          </label>
-        </div>
-
+       
       </div>
       <!-- Any other Bulma elements you want -->
-      <div class="field is-grouped">
+      <div class="field ">
         <div class="control has-icons-left has-icons-right">
-          <input class="input " id="added-points" type="text" placeholder="Points to be added (negative number to remove)">
+          <input class="input " id="added-points" type="text" placeholder="Points to be added (negative number will remove points)">
         </div>
+        <br>
         <div class="control">
           <button id = "submit-edit-points" class="button">Submit</button>
         </div>
       </div>
     </div>
     <button id = "close-edit-points" class="modal-close is-large" aria-label="close"></button>
+  </div>
+
+  <!-- Edit attendance modal -->
+  <div id = "edit-attendance-modal" class="modal">
+    <div id = "edit-attendance-bg" class="modal-background"></div>
+    <div id = "edit-attendance-content" class="modal-content">
+      
+      <div id = "edit-attendance-container" class="box">
+        
+
+      </div>
+      <!-- Any other Bulma elements you want -->
+      <div class="field is-grouped">
+        <div class="control has-icons-left has-icons-right">
+          <input class="input " id="added-meetings" type="text" placeholder="">
+        </div>
+        <div class="control">
+          <button id = "submit-edit-attendance" class="button">Submit</button>
+        </div>
+      </div>
+    </div>
+    <button id = "close-edit-attendance" class="modal-close is-large" aria-label="close"></button>
   </div>
 
   <!-- Sign in modal -->
@@ -762,7 +772,7 @@
           <img class="attendance-image" src="images/attendance.png" alt="">
           <br>
           <footer class="card-footer">
-            <a href="#" class="card-footer-item has-text-favorite is-size-5 has-text-weight-bold">Edit Attendance</a>
+            <a id = "edit-attendance-click" href="#" class="card-footer-item has-text-favorite is-size-5 has-text-weight-bold">Edit Attendance</a>
           </footer>
         </div>
       </div>
