@@ -483,9 +483,9 @@ function loadUserData(uid){
       let alumni_page = document.querySelector('#alumni-page');
 
       if(profileType == 'alumni'){
-        user_page.classList.add('is-hidden');
-        alumni_page.classList.remove('is-hidden');
-        network.classList.remove('is-hidden');
+        // user_page.classList.add('is-hidden');
+        // alumni_page.classList.remove('is-hidden');
+        alumniPage();
         
       }
       
