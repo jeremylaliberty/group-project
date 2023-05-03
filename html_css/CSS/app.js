@@ -12,6 +12,7 @@ let home_btn = document.querySelector('#home-btn');
 let network_btn = document.querySelector('#network-btn');
 let attendance_btn = document.querySelector('#attendance-btn');
 let profile_btn = document.querySelector('#profile-btn');
+let alumni_btn = document.querySelector('#alumni-btn');
 
 function homePage(){
   home.classList.remove('is-hidden');
@@ -59,6 +60,9 @@ home_btn.addEventListener('click', () => {
   profilePage();
  });
 
+ alumni_btn.addEventListener('click', () => {
+  alumnihome();
+ });
 
 
 let signupbtn = document.querySelector('#signupbtn');
