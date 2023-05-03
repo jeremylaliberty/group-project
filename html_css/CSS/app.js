@@ -60,9 +60,7 @@ home_btn.addEventListener('click', () => {
   profilePage();
  });
 
- alumni_btn.addEventListener('click', () => {
-  alumnihome();
- });
+ 
 
 
 let signupbtn = document.querySelector('#signupbtn');
