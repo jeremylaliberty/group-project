@@ -485,7 +485,6 @@ function loadUserData(uid){
       if(profileType == 'alumni'){
         user_page.classList.add('is-hidden');
         alumni_page.classList.remove('is-hidden');
-        network.classList.remove('is-hidden');
         
       }
       
