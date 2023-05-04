@@ -1124,5 +1124,3 @@ submitEditPts.addEventListener('click', () => {
     }
   });
 });
-
-
