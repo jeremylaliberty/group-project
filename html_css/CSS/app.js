@@ -19,7 +19,7 @@ function homePage(){
   network.classList.add('is-hidden');
   profile.classList.add('is-hidden');
   attendance.classList.add('is-hidden');
-  alumnihome.classList.add('is-hidden');
+  alumni_page.classList.add('is-hidden');
 }
 
 function networkPage(){
@@ -28,7 +28,7 @@ function networkPage(){
   network.classList.remove('is-hidden');
   profile.classList.add('is-hidden');
   attendance.classList.add('is-hidden');
-  alumnihome.classList.add('is-hidden');
+  alumni_page.classList.add('is-hidden');
 }
 
 function atttendancePage(){
@@ -36,7 +36,7 @@ function atttendancePage(){
   network.classList.add('is-hidden');
   profile.classList.add('is-hidden');
   attendance.classList.remove('is-hidden');
-  alumnihome.classList.add('is-hidden');
+  alumni_page.classList.add('is-hidden');
 }
 
 function alumniPage(){
@@ -44,7 +44,7 @@ function alumniPage(){
   network.classList.add('is-hidden');
   profile.classList.add('is-hidden');
   attendance.classList.add('is-hidden');
-  alumnihome.classList.remove('is-hidden');
+  alumni_page.classList.remove('is-hidden');
 }
 
 function profilePage(){
