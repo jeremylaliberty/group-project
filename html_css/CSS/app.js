@@ -414,7 +414,8 @@ sign_up_btn.addEventListener('click', () =>{
       points: 620, // ditto
       expectedGrad: "",
       hometown: "",
-      profileType: 'member'
+      profileType: 'member',
+      profilePic: 'https://firebasestorage.googleapis.com/v0/b/is424-2c845.appspot.com/o/blankUser.png?alt=media&token=b44c1a91-5bc7-4525-a3f2-5289c67e0fd1'
     })
       .then(() => {
           console.log("Document successfully written!");
