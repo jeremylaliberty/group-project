@@ -198,11 +198,6 @@ grad_profile_btn.addEventListener('click', () => {
  });
 
  submitGradBtn.addEventListener('click', () => {
-  home.classList.add('is-hidden');
-  attendance_btn.classList.add('is-hidden');
-  home_btn.classList.add('is-hidden');
-  alumni_page.classList.remove('is-hidden');
-  // alumni_btn.classList.remove('is-hidden');
   
   let gradYear = document.querySelector("#gradYear").value;
   let major = document.querySelector("#major").value;
