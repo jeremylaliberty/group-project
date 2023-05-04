@@ -12,7 +12,10 @@ let home_btn = document.querySelector('#home-btn');
 let network_btn = document.querySelector('#network-btn');
 let attendance_btn = document.querySelector('#attendance-btn');
 let profile_btn = document.querySelector('#profile-btn');
-let alumni_btn = document.querySelector('#alumni-btn');
+let alumni_btn = document.querySelector('#alumni-home-btn');
+let alumni_logout_btn = document.querySelector('#profile-btn2');
+let alumni_network_btn = document.querySelector("#alumni-network-btn");
+
 
 function homePage(){
   home.classList.remove('is-hidden');
@@ -68,8 +71,19 @@ home_btn.addEventListener('click', () => {
   profilePage();
  });
 
- 
+ alumni_logout_btn.addEventListener('click', () => {
+  profilePage();
+ });
 
+// weird stuff going on when i try to add these
+
+//  alumni_home_btn.addEventListener('click', () => {
+//   alumniPage();
+//  });
+
+//  alumni_network_btn.addEventListener('click', () => {
+//   networkPage();
+//  });
 
 let signupbtn = document.querySelector('#signupbtn');
 let signupModal = document.querySelector('#signup-modal');
@@ -449,8 +463,6 @@ var all_points = [];
 var percentile = 0;
 
 var missed = 0;
-
-
 
 function loadUserData(uid){
   var adminRef = database.collection("Admin").doc('data');
@@ -1104,4 +1116,5 @@ submitEditPts.addEventListener('click', () => {
     }
   });
 });
+
 
