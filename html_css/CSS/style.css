@@ -78,6 +78,7 @@ footer{
 
   .footer {
     background-color: #11c9fc;
+    padding-top: 2px;
     overflow: hidden;
     position: fixed;
     text-align: center;

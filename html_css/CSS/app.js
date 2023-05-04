@@ -992,6 +992,7 @@ editUsersContainer.addEventListener("click", (event) => {
     <p class = "has-text-danger"> ${name} deleted successfully.
     `
 }
+  setTimeout(function () {editUsersModal.classList.remove('is-active')}, 1500);
 });
 
 
@@ -1045,8 +1046,7 @@ submitEditAtt.addEventListener('click', () => {
         meetings: parseInt(meetings)+ parseInt(added_meetings)
       }) .then(() => {
        
-        
-        
+        setTimeout(function () {editAttModal.classList.remove('is-active')}, 1500);        
     })
     .catch((error) => {
         // The document probably doesn't exist.
@@ -1106,7 +1106,7 @@ submitEditPts.addEventListener('click', () => {
         points: parseInt(pts)+ parseInt(added_pts)
       }) .then(() => {
        
-        
+        setTimeout(function () {editPtsModal.classList.remove('is-active')}, 1500);
         
     })
     .catch((error) => {
