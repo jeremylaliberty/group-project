@@ -736,7 +736,7 @@ function loadNetwork(name, mc){
                 <div class="media">
                   <div class="media-left">
                     <figure class="image is-48x48">
-                     <img src="${doc.data().profilePic} alt="Placeholder image">
+                    <img src="${doc.data().profilePic}" onerror="this.src='images/blankUser.png'" alt="">
                     </figure>
                  </div>
                  <div class="content">
@@ -765,7 +765,7 @@ function loadNetwork(name, mc){
                 <div class="media">
                   <div class="media-left">
                     <figure class="image is-48x48">
-                     <img src="${doc.data().profilePic} alt="Placeholder image">
+                    <img src="${doc.data().profilePic}" onerror="this.src='images/blankUser.png'" alt="">
                     </figure>
                  </div>
                  <div class="content">
@@ -788,14 +788,14 @@ function loadNetwork(name, mc){
       querySnapshot.forEach((doc) => {
         if (doc.data().name.toLowerCase().includes(name.toLowerCase())){
           network_container.innerHTML += `
-          <p class = "is-hidden">${doc.id}</p>
+          <p class = "is-hidden">${doc.id}</p>s
           <div class="column is-one-quarter">
             <div class="card">
               <div class="card-content">
                 <div class="media">
                   <div class="media-left">
                     <figure class="image is-48x48">
-                     <img src="${doc.data().profilePic} alt="Placeholder image">
+                    <img src="${doc.data().profilePic}" onerror="this.src='images/blankUser.png'" alt="">
                     </figure>
                  </div>
                  <div class="content">
