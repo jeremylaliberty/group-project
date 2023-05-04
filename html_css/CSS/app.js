@@ -912,7 +912,7 @@ filterButton.addEventListener('click', () => {
   loadNetwork(filterName.value, filterMC.value);
  });
 
-let meetingbtn = document.querySelector('#addMeeting');
+let meetingbtn = document.querySelector('#edit-meetings-click');
 let meetingModal = document.querySelector('#edit-meeting-modal');
 let meetingModalBg = document.querySelector('#edit-meeting-modalbg');
 let closeMeeting = document.querySelector('#close-edit-meeting');
