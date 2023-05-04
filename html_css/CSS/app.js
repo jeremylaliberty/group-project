@@ -16,6 +16,7 @@ let profile_btn = document.querySelector('#profile-btn');
 let alumni_btn = document.querySelector('#alumni-home-btn');
 let alumni_logout_btn = document.querySelector('#profile-btn2');
 let alumni_network_btn = document.querySelector("#alumni-network-btn");
+let alumni_home_btn= document.querySelector('#alum-home-btn');
 
 
 function homePage(){
@@ -51,14 +52,14 @@ function alumniPage(){
   alumni_page.classList.remove('is-hidden');
 }
 
-function alumniPage(){
-  home.classList.add('is-hidden');
-  network.classList.add('is-hidden');
-  profile.classList.add('is-hidden');
-  attendance.classList.add('is-hidden');
-  alumni_page.classList.add('is-hidden');
-  alumni_network.classList.remove('is-hidden');
-}
+// function alumniPage(){
+//   //home.classList.add('is-hidden');
+//   //network.classList.add('is-hidden');
+//   //profile.classList.add('is-hidden');
+//   //attendance.classList.add('is-hidden');
+//   alumni_page.classList.remove('is-hidden');
+//   alumni_network.classList.add('is-hidden');
+// }
 
 function alumniNetwork(){
   alumni_page.classList.add('is-hidden');
@@ -71,8 +72,8 @@ function profilePage(){
   location.reload();
 }
 
-home_btn.addEventListener('click', () => {
-  homePage();
+alumni_home_btn.addEventListener('click', () => {
+  alumniPage();
  });
 
  network_btn.addEventListener('click', () => {
@@ -89,6 +90,10 @@ home_btn.addEventListener('click', () => {
 
  alumni_logout_btn.addEventListener('click', () => {
   profilePage();
+ });
+
+ home_btn.addEventListener('click', () => {
+  homePage();
  });
 
 // weird stuff going on when i try to add these
