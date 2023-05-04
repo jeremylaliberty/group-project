@@ -12,7 +12,10 @@ let home_btn = document.querySelector('#home-btn');
 let network_btn = document.querySelector('#network-btn');
 let attendance_btn = document.querySelector('#attendance-btn');
 let profile_btn = document.querySelector('#profile-btn');
-let alumni_btn = document.querySelector('#alumni-btn');
+let alumni_btn = document.querySelector('#alumni-home-btn');
+let alumni_logout_btn = document.querySelector('#profile-btn2');
+let alumni_network_btn = document.querySelector("#alumni-network-btn");
+
 
 function homePage(){
   home.classList.remove('is-hidden');
@@ -68,8 +71,19 @@ home_btn.addEventListener('click', () => {
   profilePage();
  });
 
- 
+ alumni_logout_btn.addEventListener('click', () => {
+  profilePage();
+ });
 
+// weird stuff going on when i try to add these
+
+//  alumni_home_btn.addEventListener('click', () => {
+//   alumniPage();
+//  });
+
+//  alumni_network_btn.addEventListener('click', () => {
+//   networkPage();
+//  });
 
 let signupbtn = document.querySelector('#signupbtn');
 let signupModal = document.querySelector('#signup-modal');
@@ -184,12 +198,7 @@ grad_profile_btn.addEventListener('click', () => {
  });
 
  submitGradBtn.addEventListener('click', () => {
-  home.classList.add('is-hidden');
-  attendance_btn.classList.add('is-hidden');
-  home_btn.classList.add('is-hidden');
-  alumni_page.classList.remove('is-hidden');
-  // alumni_btn.classList.remove('is-hidden');
-  
+  alumniPage()
   let gradYear = document.querySelector("#gradYear").value;
   let major = document.querySelector("#major").value;
   let company = document.querySelector("#company").value;
@@ -203,6 +212,9 @@ grad_profile_btn.addEventListener('click', () => {
 		company: company,
     position: position,
     linkedIn: linkedIn,
+    expectedGrad: firebase.firestore.FieldValue.delete(),
+    meetings: firebase.firestore.FieldValue.delete(),
+    points: firebase.firestore.FieldValue.delete(),
 	})
   .then(() => {
       gradProfileModal.classList.remove('is-active');
@@ -449,8 +461,6 @@ var all_points = [];
 var percentile = 0;
 
 var missed = 0;
-
-
 
 function loadUserData(uid){
   var adminRef = database.collection("Admin").doc('data');
@@ -726,7 +736,7 @@ function loadNetwork(name, mc){
                 <div class="media">
                   <div class="media-left">
                     <figure class="image is-48x48">
-                     <img src="${doc.data().profilePic} alt="Placeholder image">
+                    <img src="${doc.data().profilePic}" onerror="this.src='images/blankUser.png'" alt="">
                     </figure>
                  </div>
                  <div class="content">
@@ -760,7 +770,7 @@ function loadNetwork(name, mc){
                 <div class="media">
                   <div class="media-left">
                     <figure class="image is-48x48">
-                     <img src="${doc.data().profilePic} alt="Placeholder image">
+                    <img src="${doc.data().profilePic}" onerror="this.src='images/blankUser.png'" alt="">
                     </figure>
                  </div>
                  <div class="content">
@@ -783,14 +793,14 @@ function loadNetwork(name, mc){
       querySnapshot.forEach((doc) => {
         if (doc.data().name.toLowerCase().includes(name.toLowerCase())){
           network_container.innerHTML += `
-          <p class = "is-hidden">${doc.id}</p>
+          <p class = "is-hidden">${doc.id}</p>s
           <div class="column is-one-quarter">
             <div class="card">
               <div class="card-content">
                 <div class="media">
                   <div class="media-left">
                     <figure class="image is-48x48">
-                     <img src="${doc.data().profilePic} alt="Placeholder image">
+                    <img src="${doc.data().profilePic}" onerror="this.src='images/blankUser.png'" alt="">
                     </figure>
                  </div>
                  <div class="content">
@@ -907,7 +917,7 @@ filterButton.addEventListener('click', () => {
   loadNetwork(filterName.value, filterMC.value);
  });
 
-let meetingbtn = document.querySelector('#addMeeting');
+let meetingbtn = document.querySelector('#edit-meetings-click');
 let meetingModal = document.querySelector('#edit-meeting-modal');
 let meetingModalBg = document.querySelector('#edit-meeting-modalbg');
 let closeMeeting = document.querySelector('#close-edit-meeting');
@@ -923,15 +933,20 @@ meetingModalBg.addEventListener('click', () => {
  meetingModal.classList.remove('is-active');
 });
 
+let numMeetings = 0
 let submit_meeting_btn = document.querySelector("#submit-meeting-btn");
 submit_meeting_btn.addEventListener('click', () => {
   let location = document.querySelector('#location').value;
   let date = document.querySelector('#date').value;
   let comments = document.querySelector('#comments').value;
+  let time = document.querySelector('#time').value;
+  numMeetings++;
   database.collection("Meetings").add({
 		location: location,
 		date: date,
-		comments: comments
+    time: time,
+		comments: comments,
+    meetingNum: numMeetings,
 	})
   .then(() => {
       meetingModal.classList.remove('is-active');
@@ -1109,4 +1124,5 @@ submitEditPts.addEventListener('click', () => {
     }
   });
 });
+
 

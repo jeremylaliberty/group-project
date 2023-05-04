@@ -783,9 +783,7 @@
           <img class="attendance-image" src="images/meeting.png" alt="">
           <br>
           <footer class="card-footer">
-            <a href="#" class="card-footer-item has-text-favorite is-size-5 has-text-weight-bold">Edit Meetings</a>
-            <button class="button has-text-favorite is-size-5 has-text-weight-bold is-inverted" id="addMeeting">Add
-              Meeting</button>
+            <a id = "edit-meetings-click" href="#" class="card-footer-item has-text-favorite is-size-5 has-text-weight-bold">Edit Meetings</a>
           </footer>
         </div>
       </div>
@@ -834,6 +832,13 @@
           </div>
 
           <div class="field">
+            <label class="label">Time</label>
+            <div class="control">
+              <input id="time" class="input" type="time">
+            </div>
+          </div>
+
+          <div class="field">
             <label class="label">Comments</label>
             <div class="control">
               <input id="Comments" class="input" type="text">
@@ -877,10 +882,6 @@
             <img src="images/logo.png" alt="" width="80" height="50">
           </a>
 
-          <h1 class="has-text-weight-bold has-text-centered has-text-favorite is-size-3 p-3 ml-5
-                  ">
-            Tracking System</h1>
-
           <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
             data-target="navbarBasicExample">
             <span aria-hidden="true"></span>
@@ -895,31 +896,22 @@
           </div>
 
           <div class="navbar-end nav-end">
-            <button id="switch-to-admin-view" class="is-hidden button is-normal is-rounded has-text-weight-bold">
-              Switch to Admin View
-            </button>
 
-
-            <a id="home-btn" class="navbar-item">
+            <a id="alumni-home-btn" class="navbar-item">
               <span style="color: black;">
                 <i class="fa-solid fa-house fa-2x bordered-icon"></i>
               </span>
 
             </a>
 
-            <a id="network-btn" class="navbar-item">
+            <a id="alumni-network-btn" class="navbar-item">
               <span style="color: black; ">
                 <i class="fa-solid fa-globe fa-2x bordered-icon"></i>
               </span>
 
             </a>
 
-            <a id="attendance-btn" class="navbar-item">
-              <span style="color: black; ">
-                <i class="fa-solid fa-hand fa-2x bordered-icon"></i>
-              </span>
-            </a>
-            <a id="profile-btn" class="navbar-item">
+            <a id="profile-btn2" class="navbar-item">
               <span style="color: black;">
                 <i class="fa-solid fa-right-from-bracket fa-2x bordered-icon"></i>
               </span>
