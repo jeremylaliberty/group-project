@@ -946,12 +946,9 @@ submit_meeting_btn.addEventListener('click', () => {
   let location = document.querySelector('#location').value;
   let date = document.querySelector('#date').value;
   let comments = document.querySelector('#comments').value;
-  let time = document.querySelector('#time').value;
-  numMeetings++;
   database.collection("Meetings").add({
 		location: location,
 		date: date,
-    time: time,
 		comments: comments,
     meetingNum: numMeetings,
 	})
