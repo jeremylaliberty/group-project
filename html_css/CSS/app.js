@@ -7,6 +7,7 @@ let network = document.querySelector('#network');
 let attendance = document.querySelector('#attendance');
 let profile = document.querySelector('#profile');
 let alumni_page = document.querySelector('#alumni-page');
+let alumni_network = document.querySelector('networkForAlumns')
 
 let home_btn = document.querySelector('#home-btn');
 let network_btn = document.querySelector('#network-btn');
@@ -50,6 +51,11 @@ function alumniPage(){
   alumni_page.classList.remove('is-hidden');
 }
 
+function alumniNetwork(){
+  alumni_page.classList.add('is-hidden');
+  alumni_network.classList.remove('is-hidden');
+}
+
 function profilePage(){
   auth.signOut();
   location.reload();
@@ -81,9 +87,9 @@ home_btn.addEventListener('click', () => {
 //   console.log('Hello');
 //  });
 
-//  alumni_network_btn.addEventListener('click', () => {
-//   networkPage();
-//  });
+ alumni_network_btn.addEventListener('click', () => {
+  alumniNetwork();
+ });
 
 let signupbtn = document.querySelector('#signupbtn');
 let signupModal = document.querySelector('#signup-modal');
