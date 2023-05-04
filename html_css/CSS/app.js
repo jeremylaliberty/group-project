@@ -1144,7 +1144,7 @@ submitEditPts.addEventListener('click', () => {
 let Alumninetwork_container = document.querySelector('#alumni-network-container');
 
 function AlumniloadNetwork(name, mc){
-  alumninetwork_container.innerHTML = '';
+  Alumninetwork_container.innerHTML = '';
   if (name == '' && mc == 'Member Class'){
     database.collection("Users").get().then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
@@ -1333,6 +1333,6 @@ let filterNameAlumns = document.querySelector('#filterNameAlumns');
 let filterAlumni = document.querySelector('#filterAlumniClass');
 let filterButtonAlumni = document.querySelector('#filter-button-alumns');
 
-filterButton.addEventListener('click', () => {
+filterButtonAlumni.addEventListener('click', () => {
   loadNetwork(filterNameAlumns.value, filterAlumni.value);
  });
