@@ -87,6 +87,7 @@ home_btn.addEventListener('click', () => {
 //   console.log('Hello');
 //  });
 
+// alumni network buttons
  alumni_network_btn.addEventListener('click', () => {
   alumniNetwork();
  });
