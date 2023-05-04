@@ -198,7 +198,7 @@ grad_profile_btn.addEventListener('click', () => {
  });
 
  submitGradBtn.addEventListener('click', () => {
-  
+  alumniPage()
   let gradYear = document.querySelector("#gradYear").value;
   let major = document.querySelector("#major").value;
   let company = document.querySelector("#company").value;
@@ -212,6 +212,9 @@ grad_profile_btn.addEventListener('click', () => {
 		company: company,
     position: position,
     linkedIn: linkedIn,
+    expectedGrad: firebase.firestore.FieldValue.delete(),
+    meetings: firebase.firestore.FieldValue.delete(),
+    points: firebase.firestore.FieldValue.delete(),
 	})
   .then(() => {
       gradProfileModal.classList.remove('is-active');
