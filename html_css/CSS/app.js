@@ -283,27 +283,52 @@ function myPosition(position) {
   database.collection("Meetings").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
       if (doc.data().date == formattedDate){
+        var meeting_id = doc.id;
         long = position.coords.longitude;
         lat = position.coords.latitude;
         my_location = turf.point([long, lat]);
-        var grainger_center = turf.point([-89.4019, 43.0724]);
+        // var grainger_center = turf.point([-89.4019, 43.0724]);
+        var grainger_center = turf.point([- 89.3956, 43.0744]);
         var grainger = turf.buffer(grainger_center, 0.1, {units: 'miles'});
         if (turf.booleanPointInPolygon(my_location, grainger)){
-          x.classList.add('has-text-success');
-          x.innerHTML = "Attendance Taken!";
           let uid =  document.querySelector('#uid').innerHTML;
-          database.collection('Users').doc(uid).update({
-            meetings: firebase.firestore.FieldValue.increment(1)
+          database.collection('Users').doc(uid).get().then((doc) => {
+            if (doc.exists) {
+              console.log(doc.data().attended)
+              if(! doc.data().attended.includes(meeting_id)){
+                x.classList.add('has-text-success');
+                x.innerHTML = "Attendance Taken!";
+                database.collection('Users').doc(uid).update({
+                  meetings: firebase.firestore.FieldValue.increment(1),
+                  attended: firebase.firestore.FieldValue.arrayUnion(meeting_id)
+            })
+              }
+              else{
+                x.innerHTML = 'You have already recorded your attendance for this meeting'
+              }
+            } else {
+              console.log('User document does not exist');
+            }
           })
+          .catch((error) => {
+            console.error('Error getting user document:', error);
+          });
+            
         }
         else {
           x.classList.add('has-text-danger')
-          x.innerHTML = "You're not at any of the named locations (Gphi (not yet implemented), Grainger, The Hub)";
+          x.innerHTML = "You're not at Gphi!";
         }
             }
           });
+      if (x.innerHTML != 'Attendance Taken!'){
+        if (x.innerHTML != 'You have already recorded your attendance for this meeting'){
+          if(x.innerHTML != "You're not at Gphi!"){
+            x.innerHTML = 'No meetings today'
+          }
+        }
+      }
  });
-
 
 }
   
@@ -388,7 +413,8 @@ sign_up_btn.addEventListener('click', () =>{
       meetings: 15, // These vals will be set to 0 once we are all set up
       points: 620, // ditto
       expectedGrad: "",
-      hometown: ""
+      hometown: "",
+      profileType: 'member'
     })
       .then(() => {
           console.log("Document successfully written!");
@@ -747,11 +773,21 @@ let view_mc = document.querySelector('#view-mc');
 let view_egrad = document.querySelector('#view-egrad');
 let view_bio = document.querySelector('#view-bio');
 let view_hometown = document.querySelector('#view-hometown');
+let view_gy = document.querySelector('#view-gyear');
+let view_company = document.querySelector('#view-company');
+let view_position = document.querySelector('#view-pos');
+let view_linkedin = document.querySelector('#view-li');
+
 
 let view_mc_container = document.querySelector('#view-mc-container');
 let view_egrad_container = document.querySelector('#view-egrad-container');
 let view_bio_container = document.querySelector('#view-bio-container');
 let view_hometown_container = document.querySelector('#view-hometown-container');
+let view_gy_container = document.querySelector('#view-gyear-container');
+let view_company_container = document.querySelector('#view-company-container');
+let view_position_container = document.querySelector('#view-pos-container');
+let view_linkedin_container = document.querySelector('#view-li-container');
+
 
 
 
@@ -902,13 +938,35 @@ network_container.addEventListener("click", (event) => {
     database.collection('Users').doc(view_uid).get().then((doc) => {
       if (doc.exists) {
 
+        if ( doc.data().gradYear == '' || doc.data().gradYear === undefined){
+          view_gy_container.classList.add('is-hidden');
+        } else {
+          view_gy_container.classList.remove('is-hidden');
+        }
+        if ( doc.data().company == '' || doc.data().company === undefined ){
+          view_company_container.classList.add('is-hidden');
+        } else {
+          view_company_container.classList.remove('is-hidden');
+        }
+        if ( doc.data().position == '' || doc.data().position === undefined ){
+          view_position_container.classList.add('is-hidden');
+        } else {
+          view_position_container.classList.remove('is-hidden');
+        }
+        
+        if ( doc.data().linkedIn == '' || doc.data().linkedIn === undefined ){
+          view_linkedin_container.classList.add('is-hidden');
+        } else {
+          view_linkedin_container.classList.remove('is-hidden');
+        }
+
         if ( doc.data().memberClass == ''){
           view_mc_container.classList.add('is-hidden');
         } else if ( doc.data().memberClass != ''){
           view_mc_container.classList.remove('is-hidden');
         }
 
-        if ( doc.data().expectedGrad == ''){
+        if ( doc.data().expectedGrad == '' || doc.data().expectedGrad === undefined){
           view_egrad_container.classList.add('is-hidden');
         } else if ( doc.data().expectedGrad != ''){
           view_egrad_container.classList.remove('is-hidden');
@@ -931,6 +989,10 @@ network_container.addEventListener("click", (event) => {
         view_egrad.innerHTML = doc.data().expectedGrad;
         view_bio.innerHTML = doc.data().bio;
         view_hometown.innerHTML = doc.data().hometown;
+        view_gy.innerHTML = doc.data().gradYear;
+        view_company.innerHTML = doc.data().company;
+        view_position.innerHTML = doc.data().position;
+        view_linkedin.innerHTML = doc.data().linkedIn;
         let container = document.querySelector('#viewProfilePicture');
         container.innerHTML = `<img src="${doc.data().profilePic}"></img>`;
         viewProfileModal.classList.add('is-active');
@@ -1057,7 +1119,7 @@ editAttModalBg.addEventListener('click', () => {
 let editAttContainer = document.querySelector('#edit-attendance-container');
 function editAttendance(){
   editAttContainer.innerHTML = '';
-  database.collection("Users").get().then((querySnapshot) => {
+  database.collection("Users").where('profileType', '!=', 'alumni').get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
       editAttContainer.innerHTML += `
       <div class="control">
@@ -1117,7 +1179,7 @@ editPtsModalBg.addEventListener('click', () => {
 let editPtsContainer = document.querySelector('#edit-points-container');
 function editPoints(){
   editPtsContainer.innerHTML = '';
-  database.collection("Users").get().then((querySnapshot) => {
+  database.collection("Users").where('profileType', '!=', 'alumni').get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
       editPtsContainer.innerHTML += `
       <div class="control">
@@ -1356,3 +1418,17 @@ let filterButtonAlumni = document.querySelector('#filter-button-alumns');
 filterButtonAlumni.addEventListener('click', () => {
   AlumniloadNetwork(filterNameAlumns.value, filterAlumni.value);
  });
+
+ database.collection('Users').doc('xEMaXhjIW6eLLjS44pzVFtqeHKG3').get().then((doc) => {
+  if (doc.exists) {
+    console.log(doc.data().linkedIn);
+
+  } else {
+      // doc.data() will be undefined in this case
+      console.log("No such document!");
+  }
+}).catch((error) => {
+  console.log("Error getting document:", error);
+});
+
+ 

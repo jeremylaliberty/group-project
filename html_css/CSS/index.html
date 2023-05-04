@@ -58,10 +58,12 @@
 
       </div>
       <!-- Any other Bulma elements you want -->
-      <div class="field is-grouped">
+      <div class="field ">
         <div class="control has-icons-left has-icons-right">
-          <input class="input " id="added-meetings" type="text" placeholder="">
+          <input class="input " id="added-meetings" type="text"
+            placeholder="Meetings to be added (negative number will remove)">
         </div>
+        <br>
         <div class="control">
           <button id="submit-edit-attendance" class="button">Submit</button>
         </div>
@@ -354,6 +356,22 @@
             </p>
             <p id="view-hometown-container">
               <strong>Hometown:</strong> <span id="view-hometown"></span>
+            </p>
+
+
+            <p id="view-company-container">
+              <strong>Company:</strong> <span id="view-company"></span>
+            </p>
+
+            <p id="view-pos-container">
+              <strong>Position:</strong> <span id="view-pos"></span>
+            </p>
+
+            <p id="view-li-container">
+              <strong>LinkedIn:</strong> <span id="view-li"></span>
+            </p>
+            <p id="view-gyear-container">
+              <strong>Grad Year:</strong> <span id="view-gyear"></span>
             </p>
 
 
@@ -688,7 +706,7 @@
       <img class="user-attendance-image" src="images/users.png" alt="">
       <br>
       <div class="has-text-centered">
-        <button id="where-am-i-btn" class="button is-inline-block is-large is-rounded">Take my Attendnace</button>
+        <button id="where-am-i-btn" class="button is-inline-block is-large is-rounded">Take my Attendance</button>
       </div>
       <br>
       <div id="where-am-i" class="has-text-centered"></div>
