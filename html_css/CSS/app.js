@@ -928,15 +928,18 @@ meetingModalBg.addEventListener('click', () => {
  meetingModal.classList.remove('is-active');
 });
 
+let numMeetings = 0
 let submit_meeting_btn = document.querySelector("#submit-meeting-btn");
 submit_meeting_btn.addEventListener('click', () => {
   let location = document.querySelector('#location').value;
   let date = document.querySelector('#date').value;
   let comments = document.querySelector('#comments').value;
+  numMeetings++;
   database.collection("Meetings").add({
 		location: location,
 		date: date,
-		comments: comments
+		comments: comments,
+    meetingNum: numMeetings,
 	})
   .then(() => {
       meetingModal.classList.remove('is-active');
