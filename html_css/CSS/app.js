@@ -6,7 +6,7 @@ let home = document.querySelector('#home');
 let network = document.querySelector('#network');
 let attendance = document.querySelector('#attendance');
 let profile = document.querySelector('#profile');
-let alumnihome = document.querySelector('#alumni-page');
+let alumni_page = document.querySelector('#alumni-page');
 
 let home_btn = document.querySelector('#home-btn');
 let network_btn = document.querySelector('#network-btn');
@@ -145,7 +145,6 @@ editProfilebtn.addEventListener('click', () => {
  });
 
  let admin_page = document.querySelector('#admin-page');
- let alumni_page = document.querySelector('#alumni-page');
  let to_user_button = document.querySelector('#switch-to-user-view');
 
  let user_page = document.querySelector('#user-page');
