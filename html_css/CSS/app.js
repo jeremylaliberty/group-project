@@ -7,7 +7,7 @@ let network = document.querySelector('#network');
 let attendance = document.querySelector('#attendance');
 let profile = document.querySelector('#profile');
 let alumni_page = document.querySelector('#alumni-page');
-let alumni_network = document.querySelector('networkForAlumns');
+let alumni_network = document.querySelector('#networkForAlumns');
 
 let home_btn = document.querySelector('#home-btn');
 let network_btn = document.querySelector('#network-btn');
@@ -1278,7 +1278,7 @@ function AlumniloadNetwork(name, mc){
   
 }
 
-Alumninetwork_container.addEventListener("click", (event) => {
+ Alumninetwork_container.addEventListener("click", (event) => {
   const button = event.target;
   if (button.tagName === "BUTTON" && button.id.startsWith("user-button-")) {
     const view_uid = button.id.substring("user-button-".length);
