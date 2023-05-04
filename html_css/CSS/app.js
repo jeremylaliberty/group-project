@@ -1144,7 +1144,7 @@ submitEditPts.addEventListener('click', () => {
 let Alumninetwork_container = document.querySelector('#alumni-network-container');
 
 function AlumniloadNetwork(name, mc){
-  alumninetwork_container.innerHTML = '';
+  Alumninetwork_container.innerHTML = '';
   if (name == '' && mc == 'Member Class'){
     database.collection("Users").get().then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
