@@ -1320,8 +1320,8 @@ alumni_container.addEventListener("click", (event) => {
 });
 
 let filterNameAlumns = document.querySelector('#filterNamAlumns');
-let filterMC = document.querySelector('#filterAlumniClass');
-let filterButton = document.querySelector('#filter-button-alumns');
+let filterMCAlumns = document.querySelector('#filterAlumniClass');
+let filterButtonAlumns = document.querySelector('#filter-button-alumns');
 
 filterButton.addEventListener('click', () => {
   loadNetwork(filterNameAlumns.value, filterMC.value);
