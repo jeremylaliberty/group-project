@@ -1314,8 +1314,8 @@ function AlumniloadNetwork(name, mc){
         view_egrad.innerHTML = doc.data().expectedGrad;
         view_bio.innerHTML = doc.data().bio;
         view_hometown.innerHTML = doc.data().hometown;
-        let container = document.querySelector('#viewProfilePicture');
-        container.innerHTML = `<img src="${doc.data().profilePic}"></img>`;
+        let containerAlumn = document.querySelector('#viewProfilePicture');
+        containerAlumn.innerHTML = `<img src="${doc.data().profilePic}"></img>`;
         viewProfileModal.classList.add('is-active');
    
 
