@@ -7,6 +7,7 @@ let network = document.querySelector('#network');
 let attendance = document.querySelector('#attendance');
 let profile = document.querySelector('#profile');
 let alumni_page = document.querySelector('#alumni-page');
+let alumni_network = document.querySelector('#networkForAlumns');
 
 let home_btn = document.querySelector('#home-btn');
 let network_btn = document.querySelector('#network-btn');
@@ -15,6 +16,7 @@ let profile_btn = document.querySelector('#profile-btn');
 let alumni_btn = document.querySelector('#alumni-home-btn');
 let alumni_logout_btn = document.querySelector('#profile-btn2');
 let alumni_network_btn = document.querySelector("#alumni-network-btn");
+let alumni_home_btn= document.querySelector('#alum-home-btn');
 
 
 function homePage(){
@@ -50,13 +52,28 @@ function alumniPage(){
   alumni_page.classList.remove('is-hidden');
 }
 
+// function alumniPage(){
+//   //home.classList.add('is-hidden');
+//   //network.classList.add('is-hidden');
+//   //profile.classList.add('is-hidden');
+//   //attendance.classList.add('is-hidden');
+//   alumni_page.classList.remove('is-hidden');
+//   alumni_network.classList.add('is-hidden');
+// }
+
+function alumniNetwork(){
+  alumni_page.classList.add('is-hidden');
+  alumni_network.classList.remove('is-hidden');
+  AlumniloadNetwork('', 'Member Class');
+}
+
 function profilePage(){
   auth.signOut();
   location.reload();
 }
 
-home_btn.addEventListener('click', () => {
-  homePage();
+alumni_home_btn.addEventListener('click', () => {
+  alumniPage();
  });
 
  network_btn.addEventListener('click', () => {
@@ -75,15 +92,20 @@ home_btn.addEventListener('click', () => {
   profilePage();
  });
 
+ home_btn.addEventListener('click', () => {
+  homePage();
+ });
+
 // weird stuff going on when i try to add these
 
 //  alumni_home_btn.addEventListener('click', () => {
-//   alumniPage();
+//   console.log('Hello');
 //  });
 
-//  alumni_network_btn.addEventListener('click', () => {
-//   networkPage();
-//  });
+// alumni network buttons
+ alumni_network_btn.addEventListener('click', () => {
+  alumniNetwork();
+ });
 
 let signupbtn = document.querySelector('#signupbtn');
 let signupModal = document.querySelector('#signup-modal');
@@ -218,6 +240,7 @@ grad_profile_btn.addEventListener('click', () => {
 	})
   .then(() => {
       gradProfileModal.classList.remove('is-active');
+      location.reload();
   })
   .catch((error) => {
       // The document probably doesn't exist.
@@ -929,6 +952,7 @@ let meetingbtn = document.querySelector('#edit-meetings-click');
 let meetingModal = document.querySelector('#edit-meeting-modal');
 let meetingModalBg = document.querySelector('#edit-meeting-modalbg');
 let closeMeeting = document.querySelector('#close-edit-meeting');
+
 meetingbtn.addEventListener('click', () => {
  meetingModal.classList.add('is-active');
 });
@@ -941,20 +965,15 @@ meetingModalBg.addEventListener('click', () => {
  meetingModal.classList.remove('is-active');
 });
 
-let numMeetings = 0
 let submit_meeting_btn = document.querySelector("#submit-meeting-btn");
 submit_meeting_btn.addEventListener('click', () => {
   let location = document.querySelector('#location').value;
   let date = document.querySelector('#date').value;
   let comments = document.querySelector('#comments').value;
-  let time = document.querySelector('#time').value;
-  numMeetings++;
   database.collection("Meetings").add({
 		location: location,
 		date: date,
-    time: time,
 		comments: comments,
-    meetingNum: numMeetings,
 	})
   .then(() => {
       meetingModal.classList.remove('is-active');
@@ -1134,3 +1153,199 @@ submitEditPts.addEventListener('click', () => {
 });
 
 
+//Alumni Function
+let Alumninetwork_container = document.querySelector('#alumni-network-container');
+
+function AlumniloadNetwork(name, mc){
+  Alumninetwork_container.innerHTML = '';
+  if (name == '' && mc == 'Member Class'){
+    database.collection("Users").get().then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        Alumninetwork_container.innerHTML += `
+          <p class = "is-hidden">${doc.id}</p>
+          <div class="column is-one-quarter">
+            <div class="card">
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-left">
+                    <figure class="image is-48x48">
+                    <img src="${doc.data().profilePic}" onerror="this.src='images/blankUser.png'" alt="">
+                    </figure>
+                 </div>
+                 <div class="content">
+                  <p class="title is-4">${doc.data().name}</p>
+                  <p class="subtitle is-6"> ${doc.data().memberClass}</p>
+                 </div>
+               </div>
+               <div class="has-text-centered">
+                <button id = "user-button-${doc.id}" class="button has-text-white has-text-weight-bold is-small is-rounded is-inline-block is-favorite">View Profile</button>
+               </div>
+             </div>
+            </div>
+          </div>
+          `  
+          Alumninetwork_container.innerHTML += `
+          <br>
+          <br>
+          <br>
+          ` 
+      });
+  });
+  }
+  else if (name == ''){
+    database.collection("Users").where('memberClass', '==', mc).get().then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        Alumninetwork_container.innerHTML += `
+          <p class = "is-hidden">${doc.id}</p>
+          <div class="column is-one-quarter">
+            <div class="card">
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-left">
+                    <figure class="image is-48x48">
+                    <img src="${doc.data().profilePic}" onerror="this.src='images/blankUser.png'" alt="">
+                    </figure>
+                 </div>
+                 <div class="content">
+                  <p class="title is-4">${doc.data().name}</p>
+                  <p class="subtitle is-6"> ${doc.data().memberClass}</p>
+                 </div>
+               </div>
+               <div class="has-text-centered">
+                <button id = "user-button-${doc.id}" class="button has-text-white has-text-weight-bold is-small is-rounded is-inline-block is-favorite">View Profile</button>
+               </div>
+             </div>
+            </div>
+          </div>
+          `     
+      });
+  });
+  }
+  else if (mc != 'Member Class' && name != ''){
+    database.collection("Users").where('memberClass', '==', mc).get().then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        if (doc.data().name.toLowerCase().includes(name.toLowerCase())){
+          Alumninetwork_container.innerHTML += `
+          <p class = "is-hidden">${doc.id}</p>s
+          <div class="column is-one-quarter">
+            <div class="card">
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-left">
+                    <figure class="image is-48x48">
+                    <img src="${doc.data().profilePic}" onerror="this.src='images/blankUser.png'" alt="">
+                    </figure>
+                 </div>
+                 <div class="content">
+                  <p class="title is-4">${doc.data().name}</p>
+                  <p class="subtitle is-6"> ${doc.data().memberClass}</p>
+                 </div>
+               </div>
+               <div class="has-text-centered">
+                <button id = "user-button-${doc.id}" class="button has-text-white has-text-weight-bold is-small is-rounded is-inline-block is-favorite">View Profile</button>
+               </div>
+             </div>
+            </div>
+          </div>
+          `     
+        }
+          
+      });
+  });
+
+  }
+  else {
+    database.collection("Users").get().then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        if (doc.data().name.toLowerCase().includes(name.toLowerCase())){
+          Alumninetwork_container.innerHTML += `
+          <p class = "is-hidden">${doc.id}</p>
+          <div class="column is-one-quarter">
+            <div class="card">
+              <div class="card-content">
+                <div class = "columns">
+                  <div class="column is-three-fifths has-text-left">
+                    <div class="is-inline-block">
+                      <strong>${doc.data().name}</strong>
+                    </div>
+                  </div>
+                  <div class="column has-text-right">
+                    <div class="is-inline-block">
+                    ${doc.data().memberClass}
+                    </div>
+                  </div>
+                </div>
+                <div class="has-text-centered">
+                  <button id = "user-button-${doc.id}" class="button has-text-white has-text-weight-bold is-small is-rounded is-inline-block is-favorite">View Profile</button>
+                </div>
+              </div> 
+            </div>
+          </div>
+          `     
+
+        }        
+      });
+  });
+  }
+  
+}
+
+ Alumninetwork_container.addEventListener("click", (event) => {
+  const button = event.target;
+  if (button.tagName === "BUTTON" && button.id.startsWith("user-button-")) {
+    const view_uid = button.id.substring("user-button-".length);
+    database.collection('Users').doc(view_uid).get().then((doc) => {
+      if (doc.exists) {
+
+        if ( doc.data().memberClass == ''){
+          view_mc_container.classList.add('is-hidden');
+        } else if ( doc.data().memberClass != ''){
+          view_mc_container.classList.remove('is-hidden');
+        }
+
+        if ( doc.data().expectedGrad == ''){
+          view_egrad_container.classList.add('is-hidden');
+        } else if ( doc.data().expectedGrad != ''){
+          view_egrad_container.classList.remove('is-hidden');
+        }
+
+        if (doc.data().bio == ''){
+          view_bio_container.classList.add('is-hidden');
+        } else if (doc.data().bio != ''){
+          view_bio_container.classList.remove('is-hidden');
+        }
+
+        if (doc.data().hometown == ''){
+          view_hometown_container.classList.add('is-hidden');
+        } else if (doc.data().hometown != ''){
+          view_hometown_container.classList.remove('is-hidden');
+        }
+        
+        view_name.innerHTML = doc.data().name;
+        view_mc.innerHTML = doc.data().memberClass;
+        view_egrad.innerHTML = doc.data().expectedGrad;
+        view_bio.innerHTML = doc.data().bio;
+        view_hometown.innerHTML = doc.data().hometown;
+        let containerAlumn = document.querySelector('#viewProfilePicture');
+        containerAlumn.innerHTML = `<img src="${doc.data().profilePic}"></img>`;
+        viewProfileModal.classList.add('is-active');
+   
+
+      } else {
+          // doc.data() will be undefined in this case
+          console.log("No such document!");
+      }
+  }).catch((error) => {
+      console.log("Error getting document:", error);
+  });
+}
+
+});
+
+let filterNameAlumns = document.querySelector('#filterNameAlumns');
+let filterAlumni = document.querySelector('#filterAlumniClass');
+let filterButtonAlumni = document.querySelector('#filter-button-alumns');
+
+filterButtonAlumni.addEventListener('click', () => {
+  loadNetwork(filterNameAlumns.value, filterAlumni.value);
+ });
