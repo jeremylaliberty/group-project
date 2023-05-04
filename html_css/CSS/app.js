@@ -939,6 +939,7 @@ let meetingbtn = document.querySelector('#edit-meetings-click');
 let meetingModal = document.querySelector('#edit-meeting-modal');
 let meetingModalBg = document.querySelector('#edit-meeting-modalbg');
 let closeMeeting = document.querySelector('#close-edit-meeting');
+
 meetingbtn.addEventListener('click', () => {
  meetingModal.classList.add('is-active');
 });
