@@ -1352,5 +1352,5 @@ let filterAlumni = document.querySelector('#filterAlumniClass');
 let filterButtonAlumni = document.querySelector('#filter-button-alumns');
 
 filterButtonAlumni.addEventListener('click', () => {
-  loadNetwork(filterNameAlumns.value, filterAlumni.value);
+  AlumniloadNetwork(filterNameAlumns.value, filterAlumni.value);
  });
