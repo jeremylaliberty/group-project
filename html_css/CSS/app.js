@@ -1333,6 +1333,6 @@ let filterNameAlumns = document.querySelector('#filterNameAlumns');
 let filterAlumni = document.querySelector('#filterAlumniClass');
 let filterButtonAlumni = document.querySelector('#filter-button-alumns');
 
-filterButton.addEventListener('click', () => {
+filterButtonAlumni.addEventListener('click', () => {
   loadNetwork(filterNameAlumns.value, filterAlumni.value);
  });
