@@ -961,7 +961,6 @@ submit_meeting_btn.addEventListener('click', () => {
 		location: location,
 		date: date,
 		comments: comments,
-    meetingNum: numMeetings,
 	})
   .then(() => {
       meetingModal.classList.remove('is-active');
