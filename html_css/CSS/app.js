@@ -751,7 +751,12 @@ function loadNetwork(name, mc){
              </div>
             </div>
           </div>
-          `     
+          `    
+          network_container.innerHTML += `
+          <br>
+          <br>
+          <br>
+          ` 
       });
   });
   }
@@ -1119,6 +1124,3 @@ submitEditPts.addEventListener('click', () => {
     }
   });
 });
-
-
-
