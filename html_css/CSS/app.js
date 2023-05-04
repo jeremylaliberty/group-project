@@ -78,7 +78,7 @@ home_btn.addEventListener('click', () => {
 // weird stuff going on when i try to add these
 
 //  alumni_home_btn.addEventListener('click', () => {
-//   alumniPage();
+//   console.log('Hello');
 //  });
 
 //  alumni_network_btn.addEventListener('click', () => {
@@ -218,6 +218,7 @@ grad_profile_btn.addEventListener('click', () => {
 	})
   .then(() => {
       gradProfileModal.classList.remove('is-active');
+      location.reload();
   })
   .catch((error) => {
       // The document probably doesn't exist.
@@ -928,7 +929,6 @@ meetingModalBg.addEventListener('click', () => {
  meetingModal.classList.remove('is-active');
 });
 
-let numMeetings = 0
 let submit_meeting_btn = document.querySelector("#submit-meeting-btn");
 submit_meeting_btn.addEventListener('click', () => {
   let location = document.querySelector('#location').value;
@@ -1119,5 +1119,6 @@ submitEditPts.addEventListener('click', () => {
     }
   });
 });
+
 
 
