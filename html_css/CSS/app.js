@@ -51,6 +51,8 @@ function alumniPage(){
   profile.classList.add('is-hidden');
   attendance.classList.add('is-hidden');
   alumni_page.classList.remove('is-hidden');
+  alumni_network.add('is-hidden');
+
 }
 
 // function alumniPage(){
