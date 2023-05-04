@@ -243,30 +243,43 @@ function getLocation() {
 }
 
 function myPosition(position) {
-  long = position.coords.longitude;
-  lat = position.coords.latitude;
-  my_location = turf.point([long, lat]);
-  var grainger_center = turf.point([-89.4016, 43.0727]);
-  var grainger = turf.buffer(grainger_center, 0.1, {units: 'miles'});
+  let latest = ""
+  const today = new Date();
+  var year = today.getFullYear();
+  var month = String(today.getMonth() + 1).padStart(2, '0');
+  var day = String(today.getDate()).padStart(2, '0');
+  var formattedDate = year + '-' + month + '-' + day;
 
-  var hub_center = turf.point([-89.3956, 43.0744]);
-  var hub = turf.buffer(hub_center, 0.1, {units: 'miles'});
-  
-  
-  if (turf.booleanPointInPolygon(my_location, hub)) {
-    x.classList.add('has-text-success');
-    x.innerHTML = "You're at the Hub";
-  }
-  else if (turf.booleanPointInPolygon(my_location, grainger)){
-    x.classList.add('has-text-success');
-    x.innerHTML = "You're at Grainger";
-  }
-  else {
-    x.classList.add('has-text-danger')
-    x.innerHTML = "You're not at any of the named locations (Gphi (not yet implemented), Grainger, The Hub)";
-  }
+  database.collection("Meetings").get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      if (doc.data().date == formattedDate){
+        long = position.coords.longitude;
+        lat = position.coords.latitude;
+        my_location = turf.point([long, lat]);
+        var grainger_center = turf.point([-89.3956, 43.0744]);
+        var grainger = turf.buffer(grainger_center, 0.1, {units: 'miles'});
+        if (turf.booleanPointInPolygon(my_location, grainger)){
+          x.classList.add('has-text-success');
+          x.innerHTML = "Attendance Taken!";
+          let uid =  document.querySelector('#uid').innerHTML;
+          database.collection('Users').doc(uid).update({
+            meetings: firebase.firestore.FieldValue.increment(1)
+          })
+        }
+        else {
+          x.classList.add('has-text-danger')
+          x.innerHTML = "You're not at any of the named locations (Gphi (not yet implemented), Grainger, The Hub)";
+        }
+            }
+          });
+ });
+
 
 }
+  
+
+
+
 
 where_btn.addEventListener('click', () => {
   getLocation();
@@ -751,11 +764,6 @@ function loadNetwork(name, mc){
             </div>
           </div>
           `    
-          network_container.innerHTML += `
-          <br>
-          <br>
-          <br>
-          ` 
       });
   });
   }
