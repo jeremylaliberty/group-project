@@ -1277,7 +1277,7 @@ function AlumniloadNetwork(name, mc){
   
 }
 
-Alumninetwork_container.addEventListener("click", (event) => {
+ Alumninetwork_container.addEventListener("click", (event) => {
   const button = event.target;
   if (button.tagName === "BUTTON" && button.id.startsWith("user-button-")) {
     const view_uid = button.id.substring("user-button-".length);
