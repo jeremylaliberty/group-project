@@ -6,7 +6,7 @@ let home = document.querySelector('#home');
 let network = document.querySelector('#network');
 let attendance = document.querySelector('#attendance');
 let profile = document.querySelector('#profile');
-let alumnihome = document.querySelector('#alumni-page');
+let alumni_page = document.querySelector('#alumni-page');
 
 let home_btn = document.querySelector('#home-btn');
 let network_btn = document.querySelector('#network-btn');
@@ -19,7 +19,7 @@ function homePage(){
   network.classList.add('is-hidden');
   profile.classList.add('is-hidden');
   attendance.classList.add('is-hidden');
-  alumnihome.classList.add('is-hidden');
+  alumni_page.classList.add('is-hidden');
 }
 
 function networkPage(){
@@ -28,7 +28,7 @@ function networkPage(){
   network.classList.remove('is-hidden');
   profile.classList.add('is-hidden');
   attendance.classList.add('is-hidden');
-  alumnihome.classList.add('is-hidden');
+  alumni_page.classList.add('is-hidden');
 }
 
 function atttendancePage(){
@@ -36,7 +36,15 @@ function atttendancePage(){
   network.classList.add('is-hidden');
   profile.classList.add('is-hidden');
   attendance.classList.remove('is-hidden');
-  alumnihome.classList.add('is-hidden');
+  alumni_page.classList.add('is-hidden');
+}
+
+function alumniPage(){
+  home.classList.add('is-hidden');
+  network.classList.add('is-hidden');
+  profile.classList.add('is-hidden');
+  attendance.classList.add('is-hidden');
+  alumni_page.classList.remove('is-hidden');
 }
 
 function profilePage(){
@@ -137,7 +145,6 @@ editProfilebtn.addEventListener('click', () => {
  });
 
  let admin_page = document.querySelector('#admin-page');
- let alumni_page = document.querySelector('#alumni-page');
  let to_user_button = document.querySelector('#switch-to-user-view');
 
  let user_page = document.querySelector('#user-page');
@@ -189,7 +196,7 @@ grad_profile_btn.addEventListener('click', () => {
   let position = document.querySelector("#position").value;
   let linkedIn = document.querySelector("#linkedIn").value;
   let new_alum_uid = document.querySelector('#uid').innerHTML;
-  database.collection("Users").doc(new_alum_uid).set({
+  database.collection("Users").doc(new_alum_uid).update({
     profileType: "alumni",
 		gradYear: gradYear,
 		major: major,
