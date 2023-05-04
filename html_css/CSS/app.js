@@ -63,7 +63,7 @@ function alumniPage(){
 function alumniNetwork(){
   alumni_page.classList.add('is-hidden');
   alumni_network.classList.remove('is-hidden');
-  alumniloadNetwork('', 'Member Class');
+  AlumniloadNetwork('', 'Member Class');
 }
 
 function profilePage(){
