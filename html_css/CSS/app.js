@@ -15,6 +15,7 @@ let attendance_btn = document.querySelector('#attendance-btn');
 let profile_btn = document.querySelector('#profile-btn');
 let alumni_btn = document.querySelector('#alumni-home-btn');
 let alumni_logout_btn = document.querySelector('#profile-btn2');
+let alumni_logout_btn2 = document.querySelector('#profile-btn3');
 let alumni_network_btn = document.querySelector("#alumni-network-btn");
 let alumni_home_btn= document.querySelector('#alum-home-btn');
 
@@ -89,6 +90,10 @@ alumni_home_btn.addEventListener('click', () => {
  });
 
  alumni_logout_btn.addEventListener('click', () => {
+  profilePage();
+ });
+
+ alumni_logout_btn2.addEventListener('click', () => {
   profilePage();
  });
 
